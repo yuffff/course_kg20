@@ -1,0 +1,370 @@
+
+    ---
+    +import wikidata to neo4j 
+    +Neo4j Python driver
+    +https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Normalized_values
+    +https://www.w3.org/2018/09/rdf-data-viz/
+    +yago
+    +投资关系分析
+        “硅谷天堂 投资浙江振龙电源股份有限公司”
+        https://zhuanlan.zhihu.com/p/88792984
+        https://zhuanlan.zhihu.com/p/100200482
+    +文本挖掘*
+        https://zhuanlan.zhihu.com/p/49973686
+
+    ---
+    motivate
+        高效知识探索：知识图vr可视化
+            辅助思考
+        智能QA系统，sql查询
+        reasoning  
+            rdf可视化项目
+                https://www.w3.org/2018/09/rdf-data-viz/
+            可视化，挖掘
+                dblp
+                OpenKG
+                yago
+            Neo4j数据库优化
+            构建query系统
+        其实就是一个数据库... 
+        开放知识图谱挖掘
+        http://shuyantech.com/cndbpedia/graph?entity=%E5%95%86%E6%9C%9D
+            通过ajex加载json数据，实体triple用json存储
+        通过 
+            http://shuyantech.com/cndbpedia/entityFigure?entity=%E4%BC%9A%E6%84%8F 可以爬下来
+        http://shuyantech.com/cndbpedia/graph?entity=%E6%9D%8E%E5%A8%9C%EF%BC%88%E6%B5%81%E8%A1%8C%E6%AD%8C%E6%89%8B%E3%80%81%E4%BD%9B%E9%97%A8%E5%A5%B3%E5%BC%9F%E5%AD%90%EF%BC%89
+        http://shuyantech.com/api/entitylinking/
+        http://218.193.131.250:33663/tm?s=2005&e=2008&n=100
+        http://shuyantech.com/cndbpedia/kggraph?entity=%E5%94%90%E6%9C%9D%EF%BC%88%E4%B8%AD%E5%9B%BD%E5%8E%86%E5%8F%B2%E6%9C%9D%E4%BB%A3%EF%BC%89
+            共同构建万物之网
+            唐朝“
+            强大的可视化编辑功能，让没有技术背景的知识专家
+                也能轻松录入图谱数据。人工录入的高质量数据将是对爬虫数据的一个完美的补充。
+            非常方便的探索图谱功能。支持限制显示数量、只显示某一类关系，自动扩展多个层级等功能。整个图谱的状况尽在掌握。
+            拖放式数据清洗、知识抽取操作。后端支持MongoDB、Neo4J等多种数据库
+        开公司是个好思路
+            更加先进的语音识别技术
+        学习中，在工具和习惯之间，习惯更重要一些
+        学习就是：文字整理，大量文字research + 理解推断
+    why KG 
+        https://zhuanlan.zhihu.com/knowledgegraph
+        计算机一直面临着这样的困境——无法获取网络文本的语义信息
+        *但离一台机器拥有一个两三岁小孩的智力这样一个目标还有一段距离
+        我们需要对可描述的事物(实体)进行建模，填充它的属性，拓展它和其他事物的联系
+        构建机器的先验知识
+        我们人类在看到熟悉的事物，会做一些联想和推理是很类似的。
+        Google为了提升搜索引擎返回的答案质量和用户查询的效率，于2012年5月16日发布了知识图谱(Knowledge Graph)
+        有知识图谱作为辅助，搜索引擎能够洞察用户查询背后的语义信息
+        *Google知识图谱的宣传语“things not strings”
+        即，不要无意义的字符串，而是获取字符串背后隐含的对象或事物
+        在之前的版本，我们只能得到包含这个字符串的相关网页作为返回结果
+        *现在，除了相关网页，搜索引擎还会返回一个“知识卡片,不仅仅是字符串搜索出来的结果，*有的甚至并没有那个string
+        搜索引擎把C罗这个实体作为备选项列出
+        它的诞生是符合计算机科学、互联网发展潮流的
+        它背后的思想可以追溯到上个世纪五六十年代所提出的一种知识表示形式——语义网络(Semantic Network)
+        *其本质是为了表示知识
+        语义网络更侧重于描述概念与概念之间的关系，（有点像生物的层次分类体系——界门纲目科属种），
+            而知识图谱则更偏重于描述实体之间的关联。
+        知识图谱是由一些相互连接的实体和他们的属性构成的
+        在知识图谱中，我们用RDF形式化地表示这种三元关系。RDF(Resource Description Framework)，即资源描述框架，是W3C制定的
+        "www.kg.com/person/1"是一个IRI，用来唯一的表示“罗纳尔多”这个实体
+        *每条知识--SPO三元组(Subject-Predicate-Object)。
+        literal是字面量，我们可以把它看做是带有数据类型的纯文本
+        可以认为知识图谱就包含两种节点类型，资源和字面量
+        字面量类似叶子节点，出度为0
+        如何利用关系型数据库中的数据来构建一个知识图谱
+        *搭建一个简易的基于知识图谱的问答系统(KBQA)。
+    工业界应用，问题
+        机器学习的加入，“找规律”式的算法所带来的“红利”正在逐渐地消失
+        进而需要一种可以对数据进行更深一层挖掘的方式，这种新的方式就是知识图谱--数据挖掘
+        最难也最需要抓紧解决的是 如何将来自不同数据源的相同实体聚类
+        比如电影数据源里有刘德华，音乐数据源里也有刘德华，这两其实是一个人，从不同数据源构建图谱的时候，必须有自动化的算法将各处的刘德华聚类
+        大家可以慢慢的感受到谷歌搜索引擎正在变为谷歌知识引擎
+        知识图谱中还有很多其他挑战，比如文字到实体的映射，但这些都有较成熟的算法
+        看到其他人说的存储方面的挑战，这在谷歌里真的不是什么挑战，sstable 和 bigtable轻松愉快。之上跑起 MapReduce, flume不要太爽
+        非常大的坑disambiguation，包括重名和别名，包括实体的消歧、关系的消歧、类别的消歧。
+        *OpenKG收集和整理国内国外重要的开放知识库和知识图谱项目，并组织整理相关的中文资料免费对外开放。
+        *YAGO包含1.2亿条三元组知识。YAGO是IBM Watson的后端知识库之一
+        YAGO是由德国马普研究所研制的链接数据库。YAGO主要集成了Wikipedia、WordNet和GeoNames三个来源的数据。
+        Download YAGO ontology in .tsv format! (19 Gb compressed, 168 Gb uncompressed, without SPOTLX)
+        https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/downloads/
+        你搜个刘翔，它可以给你一堆刘翔的介绍。。这就是最简单的实体检索。。but这个太废了。。值不回巨头们的钞票啊。。
+        用来做recommendation
+            我们可以把它用到搜索引擎上啊。。你搜一个刘翔。。我除了给你一个刘翔的百科主页，我还可以告诉你教练孙海平。。父母XXX。。前妻葛天。。做得好的话还能给你推荐个裤裆藏手榴弹的电视剧有木有！！这就是利用知识库来做recommendation
+        用来query understanding
+            有人搜apple的时候，google和度娘是不知道你想搜水果还是搜乔布斯的。。but当你搜 "microsoft apple"或者"乔大爷 apple"的时候它就兴奋的发现它派上用场了，它知道巨硬跟apple都是公司啊你肯定想找手机啊于是广告就来了啊钱就哗哗了啊
+        question answering over knowledge base. 
+            说白了就是知识库上的自然语言查询。比如你输一句 "刘翔的前妻的裤裆藏手榴弹的电视剧的名字是什么呀~~"， 它能告诉你。。它叫XXX。。
+        vis
+            数据、信息、知识与知识域可视化研究
+        文本处理
+            NLPIR大数据语义智能分析平台
+        虽然NLP领域也对这个问题研究了很多年，但是在开放信息源中的效果并不是很理想。
+        知识图谱的检索方面。如何给一个自然语言的问题，能够有效的检索相关的答案。
+        最终的落脚点还是要有基于行业的本体构建，如农业、军工，如果缺乏本体构建的基础
+        推理
+        ...
+        *Neo4j 浅析 https://zhuanlan.zhihu.com/p/36404872 ！！
+            站在这个角度我们可以从“找规律”的维度上升到“理解”的维度， 这也就是为什么有人说知识图谱是 AI 的未来
+            “达观数据是一家人工智能公司”这句话在机器看来只不过是一连串的字符， 但是在我们人看来却可以分成
+                主谓宾三部分，即主语“达观数据”谓语“是”宾语“人工智能公司”
+            知识图谱可以表示成一个实体关系网络图
+            我需要是扎克伯格的妻子普莉希拉・陈的详细信息而不是一些包含了她信息的网页
+            早在2012年Google 就已经在搜索中加入了知识图谱
+            这种方式极大地提升了用户体验
+            首先将“扎克伯格的妻子是谁” 这个 Query通过自然语言处理技术（NLP）处理成“扎克伯格”实体和”has_wife"的关系
+            从已经构建好的知识图谱中查询， 然后将查询结果返回给用户。
+            通过自然语言处理（NLP）技术对文本进行命名实体识别（NER）
+            Neo4j是一个高性能的,NOSQL图形数据库，它将结构化数据存储在网络上而不是表中
+            Neo4j也可以被看作是一个高性能的图引擎，该引擎具有成熟数据库的所有特性。
+            知识图谱是基于图的数据结构，通常用图数据库进行存储，我们先来看一下图数据库排行
+            高效地将wikidata导入neo4j！
+            其采用批量导入而非一个一个的导入，所以很多内部操作可以合并
+                http://www.voidcn.com/article/p-hfmnflog-ss.html
+                https://github.com/pfllo/wikidata_neo4j_importer
+            的数量超过1000万时，在不设置索引的情况下，平均查询延时已经超过了6秒，说明此时 neo4j 已经明显“吃不消
+            但是我们发现设置索引之后查询时间明显降下来了
+            索引并不是越多越好
+            The Neo4j Python driver is officially supported by Neo4j and connects to the database using the binary protocol
+            官方提供py接口
+            不使用schema，所以从理论上来说 neo4j 可以存储任何形式的数据
+            但由于neo4j 是通过键值对（Key-Value） 的双向列表来保存节点和关系的属性值，所以neo4j仅适用于存储实体关系和实体简单的属性。
+            我们可以通过添加应用缓存（如：redis, leveldb等），将查询的结果缓存起来，减少直接访问图库的频次，减小图库的读取压力
+            数据库索引实际上是在数据之外维护了特定算法的数据结构(如 B+Tree)
+            而且索引还会利用访问局部性原理，充分利用操作系统的页缓存，加快查找的速度。
+            由于增加索引会让图库维护在维护数据的同时还会维护一份额外的数据结构，更新数据时会造成额外的开销，
+                这也印证了上面测试的插入数据时无索引比有索引快的结论
+            Neo4j 1.4以后的版本引入了自动索引（automatic index）
+            *经常会碰到一些实体拥有大量的属性，必要时还需要通过这些属性的值来查询实体进而查找实体拥有的关系。
+                这时候可以将 neo4j 数据库和KV 数据库（如：MongoDB）进行联合使用，比如在 neo4j 
+                节点的属性中存储MongoDB 中的 objectId
+            这样既可以充分利用 neo4j 的特性来进行关系查询又可以通过 KV 数据库的特性来进行属性到实体的查询。
+                通常在图库和 KV 数据库联合使用时， 
+                特别是经常需要通过属性来查询实体时需要设置 neo4j schema Index，
+                即将neo4j中与 KV 数据库关联的值设置索引。
+            由于知识图谱在关系“理解”方面的优势，目前已经在各大互联网公司和传统企业的项目中落地，并取得了良好的效果
+            知识图谱的构建过程就是通过导入一系列这样的数据，最后以图的形式展示给用户，并且支持简单的查询，推理等操作。
+            发展
+                https://pic2.zhimg.com/80/v2-fdab4e5856d5c583b40778f48bc84959_hd.jpg
+            随着互联网的发展，数据规模呈现爆炸式的增长，而传统搜索引擎基于关键词匹配在信息的准确度上存在缺陷
+            最典型的两个通用领域知识图谱为Freebase和DBpedia
+                Freebase是一个由元数据组成的大型合作知识库，后被google收购
+            https://zhuanlan.zhihu.com/p/88792984
+            知识图谱在业界还算是一个较为新颖的技术，其主要作用还是在于分析关系，尤其是深度的关系。
+                知识图谱与传统的知识表示不同，以三元组为统一的表达形式，不仅更加容易被人接受，而且在储存，推理和搜索方面也更加高效。
+            以符号表示为基础的知识图谱和以数值计算为基础的深度学习在不同领域中各有优势
+            由于传统的企业级文件系统基于关键词的检所无法满足数据量日益增长的业务需要，企业需要一种方法将业务数据转化为生产力
+            使用知识图谱可以对相关专业词汇进行通俗化词汇提示，
+                使得产出文章更加通俗易懂，辅助编辑人员编写专业的科普文章，提高文章的编写效率和专业性。
+    IRI? URLs, URIs, and URNs 
+        https://danielmiessler.com/images/uri-urn-url-miessler-2019-1024x969.png
+        as if they're different things,
+        IRI 英文全称为 Internationalized Resource Identifiers
+            引入了 Unicode 字符来解决这个兼容问题!
+        URL 是 URI 的子集。任何东西，只要能够唯一地标识出来，都可以说这个标识是 URI 。
+        如果这个标识是一个可获取到上述对象的路径，那么同时它也可以是一个 URL
+        URI 和 URL 都定义了 what the resource is。URL 还定义了 how to get the resource 
+            关于URI，详见RFC3986
+            关于URN，详见RFC2141
+        https://devblast.com/b/url-uri-iri-urn
+        Uniform Resource Locator
+        The RFCs are ancient, poorly written
+        统一资源名称（URN）是统一资源标识（URI）的历史名字，它使用urn:作为URI scheme。
+        Summ:
+            我们浏览的时候URL用的最多
+            IRI在信息爬取过程中用的多
+    语义网络Semantic Network
+        Semantic Network语义网络是由Quillian于上世纪60年代提出的知识表达模式    
+            有各种优点缺点
+            节点和边的值没有标准，完全是由用户自己定义。
+            多源数据融合比较困难，因为没有标准。
+            无法区分概念节点和对象节点。
+            由于缺少标准，其比较难应用于实践
+            *RDF的提出解决了语义网络的缺点1和缺点2，在节点和边的取值上做了约束
+            在节点和边的取值上做了约束，制定了统一标准
+            *RDF对is-a关系进行了定义，即，rdf:type（是rdf标准中的一个词汇，之后的文章会介绍）
+                猫 rdf:type 哺乳动物
+                熊 rdf:type 哺乳动物
+            建模的角度不同，那么同一个事物的表示也可能不同。如果我们不能用一种方法来区别两者
+            *我们不能说A既是B的一个实例，又是B的一个子类
+            W3C制定的另外两个标准RDFS/OWL解决了这个问题，如下图。
+            RDFS和OWL是RDF更上一层的技术，主要是为了解决语义网络的缺点3和缺点4，
+                Resource Description Framework Schema
+                Web Ontology Language (OWL)
+                哺乳动物 rdf:type rdfs:Class
+                哺乳动物 rdf:type owl:Class
+                熊 rdfs:subClassOf 哺乳动物
+            **RDF，RDFS/OWL属于语义网技术栈，不是知识图谱.......!
+            许多项目是基于语义网络的思想建立起来的，尽管有问题
+                WordNet。它是一个英语的词汇库，将英语单词划分为同义词集合，用不同的语义关系将这些集合关联起来。
+                    其在自然语言处理的中有许多应用，比如消歧、信息检索、文本分类、文本摘要等等。
+                HowNet，即知网，中文语义词典。其以汉语和英语词语所代表的概念为描述对象，构建了
+                    一个包含概念之间以及概念所具有的属性之间的关系的常识知识库。
+                    常识知识库
+                可以为一个领域，公司专门构建一个知识图谱
+        Semantic Web语义网和链接数据是万维网之父Tim Berners Lee分别在1998年和2006提出的
+            语义网和链接数据倾向于描述万维网中资源、数据之间的关系
+            “Semantic”就是用更丰富的方式来表达数据背后的含义
+            “Web”则是希望这些数据相互链接，组成一个庞大的信息网络，正如互联网中相互链接的网页
+                只不过基本单位变为粒度更小的数据，如下图。
+            对应到语义网技术栈，它倾向于使用RDF和SPARQL（RDF查询语言）技术
+            *链接数据应该是最接近知识图谱的一个概念，从某种角度说，知识图谱是对链接数据这个概念的进一步包装
+            知识图谱是由本体（Ontology）作为Schema层，和RDF数据模型兼容的结构化数据集。
+            关系我们也称为属性（Property），根据是实体和实体之间的关系还是实体和数据值之间的关
+                系分为对象属性（Object Property）和数据属性（Data Property）
+            知识图谱不一定要链接到外部的知识图谱（和企业内部数据通常也不会公开一个道理），更强调
+                有一个本体层来定义实体的类型和实体之间的关系。另外，
+                知识图谱数据质量要求比较高且容易访问，能够提供面向终端用户的信息服务（查询、问答等等）
+    基本技术,技术绽
+        RDF
+            https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#xsd-datatypes
+            *RDF、RDFS/OWL是类语义网概念背后通用的基本技术，而知识图谱是其中最广为人知的概念 
+            *RDF形式上表示为SPO三元组，有时候也称为一条语句（statement）
+            RDF节点和边的类型约束
+            sparql -- RDF query language
+                able to retrieve and manipulate data stored in Resource Description Framework (RDF) format 
+            RDF序列化方法
+                RDF/XML
+                    用XML的格式来表示RDF数据
+                    因为XML的技术比较成熟，有许多现成的工具来存储和解析XML
+                    但是太冗长
+                N-Triples
+                    用多个三元组来表示RDF数据集，是最直观的表示方法
+                    知识图谱DBpedia通常是用这种格式来发布数据的。
+                Turtle
+                    比RDF/XML紧凑一点，使用前缀（Prefix）
+                    同一个实体拥有多个属性（数据属性）或关系（对象属性），我们可以只用一个subject来表示，
+                    例子：https://zhuanlan.zhihu.com/p/32122644
+                    句子指的是一个英文句号“.”）而不是多个句子，属性间用分号隔开。
+                RDFa
+                    The Resource Description Framework in Attributes
+                    网页有关
+                JSON-LD
+                    JSON-LD is a lightweight Linked Data format
+                    It is based on the already successful JSON format
+            但是rdf的能力是有限的，RDFS和OWL这两种技术或者说模式语言/本体语言（schema/ontology language）
+                解决了RDF表达能力有限的困境。
+            如果我们是在数据库中来表示人和地点这两个类别，那么为他们分别建一张表就行了
+            RDFS/OWL本质上是一些预定义词汇（vocabulary）构成的集合，用于对RDF进行类似的类定义及其属性的定义。
+            通常我们用小写开头的单词或词组来表示属性，大写开头的表示类
+            关系（谓词）称作对象属性，同常是一个动词
+            数据属性是那个宾语，名词。
+            实体的两种属性：：属性（数据属性）或关系（对象属性）
+            : Today, bnodes are largely avoided.
+            投资关系分析
+        rdfs：是一种schema，一个蓝图
+            rdfs:Class. 用于定义类。
+            rdfs:domain. 用于表示该属性属于哪个类别。
+            rdfs:range. 用于描述该属性的取值类型。
+            rdfs:subClassOf. 用于描述该类的父类。比如，我们可以定义一个运动员类，声明该类是人的子类。
+            rdfs:subProperty. 用于描述该属性的父属性。比如，我们可以定义一个名称属性，声明中文名称和全名是名称的子类
+            *https://www.w3.org/TR/rdf-schema/
+            Data层是我们用RDF对罗纳尔多知识图的具体描述
+        OWL
+            后来人们发现RDFS的表达能力还是相当有限，因此提出了OWL
+            *可以把OWL当做是RDFS的一个扩展，其添加了额外的预定义词汇。
+            用OWL对罗纳尔多知识图进行语义层的描述
+            owl区分数据属性和对象属性
+            owl含有更加丰富的词汇
+                owl:TransitiveProperty. 表示该属性具有传递性质
+                owl:SymmetricProperty. 表示该属性具有对称性。例如，我们定义
+                    “认识”是具有对称性的属性，若A认识B，那么B肯定认识A。
+                owl:FunctionalProperty. 表示该属性取值的唯一性。 例如，我们定义“母亲”是具有唯一性的属性，
+                    若A的母亲是B，在其他地方我们得知A的母亲是C，那么B和C指的是同一个人
+                owl:inverseOf. 定义某个属性的相反关系。例如，定义“父母”的相反关系是“子女”，
+                    若A是B的父母，那么B肯定是A的子女。
+                owl:sameAs. 表示两个实体是同一个实体。
+            本体映射词汇（Ontology Mapping）：用于知识图谱的融合
+            如果没有OWL，我们将无法融合这些知识图谱
+            https://www.w3.org/TR/2004/REC-owl-features-20040210/
+            推理方面
+                想象一个场景，我们有一个庞大数据库存储人物的亲属关系。里面很多关系都是单向的，
+                    比如，其只保存了A的父亲（母亲）是B，但B的子女字段里面没有A，如下表。
+                大量数据的补全？ 需要推理！ 
+                当进行关系修改，添加，删除等操作的时候，该怎么处理？这种场景想想就会让人崩溃。
+                用inversOf来表示hasParent和hasChild互为逆关系
+                OWL的最新版本是OWL 2，在兼容OWL的基础上添加了新的功能
+                OWL 2/EL 使用场景：本体结构中有大量相互链接的类和属性，设计者想用自动推理机得到里面复杂的关系
+                QL:用OBDA（ontology based data access）的方式来访问关系数据库
+                OWL 2/RL 使用场景：需要结合基于规则的推理引擎（rule-based reasoning engine）的场合。
+            表达能力强但是构建可能不容易（？）
+    根据现有的关系数据库，我们可以利用protege自顶向下地构建自己的本体结构。  
+    wikidata 
+        为了便于机器识别、算法调用，在存储时Wikidata将数据结构化成了固定的格式——RDF
+        数据量？ 102G nt文件
+        MediaWiki is a free and open-source wiki software package written in PHP. 
+            It serves as the platform for Wikipedia and the other Wikimedia projects
+        数据中心其实电脑并不多，需求计算量并不大
+        scalable and suitable for both small and large sites;
+        simple to install, working on most hardware/software combinations; and
+        MediaWiki is the result of global collaboration and cooperation.
+        understanding the dump data format  
+            Alias (also also known as) is an alternative name for an item or property
+            Badges are optional markers that can be attached to a sitelink. 
+                For instance a sitelink can be marked to link to a "featured article"
+            Constraint is a rule how a particular property should be used. 
+                For instance most identifiers should have only one value, 
+                so there is a single value constraint on them.
+            Datatype is an attribute of a property specifying the type and shape of the value in each claim.
+            Each property is assigned a pre-defined datatype, which usually can not be changed. Not all values can be linked
+            Entity is the content of a Wikidata page, such as an item (in the main namespace) or a property (in the property namespace).
+            The claim 
+                that is made in a Statement can have various forms. 
+                    The most common form is a single assignment of a Value to a Property.
+                Property-Value pairs can express many different claims,
+                     and Values can be numbers, dates and times, geographic coordinates, and many more
+                Properties are defined by users, so any Property can be created
+            https://www.wikidata.org/wiki/Help:Statements
+                can also be expanded on, annotated, or contextualized with additional values
+                *The core part of a statement without references and ranks is also called claim. 
+                *A claim without qualifiers is also referred to as snak.
+            https://www.wikidata.org/wiki/Help:Qualifiers
+                the qualifier is just there to provide additional information
+            dump format Description!
+                https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format
+                The entity is described in two nodes - data node and entity node. 
+                    For entity Q1, data node is wdata:Q1 and entity node is wd:Q1
+                wikibase:Dump containing information about the license
+                https://www.mediawiki.org/wiki/File:Rdf_mapping-vector.svg
+            https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Prefixes_used
+                prefix!!
+                wdt:
+        the query service and query lan. 
+            https://www.mediawiki.org/wiki/Wikidata_Query_Service
+    wikileaks
+        这个国际性非营利媒体组织，专门公开来自匿名来源和网络泄露的文档
+        是透过协助知情人[5][6][7]让组织[8]、企业[9]、政府[10]在阳光下运作的无国界非营利的互联网媒体
+        维基解密发布了大量被作为头版新闻报道的极其重要的存档，特别是美国等西方国家的丑闻
+        公开了逾400,000份文档，称为伊拉克战争纪录。这使得每起在伊拉克，以及跨越伊朗边界的死亡事件的地点，都可以在地图上找到
+        2011年4月，维基解密开始公布与被关押在关塔那摩海湾拘留中心的囚犯有关的779份机密文档
+        维基解密形容自己为“一个对大量来源不明的泄密文档进行审查的系统”
+        维基解密网站托管在以坚持客户匿名著称的瑞典网络服务提供商PRQ.se，这家公司可以承受法律压力和网络攻击。
+        先将文档送到位于比利时的服务器上，再送到位于“另一个法律上较友善的国家”的服务器上，然后这些文档被转存到其他地方后删除
+        使用经过修改的Tor网络匿名传输
+        https://zh.wikipedia.org/wiki/Tor#Tor%E6%B5%8F%E8%A7%88%E5%99%A8
+    what is wiki? 
+        Wiki系统属于一种人类知识的网络系统，让人们可以在web的基础上对Wiki文本进行浏览、创建和更改
+    
+    SPARQL实现
+        资源描述框架（Resource Description Framework），或 RDF，能够将数据打散并分布开来
+        RDF 模型可以容易地合并在一起，而且序列化的 RDF 也可以简单地通过 HTTP 交换
+        SPARQL 构建在以前的 RDF 查询语言（例如 rdfDB、RDQL 和 SeRQL）之上
+        Java 平台的 Jena 语义 Web 工具包。
+        在 SPARQL 的术语中，这些查询针对的是 后台图（background graph）。后台图是指：在使用 Jena 的 API 时，通过某个查询的 FROM 子句、sparql 命令的 --data 开关或者通过向 QueryExecutionFactory.create() 传递一个模型来指定的图
+        RDF 图的半结构化特性
+        在 Java 代码中用 Jena API 运行 SPARQL 是多么简单。
+        当然，学习 SPARQL 的最好方法是编写一些自己的查询。从 Web 上得到一些 RDF 数据，下载 Jena ARQ 模块，开始体验吧！
+        Redland RDF Libraries
+        SparqlImplementations
+        https://www.w3.org/wiki/SparqlImplementations
+        We developed owlcpp, a library for storing and searching RDF triples,
+            parsing RDF/XML documents, converting triples into OWL axioms
+            and reasoning
+        *暂时还是使用java和Jena吧，顺便完善一个网页项目--mixedSandBoxForWeb 
+        zr_MSB_javaweb
+    toread-SPARQL query features! 
+
+
+
+
+

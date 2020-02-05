@@ -1,0 +1,36 @@
+
+
+    tutorial:
+        https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial
+        *The SELECT clause lists variables that you want returned
+        *the WHERE clause contains restrictions on them
+        All information in Wikidata (and similar knowledge databases) is stored in the form of triples
+        fill in the variables with actual values so that the resulting triples appear in the knowledge databas
+        returns one result for each combination of variables it finds.
+        A triple can be read like a sentence (which is why it ends with a period)
+        On Wikidata, items and properties are not identified by human-readable names like “father” (property) or “Bach” (item).
+        To find the identifier for an item, we search for the item and copy the Q-number of the result that sounds like it’s 
+            the item we’re looking for (based on the description, for example)
+        but search for “P:search term” instead of just “search term”
+        https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Prefixes_used
+        https://www.wikidata.org/wiki/Special:Search
+        items should be prefixed with wd:, and properties with wdt
+        somewhere within the WHERE clause, you get additional variables: For every variable ?foo in your query, you now also have a variable ?fooLabel
+        magic text to add label for results 
+            SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE]". }
+            not covered in slids, but important for practice 
+        *in where clause, 默认的关系是and
+        , it’s possible to express the same abbreviation in SPARQL as well, similar to ttl case 
+        use  semicolon (;) instead of a period
+        you can add another predicate-object pair
+        a , allows you to append another object to a triple (reusing both subject and predicate).
+        indentation and other whitespaces don’t actually matter – they just make it more readable
+        WDQS editor indents lines for you automatically
+        a grandchild may be related to Bach via the mother or the father. That’s two different properties, which is inconvenient
+        flip the relation around: Wikidata also has a “child” property
+        names used in var to be selected will appear in table title 
+        using group by:The second condition is that the rest of the variables in the SELECT should each result into one value.
+
+  
+
+

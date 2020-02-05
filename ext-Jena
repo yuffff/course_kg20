@@ -1,0 +1,11 @@
+
+        https://jena.apache.org/tutorials/
+            https://jena.apache.org/tutorials/sparql_datasets.html
+            working example : 
+                ../apache-jena-3.13.1/bin/sparql --graph ds-dft.ttl --namedgraph ds-ng-1.ttl --namedgraph ds-ng-2.ttl --query q-ds-2.rq
+            what happends when dir not consistant bet. query and database? 
+                database为准
+            https://jena.apache.org/tutorials/sparql_datasets.html
+            using group by:The second condition is that the rest of the variables in the SELECT should each result into one value.
+
+            
