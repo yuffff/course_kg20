@@ -148,6 +148,8 @@ h- SPARQL aggregate functions: op45
 (keep a snippets file to prac. )
 
 ---slide6---
+h- SPARQL is a feature-rich query language
+
 ---slide7---
 ---slide8---
 ---slide9---
