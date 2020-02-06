@@ -151,6 +151,7 @@ h- SPARQL aggregate functions: op45
 h- SPARQL is a feature-rich query language
 h- bgps are conjunctions of triple patterns
 q- what is miu. in this context? op04
+h- SPARQL algebra that are under queries, which is key to understand the complexity of it 
 
 ---slide7---
 ---slide8---
