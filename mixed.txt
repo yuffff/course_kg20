@@ -132,6 +132,9 @@ h- we may “erases” the count
 q- Find all descendants of Bach that were composers op15 
 // Filters
 h- Filters can express many conditions to eliminate some of the query results
+    it can not intro. new vars into the qu. result 
+
+    
 ...
 // Projection and Solution Set Modifiers
 ...
