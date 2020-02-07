@@ -1,7 +1,7 @@
 
+// from end slide 3, others in pdf file  
 
-//  from end slide 3  
-
+//////////////////////////////////////an overview, start tasks//////////////////////////////////////
 ---part of slide 3---
 +linked to a pdf 
 q- what is the partial func.? vs total func. ?  ext
@@ -104,9 +104,7 @@ h- wdqs uses typical LAMP stack, BlazeGraph used as free and open-source graph d
     public SPARQL query service is available
 q- SPARQL query features? ext! 
 
-
-
----part of slide5---
+---part of slide5--- core basic of the following chapters! try them out 
 h- core of sparql relies on basic graph patterns (BGPs)
      returns sequences or multi-sets of partial functions (“solutions”)
 q- what are property paths? op5 
@@ -135,7 +133,7 @@ q- Find all descendants of Bach that were composers op15
 // Filters
 h- Filters can express many conditions to eliminate some of the query results
     it can not intro. new vars into the qu. result 
-    
+...
 // Projection and Solution Set Modifiers
 ...
 // Groups, Union, Minus, Optional, Subqueries
@@ -148,21 +146,24 @@ h- SPARQL aggregate functions: op45
 
 (keep a snippets file to prac. )
 
----slide6---
+//////////////////////////////////////core theory part//////////////////////////////////////
+---slide6---SPARQL: Semantics
 h- SPARQL is a feature-rich query language
 h- bgps are conjunctions of triple patterns
 q- what is miu. in this context? op04
 h- SPARQL algebra that are under queries, which is key to understand the complexity of it 
 
----slide7---
----slide8---
----slide9---
----slide10---
----slide11---
----slide12---
----slide13---
----slide14---
----slide15---
+---slide7---SPARQL: Complexity and Expressivity
+---slide8---SPARQL Limits/Datalog
+---slide9---Rules for Querying Graphs
+---slide10---Property Graphs 
+---slide11--- The Cypher Query Language
+
+/////////////////////////////////////////outlook, usage and features///////////////////////////////////
+---slide12---Knowledge Graph Quality and Validation
+---slide13---Centrality measures
+---slide14---Community detection
+---slide15---Summary and Outlook 
 
 
 
