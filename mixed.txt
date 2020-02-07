@@ -162,6 +162,7 @@ h- SPARQL algebra that are under queries, which is key to understand the complex
 ---slide12---
 ---slide13---
 ---slide14---
+---slide15---
 
 
 
