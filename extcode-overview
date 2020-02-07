@@ -1,0 +1,33 @@
+
+    paper reading 
+    learning example 
+        https://www.wikidata.org/wiki/Special:EntityData/Q80.rdf
+        https://www.wikidata.org/wiki/Q80
+        https://www.wikidata.org/wiki/Special:ListDatatypes
+        https://www.wikidata.org/wiki/Special:EntityData/Q80.json
+        https://www.wikidata.org/wiki/Special:EntityData/Q80.ttl
+        .json, .rdf, .ttl or .nt.
+    ---
+    reading 
+        https://jena.apache.org/tutorials/
+            https://jena.apache.org/tutorials/sparql_datasets.html
+            working example : ../apache-jena-3.13.1/bin/sparql --graph ds-dft.ttl --namedgraph ds-ng-1.ttl --namedgraph ds-ng-2.ttl --query q-ds-2.rq
+            what happends when dir not consistant bet. query and database? 
+                database为准
+            
+        https://www.wikidata.org/wiki/Help:Statements
+
+    coding 
+        db/query
+            https://github.com/blazegraph/database
+            https://github.com/wikimedia/wikidata-query-rdf
+            practice your query skill! 
+
+        helper 
+            Apache Jena
+                open source Java framework for building Semantic Web and Linked Data applications
+                provides SPARQL engine
+                opensource, we can modify the SPARQL engine
+        vis 
+            https://www.w3.org/2018/09/rdf-data-viz/
+    -linked to centered applying file 
