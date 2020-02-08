@@ -1,4 +1,6 @@
-
+//
+    invq- indicates inversed questions 
+//
 // from end slide 3, others in pdf file  
 
 //////////////////////////////////////an overview, start tasks//////////////////////////////////////
@@ -216,6 +218,18 @@ q- what is the problem here? given a piece of query code op-
 q- Assignments of constants to variables are better realised with VALUES? 
 q- if we are going to assign a constant variable, which should we use? 
 s-q- write a code to queryxxx use a constant xxx ext 
+q- what is grouping? op44 
+    a- split a multiset of solutions into several multisets
+q- what is Aggregate function? op- in the select part? 
+invq- what we should do if we want to calcu. value as return 
+sq-  find the ten most common professions of people born in Dresden op- 
+q- for grouping, we have to select aggregate ones? n 
+h- we can select non-aggregate terms used for grouping
+ext- several aggregate functions
+h- All aggregate functions receive one expression as parameter
+q- is there allowed? (two para. showed)
+h- DISTINCT expression used to remove duplicates
+p-sq- find all professions of more than 100 people born in Dresden
 
 
 
