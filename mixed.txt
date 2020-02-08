@@ -133,7 +133,95 @@ q- Find all descendants of Bach that were composers op15
 // Filters
 h- Filters can express many conditions to eliminate some of the query results
     it can not intro. new vars into the qu. result 
-    ...
+q- how filters can be used? 
+    a- express conditions: 
+        Type checks and language checks...
+        Check for non-existence of certain graph patterns
+s-q- find out where in Germany towns have names ending in “-ow” or “-itz” op18 
+q- how semicons can be used? ext 
+h- Filters are not Turtle syntax and don’t require . as separators
+h- what means bind variables? - give value to variables
+    Answers are eliminated, never added
+q- The position of filters within a pattern is not relevant? y
+    The relative order of several filters does not change the final outcome
+    Implementations will optimise order (apply selective filters as early as possible)
+ext- detail of the filter optimization? what kind of xxx will be changed order? 
+h- the order on dates is different from the order on numbers
+q- are all pairs of resources of distinct type might be comparable? n op22 
+q- how to check if two terms are the same (not just equal-valued) in filter? op-
+q- how to check if a string matches a regular expression? 
+q- howto xxx ... op- 
+ext- practice the use of diff. conditions and record them in a long snippet file in a mixed way 
+q- check test type of RDF term? in filter block op- 
+ext- many different filter conditions.
+en- Parentheses can be used to group conditions
+h- Functions can be used in filters in order to calcu. something and compare them with desired. 
+q- what func. are there can be used to compute? 
+    a- Arithmetic functions, RDF term functions, Date/time functions
+q- how to extract parts of a date? -prac. op24 
+h- also some logical func. exists -- IN and NOTIN check membership of a term in a list
+h- FILTER NOT EXISTS
+s-q- From Wikidata, find out how many living people are know who are born in Dresden op25 
+q- how to provide a form of negation in queries? op- 
+h- RDF allows almost all kinds of terms in almost all positions, maybe no scene 
+q- how errors propagate in ql? 
+q- what is effective boolean value (EBV)? op26 
+    a- empty strings have EBV “false”, other strings have EBV “true”
+q- why there can be calcu. correctly? ext 
+h- projection = removal of some bindings from results
+q- how to set multiplicity of any element in the result to 1? op29 
+s-q- Find cities and their population densities op28 
+h- may define additional results computed by functions in select clauses
+ext- 
+    projection queries (SELECT queries) may only project out variables bound in the query. 
+    project expressions from result bindings, rather than literal values in the store.
+q- what does projection mean? ext 
+    a- return values that do not occur in the graphs that comprise a query's RDF data set
+    example: 
+        Returning the total cost of an order's line item as the product of two variables
+        Returning computed values, such as the current day of the week
+        Performing simple string parsing
+q- what are Solution Set Modifiers? ext 
+    a-  expressions after the query’s WHERE clause, modify the solution set 
+q- what means OFFSET? operator? op- 
+h- Both LIMIT and OFFSET should only be used on explicitly ordered results
+s-q- In Wikidata, find the largest German cities, rank 6 to 15 op30
+q- what is group graph pattern? op- 
+s-q- In Wikidata, find everybody who is a composer by occupation or who has composed something op33
+h- union  adds up multiplicities
+q- FILTER NOT EXISTS vs MINUS? op- 
+    a- a group graph patterns that do not share any variables.
+s-q- In Wikidata, find composers, and, optionally, their spouses op35 
+h-  OPTIONAL may leave some query variables unbound
+s-q- In Wikidata, find universities located in one of the 15 largest German cities op- 
+q- what is Subqueries? 
+    a- can also be viewed as pre-queries
+h- order of results from subqueries is not relevant 
+h- Only selected variable names are part of the subquery result
+    some hidden var. exists 
+q- what means BIND operator?  op39 
+    a- Define derived values by applying functions to query results 
+s-q- find people who are composers, or musicians, or who play some instrument op40 
+q- what is VALUES expression op-
+    a- it defines solution mappings
+h- VALUES behaves just like a subquery with the specified result
+q- only IRIs or literals can be used in VALUES? y
+q- what is the important use of VALUES? op- 
+    a- much more efficient than sending 100 small queries, or nested UNION
+q- efficiently combine 100 possible options? how to do that? op41 
+h- BIND can be used instead of expression assignments with AS in SELECT
+q- what is that "as" part in select? what are they actually? op42 
+h- cannnot be used before they were assigned.
+q- what is the problem here? given a piece of query code op- 
+q- Assignments of constants to variables are better realised with VALUES? 
+q- if we are going to assign a constant variable, which should we use? 
+s-q- write a code to queryxxx use a constant xxx ext 
+
+
+
+
+
+...
 // Projection and Solution Set Modifiers
 ...
 // Groups, Union, Minus, Optional, Subqueries
