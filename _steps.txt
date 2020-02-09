@@ -1,0 +1,16 @@
+
+	// steps to create a new repo 
+		use original dir, cd to it 
+
+		//add a muster dir 
+		git clone https://github.com/yuffff/learningpack_muster.git
+		copy batch files 
+
+		//create a repo to store the combined dir. and then, upload 
+		https://github.com/new to create a new proj. online 
+		git init 
+		git remote add origin xxx to add a new address
+		click the batch file  
+		
+		//check 
+		with https://github.com/yuffff?tab=repositories

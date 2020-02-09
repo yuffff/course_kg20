@@ -1,0 +1,30 @@
+
+
+// this will be alone with .bat files and can be found online 
+// summ. tipps of studying 
+
+steps to learn sth.
+    new to the field 
+        search web for a initial guess 
+    detailready 
+        take a look into slides roughly and mark what are imp. /hard  
+        should get a clear stru. and confidence on slides    
+    indetail
+        start from the summ. part/ start fromxxx 
+
+meaning of the files 
+    mov     -- motivation 
+    ext     -- extention of the know. with the help of internet 
+    k2rough -- to achieve a detailready state, the sec. file that go into 
+    mixed   -- mixed detail from slides 
+        p   -- problems not solved 
+        q   -- question may be asked 
+        p-q -- ques. should be asked  
+    //
+    ql      -- ques. list extracted from mixed.txt
+    h       -- high level understanding of the contents (global view)
+    summ    -- summary of the whole content 
+
+    
+
+
