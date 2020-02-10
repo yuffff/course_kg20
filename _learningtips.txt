@@ -3,6 +3,8 @@
 // this will be alone with .bat files and can be found online 
 // summ. tipps of studying 
 
+with piano music when necessary 
+    ... 
 steps to learn sth.
     new to the field 
         search web for a initial guess 
@@ -13,17 +15,20 @@ steps to learn sth.
         start from the summ. part/ start fromxxx 
 
 meaning of the files 
-    mov     -- motivation 
-    ext     -- extention of the know. with the help of internet 
-    k2rough -- to achieve a detailready state, the sec. file that go into 
-    mixed   -- mixed detail from slides 
+    r0-mov     -- motivation 
+    r0-ext     -- extention of the know. with the help of internet 
+    r1-k2rough -- to achieve a detailready state, the sec. file that go into 
+    r2-mixed   -- mixed detail from slides 
         p   -- problems not solved 
         q   -- question may be asked 
         p-q -- ques. should be asked  
     //
-    ql      -- ques. list extracted from mixed.txt
-    h       -- high level understanding of the contents (global view)
-    summ    -- summary of the whole content 
+    r3-gen-ql      -- ques. list extracted from mixed.txt
+    r3-gen-h       -- high level understanding of the contents (global view)
+    r4-summ    -- summary of the whole content 
+    r5-ext     -- additional, research related, dev related code/ lib/ tutorial/ tech 
+
+
 
     
 

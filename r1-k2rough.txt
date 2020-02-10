@@ -1,0 +1,205 @@
+
+
+// heuristic as key in slides, understand the whole thing at a high speed
+// global understanding tells us what are imp. at an initial look 
+// this file will be part of my notes from now on 
+// goal: to achieve a detailready state for each chapter
+// use this to mark: //detailready// 
+// search online possible, chinese words possible (similar to ext before)
+// 目的只有一个， detailready！！
+// 有些东西直接看看不懂，不如看看网上怎么讲
+
+---slide6---SPARQL: Semantics
+    h- query algebra operations
+    h- "we define the multiset" are imp. 
+    h- each operation corresponds to a underlying Semantic
+    h- semantic of bind may hard 
+    h- sum on op31 
+    q- how to transfer to semantic operations. 
+    h- synta. expression -> algebra expression -> ?
+    h- can be converted into nested expressions
+    //detailready//
+---slide7---SPARQL: Complexity and Expressivity
+    q- what is the naive approach and its complexity
+    q- what computational models are? 
+    q- how To classify algorithms? 
+    key- Some complexity classes may hard 
+    q- prob. of Finding BGP solutions is a decision prob. and has NP complexity
+        (with respect to the size of the pattern)
+        NP-hard 
+    ext- complexity
+        可以证明， 每个 NP 问题都可以减少到 3-SAT 。这方面的证据是技术性的
+        NP hard--这些问题至少与 NP 完全问题一样困难 。请注意，NP 难题不必在 NP 中 ，并且它们不一定是决策问题 
+        https://upload.wikimedia.org/wikipedia/commons/a/a0/P_np_np-complete_np-hard.svg
+        a many-one reduction 
+            is a reduction which converts instances of one decision problem into instances of a second decision problem
+        err- op22 
+        NP-hard
+            means can be reduced to in polynomial time by a deterministic Turing machine.
+            不是NP的一部分，最直观的就是他们不可以在P时间被验证
+        如何相互转化？ 
+            A reduction from X to Y is simply an algorithm A which solves X by 
+            making use of some other algorithm B which solves problem Y
+        "polynomial time reduction" if all parts of A other than B have a polynomial time complexit
+    key- From 3-colourability to BGP matching
+    key- coNP
+        ext: 
+            Relationships of Complexity Classes ct19s12op5
+            Other complexity classes are symmetric
+            A problem belongs to coNP, if no-instances have short certificates
+            example: 
+                No Hamiltonian Path: Does the graph G not have a Hamiltonian path?
+                Is the propositional logic formula ϕ a tautology (true under all assignments)
+            DP ≡ NP ∩ coNP is the class of problems that have
+                succinct certificates and succinct disqualifications
+            primes ∈ DP
+            https://www.researchgate.net/profile/Vladimir_Naidenko/publication/259335293/figure/fig2/AS:296982640906241@1447817587541/The-World-of-Descriptive-and-Computational-Complexity-from-P-to-PSPACE-shaded-areas.png
+            ...
+    key- PSpace
+        Space seems to be more powerful than time
+        power of space 
+        ct19s9op8
+        Tautology can be solved in linear space
+        Sat can be solved in linear space
+        using an amount of memory that is polynomial in the input length (polynomial space) 
+        https://jeremykun.files.wordpress.com/2012/02/chp_venn_diagram.jpg
+        http://s3.amazonaws.com/sf-web-assets-prod/wp-content/uploads/2018/05/29144646/Scott_AAronson_Quantum_And_Classical_Uncertainty.svg
+    h- space is more powerful than time, they can be reused, take examples to have a better understand!
+    key- typical problems and their complexity
+        ext- 
+            ...
+            linked
+    h- game design, start from Complexity!
+    h- SPARQL is PSpace-hard, but can be imp. 
+    h- Other widely used query languages, such as SQL, have similar complexities
+    h- SQL query
+        answers, e.g., are not, if all SQL features are allowed.
+        not computable 
+    q- why practical? 
+        *In practice, databases grow very big, while queries are rather limited!
+            less than 100 
+        measure more carefully 
+        a polynomial space algorithm could still discover all solutions
+            (and stream them to an output)
+        *SPARQL is NL-complete for data complexity, hence practically tractable and well
+            parallelisable
+        http://borneo.informatik.uni-freiburg.de/content/team/schmidt/docs/talk_disputation.pdf
+        Already Optional alone leads to PSpace-hardness
+        Combinations And/Union
+            and And/Select cause
+            NP-hardness
+        数据库的实现在时间复杂度上会有成熟的优化算法，比如排序（order by），分组统计（group by）和取不重复值（distinct）
+        你要争取毫秒级操作?
+
+    h- ext- Exploiting RDF Constraints for Query Optimization/ "sparql Query Optimization"
+    q- Where this sketch is lacking? s7op58
+    //detailready//
+---slide8---SPARQL Limits/Datalog
+    q- why not every set of RDF graphs corresponds to a query
+    h- power means characterise strictly more sets of graphs
+    q- The lower the complexity of query answering, the lower its expressivity, which complexity?
+        why? op07 (Complexity-based arguments)
+    q- why can not measure expressivity with complexity? not so correct? op08 
+    q- give a example shows that Complexity not equ. to expressivity op- 
+    q- proof that SPARQL cannot express parallel reachability. op- 
+        不是讲的特别清楚，有一些前提假设没有交代，要弄清楚还需要时间去看CT。暂时就这样背吧....
+    h- Non-regular path languages cannot be expressed--due to the use of regular expression 
+    h- 其实regex同常是够用的？ 进一步的表达性需要更多的复杂性，难以承受的计算量。
+    h- “Wide” paths consisting of repeated graph patterns cannot be expressed
+    q- what can not be expressed? op14 
+    h-  non-linear patterns
+    q- sum- limits of sparql? x4+x4 
+        express limiations + limits by design 
+    h- SPARQL cannot talk about path lengths
+    h- SPARQL has no support for recursive/iterative computation, e.g., for page rank or
+        other graph algorithms
+    h- longest path detection is NP-complete [in data complexity!]
+    q- why not support them in sparql? 
+    q- Potential reasons? x3 
+    q- what is the func. of the following code? Example 8.5 op17 
+    s-q- replaces all uses of the hasSister property with a different encoding of the same information
+    h- it can also encode results as RDF graphs (CONSTRUCT)
+    h- Rules have their consequence on the left
+    key- rule-based query language datalog 
+        ext- 
+            语法与Prolog相似
+            Datalog也是一个规范，bddbddb[2]、 DES[3]、OverLog[4]、Deals[5]等都按照Datalog的语法实现了自己的语言
+            Java之于Java虚拟机，Prolog之于SWI-Prolog，他们都有自己的执行环境
+            为了降低智能系统与数据库之间的耦合（智能系统可以使用现有的成熟的数据库
+            数据库与智能系统间交互的语言
+            Datalog程序对事实和规则的出现顺序不做要求，两条规则的出现顺序对换，执行结果仍然是一样的
+            define facts： parent(bill, mary).
+                This is what they mean: bill is a parent of mary and mary is a parent of john
+                The names are written in lowercase because strings beginning with an 
+                    uppercase letter stand for variables.
+            define rules, which define how new facts can be inferred from known facts.
+                ancestor(X, Y) :- parent(X, Y).
+                    meaning--X is an ancestor of Y if X is a parent of Y.
+            define a query : ?- ancestor(bill, X).
+            Who are all the X that bill is an ancestor of? It would return mary and john 
+                when posed against a Datalog system
+            https://datalog.db.in.tum.de/
+            online testing! 
+
+    q- diff. bet. datalog and prolog 
+    key- first-order logic/ atom/ predicate 
+        +
+            WFF是合式公式（well-formed formula）
+            给定一个形式文法，WFF是这个文法生成的任何字符串
+            在命题演算中符号序列{\displaystyle ((\alpha \rightarrow \beta )\rightarrow (\neg \beta \rightarrow \neg \alpha ))}((\alpha \rightarrow \beta )\rightarrow (\neg \beta \rightarrow \neg \alpha ))是一个WFF
+            证明是有特定性质的WFF序列，而序列中最终的WFF就是要证明的
+            合式公式具有相应推演规则
+            所有的逻辑运算符都可以用自足算子的方式来定义
+            推理系统中规则的关键特性是它们是可靠的和完备的
+            这意味着规则都是正确的并且不再需要其他规则
+            布尔逻辑
+                计算集合之间的关系，定义了一套推理系统（结合律，交换律等）
+                应用：数字电子电路设计， SQL语言
+                布尔代数？捕获了集合运算和逻辑运算二者的根本性质的一个代数结构（就是说一组元素和服从定义的公理的在这些元素上运算）
+                子集的布尔格的哈斯图
+            “所有个体”、“存在个体”中，量词加在论域的个体上，称为一阶量词
+            在一阶逻辑中使用的量词仅限于一阶量词
+            “所有函数”、“存在函数”、“所有关系”和“存在关系”是二阶量词。
+            此外还有更高阶的量词。相应地也有二阶逻辑、高阶逻辑
+            命题逻辑只考虑逻辑连接词的逻辑特性不考虑命题本身,谓词逻辑既考虑连接词的逻辑特性,
+                    还深入分析到命题内部考虑谓词及其量词的逻辑特性
+                命题逻辑Propositional calculus is a branch of logic. It is also called propositional logic, 
+                    statement logic, sentential calculus, sentential logic, or sometimes 
+                    zeroth-order logic.
+                Compound propositions are formed by connecting propositions by logical connectives.
+                The propositions without logical connectives are called atomic propositions.
+            一阶逻辑又叫谓词逻辑
+            命题逻辑只能表达句子之间的关系, 比如“p&q”, “if p then q”等等的真值如何从p和q的真值中计算出来.
+            而语言大类中，部分为逻辑自洽的形式系统，如计算编程用的各类程序语言等
+            由于数学的研究对象是形式系统中唯一天生的逻辑自洽系统，因此数学也被一些人称为：形式科学
+            形式系统（英语：Formal system）是由两个部分组成的，一个形式语言加上一个推理规则或转换规则的集合
+        summ：
+            布尔逻辑
+                布尔代数是数学中的称呼
+            命题逻辑
+                Propositional calculus/ zeroth-order logic/ statement logic...
+            一阶逻辑
+                谓词逻辑
+                prolog/datalog使用一阶逻辑而不是高阶逻辑
+
+            二阶逻辑
+                二阶逻辑是一阶逻辑的扩展，一阶逻辑是命题逻辑的扩展
+                Second Order Logic 的引入有个很大的问題，就是 Russell’s Paradox
+
+            高阶逻辑
+                二阶逻辑接着被高阶逻辑和类型论所扩展。
+    h- Datalog semantics is set-based (no multiplicity of results)
+    h- Datalog is a rule-based query language that can express more powerful recursive queries
+    h- datalog uses first order logic/ and prolog.
+---slide9---Rules for Querying Graphs
+    key- Datalog semantics/ syntax/ detail about them 
+    q- how apply Datalog to graph data? x2 
+
+---slide10---Property Graphs 
+---slide11--- The Cypher Query Language
+
+/////////////////////////////////////////outlook, usage and features///////////////////////////////////
+---slide12---Knowledge Graph Quality and Validation
+---slide13---Centrality measures
+---slide14---Community detection
+---slide15---Summary and Outlook 

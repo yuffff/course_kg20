@@ -7,4 +7,5 @@
         what are semantic features here? 
     provides an RDF-mapping, linked-data exports, and the SPARQL-based
         Wikidata query service (WDQS)
+    theory is sth. build upon each other 
     
