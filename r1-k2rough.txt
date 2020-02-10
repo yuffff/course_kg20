@@ -194,7 +194,8 @@
 ---slide9---Rules for Querying Graphs
     key- Datalog semantics/ syntax/ detail about them 
     q- how apply Datalog to graph data? x2 
-
+    s-q- parallel s-t-reachability for predicates p and q (for triple encoding)
+    
 ---slide10---Property Graphs 
 ---slide11--- The Cypher Query Language
 
