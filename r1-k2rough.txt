@@ -445,6 +445,36 @@
         the idea? 
         the algo? GN algorithm 
     h-q- it is a hierarchical clustering algo. what this mean? 
+    q- run GN algo in this graph op28 
+    h- betweeness-based clustering 
+    lan- dandrogram tree-view 
+    q- what is the computational complexity of the betweeness centrality? 
+        how to improve that? x2 op33 
+    q- when to stop? x3 possibles op35 
+    lan- hypothetical Community partitioning 
+    h- partation quality estimation 
+    pp- op39 modularity define? 
+    q- naive appro. random graph, problem? solve? op39 
+    q- what is modularity used for? op- 
+        a- measures degree of random? 
+    q- calcu. of modularity metrics? op42 
+    q- what appro. used to gen random. data as ref? op41 
+        a- degree-preserving random graphs 
+    q- range of Q? how can it been used? the higher the better? 
+        should be higher than 0? yy
+    h- modularity based Community detection, meaning
+        not only GNalgo. 
+    q- inherent limiations of modularity- based approaches? op45 
+        cons of that? x2 
+            can not detect too small ones 
+            may too far away from optimum 
+    h- key of modularity based algorithm? detect if it has enough connections 
+        in between 
+    //further detection methods op46 
     
+
+
+
+
 
 ---slide15---Summary and Outlook 
