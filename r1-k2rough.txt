@@ -195,12 +195,256 @@
     key- Datalog semantics/ syntax/ detail about them 
     q- how apply Datalog to graph data? x2 
     s-q- parallel s-t-reachability for predicates p and q (for triple encoding)
-    
+    h- datalog query has a higher complex. 
+        namly P-complete in data complexity
+    q- does not imply that all P-computable problems can be
+        solved with a Datalog query, why? op10
+    key- monotonic logic 
+    lan- Stratification means arranging something, or something that has been arranged, into categories
+    h- sparql is not enough for queries in the future, 
+        we may need logic to help the QA process
+        hence, VLog is imp. and it has
+        many high-level features for knowledge
+        base management and rule manipulation.
+    key- VLog4j
+        +
+            The rule language supported by VLog4j is an extension of Datalog 
+            DLGP format/ rdf format/ owl format... are supported as data source 
+            https://github.com/knowsys/vlog4j/wiki/Rule-syntax-grammar
+    hardones- Stratified negation semantic 
+    q- Query for maternal ancestors of Ada Lovelace op37 
+    //detailready// 
 ---slide10---Property Graphs 
+    h- why interplay with recursion must be limited? op3 
+    h- RDF graphs which do not contain any such 'loops' 
+    q- what is “Property Graph” 
+        refers to a broad class of enriched graph structures
+    h- many details related to this 
+        What are those “labels” that one can use for edges?
+    h- attribute-value pairs (called
+        “properties”) that can be associated with nodes and edges
+        take  a look at the pic on op06 
+    key-neo4j
+        you can map, store and traverse networks of highly connected data to reveal invisible contexts and hidden relationships
+        Neo4j is a property graph database management system
+        imp. Cypher
+    q- how can property graph be used? which model exists? x3 op08 
+    h- possibility: use rdf as underlying database and use property graph 
+        in higher lev. as abstract layer 
+    q- Types of “Property Graphs”? x3+ 
+    h- e different ways to interpret this model when designing actual data structures.
+    h- property graph is something build upon other data structures
+    h- property graph has a problem of implementation chaos 
+    h- a unified “(Property) Graph Query Language” GQL is under way 
+    h- e OpenCypher/Neo4j world uses completely different names for
+        concepts than the RDF world
+    q- what does it mean "Relationship types" in rdf world? 
+    key- opencyper 
+        open query language for property graph databases
+        GQL (Graph Query Language) as a new database query language.
+        Maintain and bugfix the openCypher query language
+    key- 图数据库？ 
+        图数据相比关系型数据库的优势
+        使用图形化的模型进行查询的数据库，通过节点、边和属性等方式来表示和存储数据
+        *增删改查（CRUD）等操作
+        与图数据库对应的是图计算引擎，一般用于OLAP系统中，提供基于图的大数据分析能力。
+        没有一个系统能同时在数据量、性能、和灵活性三个方面做到完美，
+            每个系统在设计时都需要在这三者间做出取舍
+        Druid是广告分析公司Metamarkets开发的一个用于大数据实时查询和分析的分布式实时处理系统
+        *广告分析，互联网广告系统监控、度量和网络监控
+        Hadoop之上的SQL查询接口及多维分析（OLAP）能力以支持超大规模数据。
+        *图数据库管理系统，如Neo4j，提供了基本的图操作APl，如图数据存储
+        目前使用的图模型有3种，分别是属性图（Property Graph）、资源描述框架（RDF）三元组和超图（HyperGraph）
+        Twitter用户关系
+        *q- 为啥用图数据库？ 
+            关系型数据库不擅长处理数据之间的关系， 基于表格的
+        图数据库与关系型数据库的建模方式不同
+        *社交网络中查询的性能有很大提高
+        深度为3时，很明显，关系型数据库的响应时间30s，已经变得不可接受了
+        *从深度为4/5的查询结果我们可以看出，图数据库返回了整个社交网络一半以上的人数
+        灵活性和敏捷性也是图数据库相比关系型数据库的重要优势
+            可以对已存在的图结构增加新的边、节点、标签和子图，但却不会破坏现有的查询和应用程序的功能
+            在项目开始的时候或许并不知道那么多
+            NoSQL数据库，比如MongoDB
+        图数据库不使用最传统的SQL作为CRUD语言，目前主流的图查询语言是Cypher和Gremlin。
+        *sum-q- 图数据库有什么优势？ 
+        https://zhuanlan.zhihu.com/p/50171330
+        企业版包括了Neo4J所有功能，包括主从复制用于高可用和读写分离，可视化管理工具等，但增加了商业协议
+        应该说Neo4J是目前使用最为广泛的图数据库，大量介绍图数据库的书籍都是以Neo4J为基础来介绍的
+        因为连接存在于自然和社会中的各个角落。每个事物都不是孤立的，而是跟其他事物或紧或松得联系着
+        万物互联的时代已经到来
+        应用：
+            社交网络应用 
+            地理信息： 通信、物流、旅游已经路由计算相关领域的地理空间应用经常会使用图数据库。
+            主数据管理，商业数据管理
+            授权访问控制--从分钟级别的应用转成毫秒级
+            自然语言查询
+        *图数据库是新型NoSQL数据库，图数据库研究和实践相关的论文占据了数据库领域顶尖会议和期刊中很重要的部分
+        作为数据库从业人员
+    key- NoSQL数据库    
+    key- 属性图例子？ 
+        见过rdf的各种存储方式，对于属性图，是否同样？ 
+        https://hugegraph.github.io/hugegraph-doc/language/hugegraph-example.html
+        RDF在设计上的主要特点是易于发布和分享数据，但不支持实体或关系拥有属性
+        RDF主要还是用于学术的场景，在工业界我们更多的还是采用图数据库（比如用来存储属性图）
+        https://www.jiqizhixin.com/articles/2018-06-20-4
+        https://snap.stanford.edu/data/
+        属性图更为通用，可以表示现实生活中的更多关系。 但是，RDF更简单，我们的系统基于此。
+        *https://medium.com/@christophewillemsen/github-events-analysis-with-neo4j-18bc6ffcab01
+        一些小的实例！ 
+        neo4j官方提供了一些，也可以把rdf导入
+        https://neo4j.com/developer/example-data/
+        pp- file extension of property graph? 
+    key- opencyper in neo4j 
+        https://neo4j.com/blog/open-cypher-sql-for-graphs/
+    key- relations bet. quering lan? 
+        Datalog Datalog is a much older language than SPARQL or Cypher
+    *sum-q- what data model and corresponding quering lan. are there? 
+        data model:
+            rdf, property graph... 
+        quering lan: 
+            sparql, cypher, datalog ...
+    *q- datatypies, object model, labeling rules in property graph? 
+        op15 round 
+    q- property graph has some limiations? 
+        Property Graph in this form is therefore not suitable to model, e.g., Wikidata statements:
+        op20 
+    q- transform From Property Graph to RDF? 
+    q- from rdf to property graph? op22 
+    h-q- the diff. from them 
+    s-q- Find up to ten people whose daughter is a professor op29 
+        Count all relationships in the database
+        Count all relationship types in the database
+        Find the person with most friends op-
+        Find pairs of siblings
+        Find friends of all people with name Paul Erdos, and return their ˝
+            name and the start date of the friendship
+    h- Cypher has many further features, Subqueries, Filter...
+    q- property graph makes data in two layers? which two? 
+    //detailready// 
 ---slide11--- The Cypher Query Language
-
+    h- an other lan. which should also be familier with 
+    q- The shape of a Cypher query 
+    h- The order of clauses affects the semantics of queries
+    h- we can query nodes with more than one properties when using cypher
+    h- lan. semantic issues 
+    q- how to express path patterns? 
+    h- how to write a query with "optional"
+    https://console.neo4j.org/
+    use this online console to train cypher skills 
+    q- the value cannot be distinguished from “unbound”? y 
+    h- powerful path manipulation features are available
+    pp- key- what means homomorphisms, isomorphim op30 
+    //detailready// 
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
 ---slide12---Knowledge Graph Quality and Validation
+    h- we focus on quality measurment, and monitor them automatically
+    q- two dimensions of KG(from requirements)? op13 
+    q- what are Functional quality of that? x3 
+    q- what are non-functional? x5 
+    q- what is  TimBL’s Open Data Quality proposal, 5-star quality metric
+        op18 
+        the best--linked open data
+    h- the idea that see KGs as software and measure its quality 
+    h- always subjective measurments 
+    q- The distinction between “operational” and “declarative”
+    q- checking approach? x2x2 op30 
+    q- what is Competency questions? 
+        classical ones...
+        a example? op33 
+    h- similar to test case (unit test)
+    q- what are typical  functional metrics of kg?
+        x3 
+    h- Unit tests can also validate non-functional criteria.
+    h- in detail, we can use unit test to acc. this 
+    q- what is XML Schema used for? ext op37 
+    key- schema lan. 
+        An XML Schema describes the structure of an XML document.
+        define the legal building blocks of an XML document:
+        (define data types for elements and attributes) 
+        ...
+        https://www.w3schools.com/xml/schema_intro.asp
+    q- rdf schema? x2 op38 
+    q- Validating using SHACL and ShEx
+    q- diff. of thee two: SHACL and ShEx
+    h-q- many criteria to measure quality of kg, what are they?
+    q-  basic approaches for automatic quality checks?  x2
+    h- rdf schama -- RDF constraint languages 
+        like SHACL and ShEx 
+        they can declaratively specify constraints 
+    //detailready// 
 ---slide13---Centrality measures
+    q- what is Centrality 
+        a- how to return most “important” ones on top
+    q- Possible Solution and their problems? op04 
+        a- application dep. 
+    h- precompute some metrics, and use them in queries 
+    h- it is about network analysis 
+    q- what are typical networks? they are becoming more and more imp. nowadays
+    h- different notions of centrality can be measured, as for diff. types of graph/ application 
+    h- what is one-step paths
+    h- Paths might be more important if they pass through important nodes
+    h- follwing parts will focus on application free model of centrality calcu. 
+    q- what is Degree centrality? op13 
+    h- wikibase:sitelinks is a pre-computed degree centrality
+    q- pro cons of Degree centrality p15 
+    q- the random walk process? 
+        take a node randomly, uniformly 
+        the same uniform probability for each choice of edge
+    h- it will converge to some limit, we can even compute them dirc. 
+    h-q- what is the actual operation we iteratively apply? op28 
+    q- what is eigenvector centrality op29 
+    h-q- what is the components of eigenvectors? their meaning? op30
+    h- we only need the relative importance of nodes, scaling is ok  
+    q- we want well-behaved eigenvectors, how can we get them? op32 
+    q- what is Perron-Frobenius Theorm 
+    q- what means irreducible for a matrix? op32 
+    q- what means strongly connected for a directed graph? op34 
+        x2 characterise? 
+    invq- what means dead ends, why not good? op- 
+    invq- two cases that may lead to invalid non-meaningful centrality measure?
+    q- what is transition matrix? op21 
+    q- what is the meaning of MM? two adj. matrix multply one after an other 
+        or more? op36 
+    h- use path to count centrality, we have to deal with path len. issues 
+        penalize longer paths 
+    q- what is the Katz centrality
+    h- centrality is a measurment used to compare to other nodes 
+    q- alpha must not too large, how can its value be computed? op39 
+    q- centralities? eigenvector centrality and katz centrality, diff? 
+        in-degree centrality, out-degree centrality
+    q- pro cons of katz centrality op41 
+    q- the idea of pagerank? line by line, speak first 
+    q- what is the iterative computing scheme used in pagerank op44 
+        taxation? damping? 
+    q- the effect of damping factor? too large? too small? op46 
+    q- does pagerank converges quickly? y 
+    q- compare pagerank to katz centrality
+    h- centrality based on graph structure 
+    //detailready/
 ---slide14---Community detection
+    q- what is closeness centrality? op08 
+        h- has to be strongly connected graph 
+    q- limiations of closeness centrality and solutions? op10 
+    q- what is harmonic centrality? solved what issue of closeness? 
+        op- 
+    q- what is betweeness centrality? op13 
+        what is N-1 N-2 here? 
+        h- best used for star-shaped structure 
+    h- there is sth. diff. when using this metric 
+    q- how fast can we achieve when imp. betweeness metric 
+        op15
+    h-q- summerize all centrality criteria? op16 
+        what are their meaning intuitively? 
+    q- what is Community feature? op18
+        a-more likely to be connected when in two nodes in one Community
+        ... 
+    h-key- social network analysis 
+    q- why we study Community activity? op19 
+    q- approach of Girvan-Newman their algorithm? op- 
+        the idea? 
+        the algo? GN algorithm 
+    h-q- it is a hierarchical clustering algo. what this mean? 
+    
+
 ---slide15---Summary and Outlook 
