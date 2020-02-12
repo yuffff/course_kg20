@@ -3,6 +3,36 @@
 // this will be alone with .bat files and can be found online 
 // summ. tipps of studying 
 
+workflow:
+    premix
+        materials finding 
+        key2rough understanding 
+    ---//detailready//
+    *detailmix
+        all problems has been detected 
+        question/ problem/ hlev und. extraction...
+    *postmix
+        inversed problem design
+        highlev questions design 
+        answer filling 
+            (keyword only! shall extended in oral)
+        ...
+    ---//rememberready//
+    rempractice
+        visual based, speak ori. 
+typical questions:
+    global
+        gen. under. -- h-q-
+        list of methods -- q-
+        pro cons 
+    spec.
+        algo./math gernal idea 
+        algo./math detail 
+        algo./math runtime example 
+要不要在q后面写answer？
+    文字性的要reform一下，方便记忆
+    公式也尽量描述一下。不容易描述的但是visual的
+    怎么写？可以只写关键词，一边背诵一边写r1
 with piano music when necessary 
     ... 
 steps to learn sth.

@@ -1,5 +1,7 @@
 //
-    invq- indicates inversed questions 
+    invq-   indicates inversed questions 
+    a-      answers to the corres. question 
+    answer filling needed, reform needed
 //
 // from end slide 3, others in pdf file  
 

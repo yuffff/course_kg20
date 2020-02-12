@@ -471,10 +471,55 @@
     h- key of modularity based algorithm? detect if it has enough connections 
         in between 
     //further detection methods op46 
+    q- idea of minimum cuts? 
+    q- does it suitable for social Community detection? 
+    q- idea of Bi-Cliques 
+        how works? op48 
+        features of it? x3 
+            a- 
+                based on math. bkg 
+                good also for small Communities 
+                freq. used on social netw. anal.
+    q- the idea based on statistics? features of it? 
+        a- 
+            find the underlaying model, to explain data 
+            1.hard to solve 
+            2.can find overlapping ones
+            3.more insightful 
+    //detailready//
+---slide15---Summary and Outlook 
+    h- to understand graphs 
+    q- what is ontology op10 
+        which parts are there? x4 x2big 
+    h- knowledge of a domain of interest 
+        特殊领域的知识库，其中还可以做推理
+    q- snomed ct? op11 
+        a- health data record sys. provides nomenclature
+    h- modeling and reasoning relationships
+    h- this ontology sys. can be used for clinical information retrival 
+    h- relationships are modelled formally 
+    q- diff. from taxonomy and databases? op10 op13 
+    q- what is an ontology language? op14 
+        a- for encode and exchange 
+    key- description logic 
+        based on first order logic 
+    h- owl based on description logic, can be transfered to rdf 
+    h- formal semantics of ontology lan. has logical meaning 
+    q- what is reasoning? 
+        a- analyse and evaluate in logical database 
+        deduce more know. based on existing database 
+        entail addition facts, hidden 
+        we can enlarge db in this way 
+    q- reasoning tasks in ontology system? x4 
+    q- what is entailment? op15 
+    q- qa process? ext 
+        a- find deduced query results 
+    q- diff. bet. ontology lan. and constraints lan.? op16 
+        and their commons
+    q- what are : ontology based query answering, ontology based data integration 
+    q- we can also use ontology to enlarge traditional db? y ext 
+    //detailready//
+    
+    
     
 
-
-
-
-
----slide15---Summary and Outlook 

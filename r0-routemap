@@ -12,19 +12,32 @@ from 14 // some hard ones! - 一点点攻破
     //scl课程不熟悉，背景知识少。上课最后考试模拟没有去（很多人也没去，问就是不舒服）
     //scl有问题可以问学姐
 
+workflow:
+    premix
+    detailmix
+    postmix
+    rempractice
+
 detail task design before exam: 
 
 12---
-    finish all rough parts at least 
-    find solutions to ubungen 
+    premix--finish all rough parts at least 
+    premix--find solutions to ubungen 
 13---
-    finish detail, question/ problem extraction...
-    practice, 尤其是graph的细节
-    inversed problem design, highlev questions design 
+    detailmix--finish detail, question/ problem extraction...
+    rem1
+        rem--queries, algos, fixed formats 
+        postmix--
+            inversed problem design
+            highlev questions design 
+            answer filling 
 14---
-    discussion + remember, practice r1
+    disscussion 
+    rem2
+        postmix+rem
 15---
-    detail review, remember, practice r2  
+    rem3 
+        postmix+rem 
 16---
     flexi
 17---
