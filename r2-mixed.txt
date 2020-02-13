@@ -18,7 +18,7 @@
         3.easy prac.
 //
 
----rem-global---
+---rem1-global---
     ok-pp- what are prefixed names in this pic? s2p22 
     q- *The OWL Web Ontology Language extends the semantic features of RDF
         what are semantic features here? 
@@ -35,11 +35,13 @@
     h- db enlarge operation -- make it complete 
     q- what are wikis? 
         a- human knowledge network/ system
-    h- summ highlev s0op30
-// from end slide 3, others in pdf file  
----rem-slide1---* usually starts from here...
+    h- summ highlev s0op30 
+---rem1-slide1---* usually starts from here...
     h- the hype 
-    q- what is KG op18 
+    **q- what is KG op18 
+        graph base that is a graph 
+        collection of facts rules or other knowledge
+        that express somekind of relations and connections 
     q- features of KG sys? op19 
     q- why wikipedia not KG? rdbms not? op29 
     q- def. of simple undirected graph? set of? op- 
@@ -66,8 +68,20 @@
     q- what is missed in adjacency list rep. op40 
     q- possible rep. of a graph? x3 
         how they can be adapted to other complex graphs? op39 
-    q- pros and cons of each? op41 
-    q- what is rdf? ext op59 
+    q- pros and cons of each? op42 x2x1
+        matrix
+            +
+                space eff. for dense graph 
+                be processed with matrix operations 
+            - 
+                un natural for labeling  
+        list 
+            + 
+                space effi. for sparse graph 
+                easy labeling 
+            -
+                hard to process 
+    q- what is rdf? ext op59 what kind of graph? 
         a- 
             resource description framework
             used to modeling directed, edge-labelled graphs
@@ -77,7 +91,7 @@
             graphs may be modeled diff. from diff. people 
             we want to exchange them, merge them auto. 
             so we need a standard to describe the desired graph 
-    q- lab elling in rdf? restricted form of multi-graphs? op51 
+    q- labelling in rdf? restricted form of multi-graphs? op51 
         a- multiple edges can exist when they have diff. labels 
     q- what are uri/iri/url ? op54 
     q- RDF uses IRIs in two ways? op57 
@@ -90,10 +104,10 @@
         a- isbn, used for  naming resources 
     q- rdf identifies vertices and edge-types using? 
         a- iris 
----rem-slide2---
+---rem1-slide2---
     q- where comes from iris? x2 op5 
         a- create reuse 
-    q- ways to construct Resolvable IRIs? s2p5
+    //q- ways to construct Resolvable IRIs? s2p5
         ...
     q- why use domain in iris? op5 
         a- ownership 
@@ -103,7 +117,7 @@
         fragments, HTTP redirects, Content negotiation
     q- which to use to select the type of file returned? op11
         Accept header
-    q- Why not use IRIs for data value? op16 
+    q- Why not use IRIs for data value? op16 x1 
         a- 
             same meaning every where 
             buildin understanding 
@@ -161,13 +175,12 @@
     h- Constraint languages SHACL and SHEX can restrict graphs syntactically
     q- what is properties? op56 
         ra- used for edge labels 
-//////////////////////////////////////an overview, start tasks//////////////////////////////////////
----rem-slide3---
+---rem1-slide3---
     q- what can be encoded in RDF? almost every thing? 
         databese, other graphs 
     h- tools and libs are imp. acco. to standards, which will help us 
         dev. sth
-    q- chanllenges when translating data into rdf? op09 
+    *q- chanllenges when translating data into rdf? op09 
         represent n-ary relations 
         sort 
     *q- how to deal with them? x3 to sort, compare them op20 
@@ -177,7 +190,11 @@
             has a dedicated vocabulary to reify RDF triples
         sort 
             linked lists
+                easy insert 
+                hard access 
             order-indicating properties
+                fast access 
+                hard insert 
             give up     
     q- what is sparql op23 
     h- we can update a database use sparql
@@ -203,7 +220,8 @@
         Turtle snippet that specifies patterns
     *q- What is the meaning of blank nodes in query patterns?
         unspecified resource
-        like var. but can not bind 
+        like var. but can not bind
+        can match any node 
     hq- why support literal as subject? 
         inversed query 
     q- What is the meaning of blank nodes in query results?
@@ -211,6 +229,8 @@
         the bnode id in query and in db may differ 
     q- what is the partial func.? vs total func. ?  ext
         a- all inputs are considered 
+    pp- blank nodes to RDF terms op43 ? 
+    q- The multiset of these solutions is denoted evalG(P)? how to understand this 
     p-q- what is the result of sparql formally op42 
     q- what is solution sequence op42 
     h- multiset is an unordered set 
@@ -230,88 +250,143 @@
     q- What is evalG(eg:s eg:p eg:o) over the graph G = {eg:s eg:p eg:o}? op50
     h- sparql is meanly depend on matching graph patterns(暴力枚举？)
     pp- Queries that cannot yield bindings for any variable op50
----slide4---
+---rem1-slide4---
     h- Wikidata as a working example to try out our knowledge, other resources possible 
     h- Wikidata is a Free Knowledge Graph database that we can play with 
-    q- what are properties of wikidata? op08 
+    q- what are properties of wikidata? op08 x2
+        Large graph
+        active community
     h- Dec 2014: Google announces the closure of Freebase and migration to Wikidata
     h- 4th Feb 2013: The first statements can be created
     h- 2012: Wikidata development kick-off in Berlin
     h- create and dev between 2012-2014 
-    q- applications of wikidata? 
+    q- applications of wikidata? ext x2
         a- 
-            in apps: Data-driven journalism, Knowledge base of intelligent assistants such as Apple Siri and Amazon Alexa
-            in research: Wikidata as a subject of study (social dynamics, internationality, biases, . . . )
-    q- wikidata is a Wikimedia project? what is WMF? op17 
+            QA 
+            data-driven 
+            in apps: Data-driven journalism, 
+                Knowledge base of intelligent assistants 
+                such as Apple Siri and Amazon Alexa
+            in research: Wikidata as a subject of study 
+                (social dynamics, internationality, biases, . . . )
+    q- Wikimedia wikidata and wikipedia? what is WMF? op17 
+        Wikimedia Foundation
+        wikidata is part of wikimedia proj. 
+        wikidata is a kg based database 
+        wikipedia is driven by wikidata 
     q- wikidata can be viewed and modified online? 
-    q- basic principles of wikidata? op20 x7 
+    q- basic principles of wikidata? op20 rough 
+        open editing, community control 
     h- wikidata has one page per entity, with diff. sections 
     q- what are two views of wikidata? and their properties. op28 
-    q- what is Wikidata entity documents? the content it has? - op34 
-    t- language-independent id, abel, short description, and list of aliases
-        best available language, statements may have a rank, which encodes their current significance
+        document-centric
+            grouped by subject
+            sections 
+            order is preserved 
+        graph-structured
+            relationships as main 
+            order does not affect 
+    *q- what is Wikidata entity documents? the content it has? x4 - op34 
+        Entity ID
+        Terms header
+        Statements
+        Site links
+    t- language-independent id, abel, short description, 
+        and list of aliases
+        best available language, statements may have a rank, 
+        which encodes their current significance
         Site links: Connections to pages on other Wikimedia projects
     q- what is the main part of the page? 
         a- statements
-    q- how to realise entity-level information integration? 
-    p-q- how does property pages differs from entity pages? op34
-    q- Why does Wikidata use abstract (numeric) QIDs and PIDs? op35 
+    q- how to realise entity-level information integration? ext 
+        site links  
+    **q- how does property pages differs from entity pages? op34
+        no sitelinks 
+        start with P instead of Q 
+    **q- Why does Wikidata use abstract (numeric) QIDs and PIDs? op35
+        International
+        stable against change 
+        Convenient short  
     q- How to find the ID of an item? ext op35 
         a- just google item + "wikidata id" may work 
     h- statements may Annotated with property-value pairs
-    q- what is Wikidata’s basic information units? 
+    q- what is Wikidata’s basic information units? op37
+        statements are basic units! 
+        similar to triple, it is 
+            "Wikidata items + wikidata properties + value"
     q- how statements can be build? op37 
-        a- Wikidata items... 
+        a- "Wikidata items + wikidata properties + value"
     q- start time is a property type? y
     h- property types are predicates, list of all possible properties can be found online 
         https://www.wikidata.org/wiki/Wikidata:List_of_properties/politics
         subclass of (P279)
         instance of (P31)
+    q- find list of all properties in wikidata? ext 
+        an official page 
     h- Texts in a specific language (similar to language-tagged RDF strings)
     h- Property types cannot be changed once created.
-    q- how does wikidata store infos. internally? op41
-        a- Wikidata is internally stored in the document-centric form using a JSON format
-    q- why Data is converted to RDF? for external use? 
-    p-q- differences bet. Wikidata’s graph view and rdf? op43 x3 
-    h- they both Based on directed, labelled, multi-graph
+    *q- how does wikidata store infos. internally? op41
+        a- document-centric form using a JSON format
+    **q- why Data is converted to RDF? x3 op43 
+        for external use, exchange 
+        entity-specific linked data exportsn via web -> wikipedia 
+        query service
+    *q- differences bet. Wikidata’s graph view and rdf? op43 x3 
+        h- not the same thing but can be converted bet. each other 
+        common: 
+            Based on directed, labelled, multi-graph
+            properties identity 
+            order not imp. 
+        differ: 
+            Wikidata statements can have annotations and references
+            do not have xml schema types 
+            wikidata ID are not IRIs 
     h- we can Encoding statements in RDF(statements are in graph view)
     h- wikidata has rdf dump, converts will happen inside this process, encoding statements in RDF
         is not easy. 
     h- some predefined prefix:https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format
-    q- how to encode statements when where are many annotations? op46 
+    ***q- how to encode statements when where are many annotations? op46 
         a- in the style of reification
         h- annotations are predicate-object pairs, include bnodes can help 
-    q- what is diff. bet. wdt: and p: op50 ext 
+    *q- what is diff. bet. wdt: and p: op50 ext 
         a- 
-            Truthy statement predicates have prefix wdt: with the property name (e.g. wdt:P2
-            The statements(bnodes ) are linked to the entity with the predicate with prefix p: and the name of the property (e.g. p:P2).
+            Truthy statement predicates have prefix wdt: 
+                with the property name (e.g. wdt:P2
+                The statements(bnodes ) are linked to the 
+                entity with the predicate with prefix p: 
+                and the name of the property (e.g. p:P2).
             wdt is the ori. version of Connections
             p: Connects subject(entities) with helper nodes
     h- References and complex values are represented using auxiliary nodes
-    q- rules that trans. from wikidata to rdf? ext -h op51 
+    lessq- rules that trans. from wikidata to rdf? ext -h op51 
+    q- what is statement RDF encoding? op51 
     h- Order of qualifiers or statements is not represented in RDF
-    q- is there some information loss during that conversion? y
+    **q- is there some information loss during that conversion? 
+        Order of qualifiers or statements
     h- The complete Wikidata-to-RDF documentation is available online
-    q- how to encode statements? -h 
-    q- how to encode Labels, descriptions, aliases? Sitelinks? op52 
+    **q- how to encode Labels, descriptions, aliases? Sitelinks? op52
+        literals, use property "schema:about" 
     q- what is content negotiation? ext 
     h- Wikidata SPARQL Query Service (WDQS)
     q- liberal configuration, how about the timeout? how many secs? op54 
     h- features about online query Service? (if a online qu. should be dev.)
         a- Query editing support (auto-completion, suggestions. examples) 
-    q- how WDQS can be used? op55 x3 
-        a-  playing an important role in Wikidata editing and quality control
+    h- how WDQS can be used? op55 
+        a-  playing an important role in 
+        Wikidata editing and quality control
         but keeping up with Wikidata’s growth becomes harder
+    q- what is the backend of wdqs? ext 
     h- wdqs uses typical LAMP stack, BlazeGraph used as free and open-source graph database
         script used to monitor changes and update the database accordingly
         incoming requests distributed by load balancing (LVS)
         public SPARQL query service is available
-    q- SPARQL query features? ext! 
----slide5--- core basic of the following chapters! try them out 
+    q- SPARQL query features? go to ext! 
+---rem1-slide5--- core basic of the following chapters! try them out 
     h- core of sparql relies on basic graph patterns (BGPs)
         returns sequences or multi-sets of partial functions (“solutions”)
     q- what are property paths? op5 
-    s-q- Find all descendants of Johann Sebastian Bach op06 
+        spec. conditions /express more complicated predicate for match 
+    **s-q- Find all descendants of Johann Sebastian Bach op06 
         with no predicate hasChild but two predicates hasFather and hasMother
     h- Property path syntax-- similar to regular expression
     q- how does this execute? ˆ!ˆeg:p1*/eg:p2?|eg:p3+ op07 
@@ -319,35 +394,46 @@
     q- ˆ(iri*) is actually the same as the meaning of (ˆiri)*? 
     h- property path pattern is a triple hs, p, oi,
     h- extending Turtle syntax to allow 
-    p-q- meaning of the following ppp op09 
+    **q- meaning of the following ppp op09 
         ?x !(eg:p|eg:q)* ?y:
         ?x eg:p/eg:p eg:o:
         ?x (!eg:p|!ˆeg:q)* ?y
+        !(ˆiri1|· · · |ˆirin)
+        !(iri1|· · · |irin)
+        PP1 / PP2
         ...
     h- or inside a sparql query, which may be hard 
-    q- the semantic def. of the property paths (more formal) op11
+    *q- the semantic def. of the property paths (more formal) op11
         path(!(iri1|· · · |irin)) = ? 
     h- a path from µ(σ(s)) to µ(σ(o)) that is labelled by a word in path(pp)
     h- We do not count the number of distinct paths: only existence is checked.
     h- SPARQL 1.1 sometimes counts some paths
-    q- why counting paths is not feasible in g op14 
+    *q- why counting paths is not feasible in g op14 x2 
+        loops
+        grows exp. 
     h- we may “erases” the count
+    q- ?s eg:p|eg:q ?o may have multiplicities? 
+        1 or 2 
     q- Find all descendants of Bach that were composers op15 
     // Filters
     h- Filters can express many conditions to eliminate some of the query results
         it can not intro. new vars into the qu. result 
-    q- how filters can be used? 
-        a- express conditions: 
+    *q- how filters can be used? 
+        a- 
+            as checkers, can express conditions: 
             Type checks and language checks...
             Check for non-existence of certain graph patterns
-    s-q- find out where in Germany towns have names ending in “-ow” or “-itz” op18 
-    q- how semicons can be used? ext 
-    h- Filters are not Turtle syntax and don’t require . as separators
-    h- what means bind variables? - give value to variables
+    s-q- find out where in Germany towns have names 
+        ending in “-ow” or “-itz” op18 
+    less-q- how semicons can be used? ext 
+    q- Filters are not Turtle syntax and don’t require . as separators?
+    q- what means bind variables? - give value to variables
         Answers are eliminated, never added
     q- The position of filters within a pattern is not relevant? y
-        The relative order of several filters does not change the final outcome
-        Implementations will optimise order (apply selective filters as early as possible)
+        The relative order of several filters does not 
+            change the final outcome
+        Implementations will optimise order 
+            (apply selective filters as early as possible)
     ext- detail of the filter optimization? what kind of xxx will be changed order? 
     h- the order on dates is different from the order on numbers
     q- are all pairs of resources of distinct type might be comparable? n op22 
@@ -365,38 +451,48 @@
     h- also some logical func. exists -- IN and NOTIN check membership of a term in a list
     h- FILTER NOT EXISTS
     s-q- From Wikidata, find out how many living people are know who are born in Dresden op25 
-    q- how to provide a form of negation in queries? op- 
+    q- how to provide a form of negation in queries? op- ext  
     h- RDF allows almost all kinds of terms in almost all positions, maybe no scene 
     q- how errors propagate in ql? 
-    q- what is effective boolean value (EBV)? op26 
-        a- empty strings have EBV “false”, other strings have EBV “true”
-    q- why there can be calcu. correctly? ext 
-    h- projection = removal of some bindings from results
+        use EBV 
+    *q- what is effective boolean value (EBV)? op26 
+        a- 
+            used for error propergation 
+            empty strings have EBV “false”, other strings have EBV “true”
+    //q- why there can be calcu. correctly? ext 
+    q- projection = removal of some bindings from results?
     q- how to set multiplicity of any element in the result to 1? op29 
     s-q- Find cities and their population densities op28 
     h- may define additional results computed by functions in select clauses
     ext- 
         projection queries (SELECT queries) may only project out variables bound in the query. 
         project expressions from result bindings, rather than literal values in the store.
-    q- what does projection mean? ext 
-        a- return values that do not occur in the graphs that comprise a query's RDF data set
+    *q- what does projection mean? ext 
+        a- 
+            do some calcu. and 
+            return values that do not occur in the graphs 
+                that comprise a query's RDF data set
         example: 
             Returning the total cost of an order's line item as the product of two variables
             Returning computed values, such as the current day of the week
             Performing simple string parsing
     q- what are Solution Set Modifiers? ext 
-        a-  expressions after the query’s WHERE clause, modify the solution set 
+        a-  
+            expressions after the query’s WHERE clause
+            modify the solution set 
     q- what means OFFSET? operator? op- 
-    h- Both LIMIT and OFFSET should only be used on explicitly ordered results
-    s-q- In Wikidata, find the largest German cities, rank 6 to 15 op30
+    h- Both LIMIT and OFFSET should only be used on 
+        explicitly ordered results
+    **s-q- In Wikidata, find the largest German cities, rank 6 to 15 op30
     q- what is group graph pattern? op- 
     s-q- In Wikidata, find everybody who is a composer by occupation or who has composed something op33
     h- union  adds up multiplicities
+    s-q- find composers, and, optionally, their spouses
     q- FILTER NOT EXISTS vs MINUS? op- 
         a- a group graph patterns that do not share any variables.
     s-q- In Wikidata, find composers, and, optionally, their spouses op35 
     h-  OPTIONAL may leave some query variables unbound
-    s-q- In Wikidata, find universities located in one of the 15 largest German cities op- 
+    *s-q- In Wikidata, find universities located in one of the 15 largest German cities op- 
     q- what is Subqueries? 
         a- can also be viewed as pre-queries
     h- order of results from subqueries is not relevant 
@@ -410,8 +506,10 @@
     h- VALUES behaves just like a subquery with the specified result
     q- only IRIs or literals can be used in VALUES? y
     q- what is the important use of VALUES? op- 
-        a- much more efficient than sending 100 small queries, or nested UNION
-    q- efficiently combine 100 possible options? how to do that? op41 
+        a- 
+            much more efficient than sending 100 small queries, 
+            or nested UNION
+    invq- efficiently combine 100 possible options? how to do that? op41 
     h- BIND can be used instead of expression assignments with AS in SELECT
     q- what is that "as" part in select? what are they actually? op42 
     h- cannnot be used before they were assigned.
@@ -423,18 +521,21 @@
         a- split a multiset of solutions into several multisets
     q- what is Aggregate function? op- in the select part? 
     invq- what we should do if we want to calcu. value as return 
-    sq-  find the ten most common professions of people born in Dresden op- 
+    s-q-  find the ten most common professions of people born in Dresden op- 
     q- for grouping, we have to select aggregate ones? n 
     h- we can select non-aggregate terms used for grouping
     ext- several aggregate functions
     h- All aggregate functions receive one expression as parameter
     q- is there allowed? (two para. showed)
     h- DISTINCT expression used to remove duplicates
-    p-sq- find all professions of more than 100 people born in Dresden
+    *s-q- find all professions of more than 100 people born in Dresden op46
     h- Property Path Patterns can express arbitrarily long paths! 
     h- Aggregates are used to obtain answers that combine several solutions.
     h- SPARQL aggregate functions: op45 
     (keep a snippets file to prac. )
+    h-s-q- all possible features of sparql? -h s6op2 -and possible examples
+    q- what is COUNT(*) as ?val here COUNT? ext h
+        Aggregates
 //////////////////////////////////////core theory part//////////////////////////////////////
 ---slide6---SPARQL: Semantics
     h- SPARQL is a feature-rich query language
@@ -710,35 +811,62 @@
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
 ---slide12---Knowledge Graph Quality and Validation
     h- we focus on quality measurment, and monitor them automatically
-    q- two dimensions of KG(from requirements)? op13 
+    q- what is quality? two dimensions of KG(from requirements)? op17 
+        func. 
+            correct, complete, performance 
+        non-func. 
+            documentation, style guides 
     q- what are Functional quality of that? x3 
     q- what are non-functional? x5 
-    q- what is  TimBL’s Open Data Quality proposal, 5-star quality metric
+    *q- what is  TimBL’s Open Data Quality proposal, 5-star quality metric
         op18 
         the best--linked open data
+        available on the Web
+        structured
+        non-proprietary
+        use URIs to denote things
+        linked open data
     h- the idea that see KGs as software and measure its quality 
     h- always subjective measurments 
+    q- diff. with software dev? measure kg quality p21 
+        unclear development life cycle
     q- The distinction between “operational” and “declarative”
-    q- checking approach? x2x2 op30 
+    q- Quality checking: basic approaches? x2x2 op30 
+        Manual
+            Subjective:experts
+            objective:clearly defined criteria
+        automatically
+            Operational:Ad hoc implementation 
+            Declarative:Schema
     q- what is Competency questions? 
         classical ones...
-        a example? op33 
+        formalised in a query language, carefully designed query
+        expected result  
+        a example? op33
+    h- effort needed, we want to monimize it
+        modelling effort, maintenance 
     h- similar to test case (unit test)
-    q- what are typical  functional metrics of kg?
+    q- what are typical  functional metrics of kg? -re op17 
         x3 
     h- Unit tests can also validate non-functional criteria.
-    h- in detail, we can use unit test to acc. this 
+    q- in detail, we can use unit test to acc. this? y
     q- what is XML Schema used for? ext op37 
-    key- schema lan. 
+        constrain the syntactic form
+    q- rdf schema is an otology lan? y 
+    q- key- schema lan. ? -re 
         a- 
             schema lan. are used to describe structures of documents
-            define eg. what are legal blocks, datatypes, ... 
+            define eg. what are legal blocks, datatypes, ...
+            constrain the syntactic form 
         An XML Schema describes the structure of an XML document.
         define the legal building blocks of an XML document:
         (define data types for elements and attributes) 
         ...
         https://www.w3schools.com/xml/schema_intro.asp
-    q- rdf schema? x2 op38 
+    q- rdf schema? x2 op38 what are they stands for? 
+        SHACL, ShEx 
+            shape constrain lan  
+            shape expression 
     q- Validating using SHACL and ShEx
     q- diff. of thee two: SHACL and ShEx
     h-q- many criteria to measure quality of kg, what are they?

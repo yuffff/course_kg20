@@ -1,6 +1,6 @@
     invq-   indicates inversed questions 
     extract q- with python
----rem-global---
+---rem1-global---
     q- *The OWL Web Ontology Language extends the semantic features of RDF
     q- what does rdf:type mean?     
     q- what means a db is normalized? 
@@ -8,8 +8,8 @@
     q- qa pipeline? graph db querying 
     q- redis? 
     q- what are wikis? 
----rem-slide1---* usually starts from here...
-    q- what is KG op18 
+---rem1-slide1---* usually starts from here...
+    **q- what is KG op18 
     q- features of KG sys? op19 
     q- why wikipedia not KG? rdbms not? op29 
     q- def. of simple undirected graph? set of? op- 
@@ -25,25 +25,25 @@
     q- what is adjacency matrix
     q- what is missed in adjacency list rep. op40 
     q- possible rep. of a graph? x3 
-    q- pros and cons of each? op41 
-    q- what is rdf? ext op59 
+    q- pros and cons of each? op42 x2x1
+    q- what is rdf? ext op59 what kind of graph? 
     q- why we need rdf? h ext 
-    q- lab elling in rdf? restricted form of multi-graphs? op51 
+    q- labelling in rdf? restricted form of multi-graphs? op51 
     q- what are uri/iri/url ? op54 
     q- RDF uses IRIs in two ways? op57 
     q- shape of a url? op55 
     q- URIs vs. URLs? 
     q- urn used for? op56 
     q- rdf identifies vertices and edge-types using? 
----rem-slide2---
+---rem1-slide2---
     q- where comes from iris? x2 op5 
-    q- ways to construct Resolvable IRIs? s2p5
+    //q- ways to construct Resolvable IRIs? s2p5
     q- why use domain in iris? op5 
     q- we should avoid existing pages? y ? 
     q- iris should display to users? n 
     **q- how to make iris Resolvable? x2 
     q- which to use to select the type of file returned? op11
-    q- Why not use IRIs for data value? op16 
+    q- Why not use IRIs for data value? op16 x1 
     **q- how to rep. a value in rdf? example? xsd? 
     **q- datatype in RDF is specified by the following components? the shape?
     q- lexical space of a integer? op20 
@@ -65,8 +65,28 @@
     q- we have to express The relation of predicates, so hypergraphs? y 
     q- RDF provides several properties for describing properties
     q- what is properties? op56 
----part of slide 3---
+---rem1-slide3---
+    q- what can be encoded in RDF? almost every thing? 
+    *q- chanllenges when translating data into rdf? op09 
+    *q- how to deal with them? x3 to sort, compare them op20 
+    q- what is sparql op23 
+    s-q- asks for a list of all resource IRIs together with their labels op24 
+    sq- Find up to ten people whose daughter is a professor
+    q- Count all predicates in the database op27 
+    sq- Find the person with most friends
+    sq- Find pairs of siblings
+    q-  shape of a SPARQL query? x4 which parts? op31 
+    q- variable assignment? pattern matching process? predicate
+    q- how to express order? 
+    q- how to express "most"? op- 
+    q- further types of queries? x2 
+    q- does sparql support literals as subject? y 
+    q- what is BGP? -a 
+    *q- What is the meaning of blank nodes in query patterns?
+    hq- why support literal as subject? 
+    q- What is the meaning of blank nodes in query results?
     q- what is the partial func.? vs total func. ?  ext
+    q- The multiset of these solutions is denoted evalG(P)? how to understand this 
     p-q- what is the result of sparql formally op42 
     q- what is solution sequence op42 
     q- what doeas this mean? µ(σ(P)) ⊆ G op43 
@@ -75,47 +95,51 @@
     q- What is evalG(eg:s eg:p eg:o) over the empty graph G = ∅? op48 
     q- what is Boolean queries? op50 
     q- What is evalG(eg:s eg:p eg:o) over the graph G = {eg:s eg:p eg:o}? op50
----slide4---
-    q- what are properties of wikidata? op08 
-    q- applications of wikidata? 
-    q- wikidata is a Wikimedia project? what is WMF? op17 
+---rem1-slide4---
+    q- what are properties of wikidata? op08 x2
+    q- applications of wikidata? ext x2
+    q- Wikimedia wikidata and wikipedia? what is WMF? op17 
     q- wikidata can be viewed and modified online? 
-    q- basic principles of wikidata? op20 x7 
+    q- basic principles of wikidata? op20 rough 
     q- what are two views of wikidata? and their properties. op28 
-    q- what is Wikidata entity documents? the content it has? - op34 
+    *q- what is Wikidata entity documents? the content it has? x4 - op34 
     q- what is the main part of the page? 
-    q- how to realise entity-level information integration? 
-    p-q- how does property pages differs from entity pages? op34
-    q- Why does Wikidata use abstract (numeric) QIDs and PIDs? op35 
+    q- how to realise entity-level information integration? ext 
+    **q- how does property pages differs from entity pages? op34
+    **q- Why does Wikidata use abstract (numeric) QIDs and PIDs? op35
     q- How to find the ID of an item? ext op35 
-    q- what is Wikidata’s basic information units? 
+    q- what is Wikidata’s basic information units? op37
     q- how statements can be build? op37 
     q- start time is a property type? y
-    q- how does wikidata store infos. internally? op41
-    q- why Data is converted to RDF? for external use? 
-    p-q- differences bet. Wikidata’s graph view and rdf? op43 x3 
-    q- how to encode statements when where are many annotations? op46 
-    q- what is diff. bet. wdt: and p: op50 ext 
-    q- rules that trans. from wikidata to rdf? ext -h op51 
-    q- is there some information loss during that conversion? y
-    q- how to encode statements? -h 
-    q- how to encode Labels, descriptions, aliases? Sitelinks? op52 
+    q- find list of all properties in wikidata? ext 
+    *q- how does wikidata store infos. internally? op41
+    **q- why Data is converted to RDF? x3 op43 
+    *q- differences bet. Wikidata’s graph view and rdf? op43 x3 
+    ***q- how to encode statements when where are many annotations? op46 
+    *q- what is diff. bet. wdt: and p: op50 ext 
+    lessq- rules that trans. from wikidata to rdf? ext -h op51 
+    q- what is statement RDF encoding? op51 
+    **q- is there some information loss during that conversion? 
+    **q- how to encode Labels, descriptions, aliases? Sitelinks? op52
     q- what is content negotiation? ext 
     q- liberal configuration, how about the timeout? how many secs? op54 
-    q- how WDQS can be used? op55 x3 
-    q- SPARQL query features? ext! 
----slide5--- core basic of the following chapters! try them out 
+    q- what is the backend of wdqs? ext 
+    q- SPARQL query features? go to ext! 
+---rem1-slide5--- core basic of the following chapters! try them out 
     q- what are property paths? op5 
-    s-q- Find all descendants of Johann Sebastian Bach op06 
+    **s-q- Find all descendants of Johann Sebastian Bach op06 
     q- how does this execute? ˆ!ˆeg:p1*/eg:p2?|eg:p3+ op07 
     q- ˆ(iri*) is actually the same as the meaning of (ˆiri)*? 
-    p-q- meaning of the following ppp op09 
-    q- the semantic def. of the property paths (more formal) op11
-    q- why counting paths is not feasible in g op14 
+    **q- meaning of the following ppp op09 
+    *q- the semantic def. of the property paths (more formal) op11
+    *q- why counting paths is not feasible in g op14 x2 
+    q- ?s eg:p|eg:q ?o may have multiplicities? 
     q- Find all descendants of Bach that were composers op15 
-    q- how filters can be used? 
-    s-q- find out where in Germany towns have names ending in “-ow” or “-itz” op18 
-    q- how semicons can be used? ext 
+    *q- how filters can be used? 
+    s-q- find out where in Germany towns have names 
+    less-q- how semicons can be used? ext 
+    q- Filters are not Turtle syntax and don’t require . as separators?
+    q- what means bind variables? - give value to variables
     q- The position of filters within a pattern is not relevant? y
     q- are all pairs of resources of distinct type might be comparable? n op22 
     q- how to check if two terms are the same (not just equal-valued) in filter? op-
@@ -125,28 +149,30 @@
     q- what func. are there can be used to compute? 
     q- how to extract parts of a date? -prac. op24 
     s-q- From Wikidata, find out how many living people are know who are born in Dresden op25 
-    q- how to provide a form of negation in queries? op- 
+    q- how to provide a form of negation in queries? op- ext  
     q- how errors propagate in ql? 
-    q- what is effective boolean value (EBV)? op26 
-    q- why there can be calcu. correctly? ext 
+    *q- what is effective boolean value (EBV)? op26 
+    //q- why there can be calcu. correctly? ext 
+    q- projection = removal of some bindings from results?
     q- how to set multiplicity of any element in the result to 1? op29 
     s-q- Find cities and their population densities op28 
-    q- what does projection mean? ext 
+    *q- what does projection mean? ext 
     q- what are Solution Set Modifiers? ext 
     q- what means OFFSET? operator? op- 
-    s-q- In Wikidata, find the largest German cities, rank 6 to 15 op30
+    **s-q- In Wikidata, find the largest German cities, rank 6 to 15 op30
     q- what is group graph pattern? op- 
     s-q- In Wikidata, find everybody who is a composer by occupation or who has composed something op33
+    s-q- find composers, and, optionally, their spouses
     q- FILTER NOT EXISTS vs MINUS? op- 
     s-q- In Wikidata, find composers, and, optionally, their spouses op35 
-    s-q- In Wikidata, find universities located in one of the 15 largest German cities op- 
+    *s-q- In Wikidata, find universities located in one of the 15 largest German cities op- 
     q- what is Subqueries? 
     q- what means BIND operator?  op39 
     s-q- find people who are composers, or musicians, or who play some instrument op40 
     q- what is VALUES expression op-
     q- only IRIs or literals can be used in VALUES? y
     q- what is the important use of VALUES? op- 
-    q- efficiently combine 100 possible options? how to do that? op41 
+    invq- efficiently combine 100 possible options? how to do that? op41 
     q- what is that "as" part in select? what are they actually? op42 
     q- what is the problem here? given a piece of query code op- 
     q- Assignments of constants to variables are better realised with VALUES? 
@@ -155,10 +181,13 @@
     q- what is grouping? op44 
     q- what is Aggregate function? op- in the select part? 
     invq- what we should do if we want to calcu. value as return 
-    sq-  find the ten most common professions of people born in Dresden op- 
+    s-q-  find the ten most common professions of people born in Dresden op- 
     q- for grouping, we have to select aggregate ones? n 
     q- is there allowed? (two para. showed)
-    p-sq- find all professions of more than 100 people born in Dresden
+    *s-q- find all professions of more than 100 people born in Dresden op46
+    h-s-q- all possible features of sparql? -h s6op2 -and possible examples
+    q- what is COUNT(*) as ?val here COUNT? ext h
+//////////////////////////////////////core theory part//////////////////////////////////////
 ---slide6---SPARQL: Semantics
     q- what is miu. in this context? op04 ?? 
     q- how to transfer to semantic operations. 
@@ -207,8 +236,9 @@
     q- The shape of a Cypher query 
     q- how to express path patterns? 
     q- the value cannot be distinguished from “unbound”? y 
+/////////////////////////////////////////outlook, usage and features///////////////////////////////////
 ---slide12---Knowledge Graph Quality and Validation
-    q- two dimensions of KG(from requirements)? op13 
+    q- what is quality? two dimensions of KG(from requirements)? op17 
     q- what are Functional quality of that? x3 
     q- what are non-functional? x5 
     q- what is  TimBL’s Open Data Quality proposal, 5-star quality metric

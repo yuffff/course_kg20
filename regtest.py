@@ -29,6 +29,9 @@ def extractp(file_name):
             #print(linetxt)
             x = re.search("q- ", linetxt)
             splitslide = re.search("---", linetxt)
+            sectionmark = re.search("////", linetxt)
+            if sectionmark != None:
+                resulttxtlist.append(linetxt)
             if splitslide != None:
                 resulttxtlist.append(linetxt)
             if x != None:

@@ -19,6 +19,14 @@ workflow:
     detailmix
     postmix
     rempractice
+
+hard ones:
+    write sparql on paper hard !
+    algo/formula details missing !
+    exercises not even started! they are not only sparql! 
+    wikidata dump file format! huge amount of reading 
+     
+
 detail task design before exam: 
     12---
         premix--finish all rough parts at least 
