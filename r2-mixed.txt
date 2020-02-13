@@ -902,71 +902,130 @@
         like SHACL and ShEx 
         they can declaratively specify constraints 
     //detailready// 
----slide13---Centrality measures
+---rem1-slide13---Centrality measures
     q- what is Centrality 
         a- how to return most “important” ones on top
     q- Possible Solution and their problems? op04 
-        a- application dep. 
+        a- 
+            use wikibase:sitelinks or compute 
+            application dep. 
     h- precompute some metrics, and use them in queries 
     h- it is about network analysis 
     q- what are typical networks? they are becoming more and more imp. nowadays
-    h- different notions of centrality can be measured, as for diff. types of graph/ application 
+        transportation, social, web, chem. 
+    h- different notions of centrality can be measured, 
+        as for diff. types of graph/ application 
     h- what is one-step paths
     h- Paths might be more important if they pass through important nodes
-    h- follwing parts will focus on application free model of centrality calcu. 
+    h- follwing parts will focus on application free
+        model of centrality calcu. 
     q- what is Degree centrality? op13 
-    h- wikibase:sitelinks is a pre-computed degree centrality
+        given by the indegree of each node
+        we can take use of sitelinks 
+    q- wikibase:sitelinks is a pre-computed degree centrality? y
     q- pro cons of Degree centrality p15 
-    q- the random walk process? 
+        simple fast 
+        just consider direct neighbors too simple 
+    **q- the random walk process? op22 
         take a node randomly, uniformly 
-        the same uniform probability for each choice of edge
+        use Transition matrix to calcu. the probability reaching a point 
+        [the same uniform probability for each choice of edge
     h- it will converge to some limit, we can even compute them dirc. 
     h-q- what is the actual operation we iteratively apply? op28 
-    q- what is eigenvector centrality op29 
+        matrix multiplication
+    q- what is eigenvector centrality op29
+        we calcu. eigenvector acc. to the radom walk model 
+        and use it as centrality measurment 
+        not perfect 
     h-q- what is the components of eigenvectors? their meaning? op30
     h- we only need the relative importance of nodes, scaling is ok  
-    q- we want well-behaved eigenvectors, how can we get them? op32 
+    q- we want well-behaved eigenvectors, how can we get them? op32
+        strongly connected
+            no dead ends
+            no spider traps
     q- what is Perron-Frobenius Theorm 
+        if graph is  strongly connected, eigenvector will be well-behaved 
     q- what means irreducible for a matrix? op32 
-    q- what means strongly connected for a directed graph? op34 
+    q- what means strongly connected for a directed graph? op34 x2
         x2 characterise? 
-    invq- what means dead ends, why not good? op- 
+    invq- what means dead ends and spider traps, why not good? op- 
+        dead ends 
+            don’t let a random walker continue
+            weight of node will be lost 
+        Spider traps
+            no path back to all other nodes 
+            weight is drained
     invq- two cases that may lead to invalid non-meaningful centrality measure?
-    q- what is transition matrix? op21 
-    q- what is the meaning of MM? two adj. matrix multply one after an other 
-        or more? op36 
+    q- what is transition matrix? op21 -re  
+    q- what is the meaning of MM? two adj. matrix multply one after an other or more? op36
+        number of length-n paths 
     h- use path to count centrality, we have to deal with path len. issues 
         penalize longer paths 
     q- what is the Katz centrality
+    q- pro cons of it? 
+        +
+            solve the prob. with eigenvector centrality
+        -
+            para. hard to control 
+            Small values focus on (very) short paths
+
     h- centrality is a measurment used to compare to other nodes 
     q- alpha must not too large, how can its value be computed? op39 
     q- centralities? eigenvector centrality and katz centrality, diff? 
         in-degree centrality, out-degree centrality
-    q- pro cons of katz centrality op41 
+    //
     q- the idea of pagerank? line by line, speak first 
+        1.random walk by stochastic transition matrix
+        2.also allow walkers to teleport to a random new location
     q- what is the iterative computing scheme used in pagerank op44 
         taxation? damping? 
     q- the effect of damping factor? too large? too small? op46 
+        small:  more local perspective that ignores long paths
     q- does pagerank converges quickly? y 
     q- compare pagerank to katz centrality
+        comm:
+            all-paths criteria
+            penalize
+        diff.
+            propagates the full (discounted) weight, splits the weight
+            pagerank emph. distinguished focus 
+            pp-
     h- centrality based on graph structure 
     //detailready/
 ---slide14---Community detection
-    q- what is closeness centrality? op08 
+    *q- what is closeness centrality? op08 
+        close to:
+        A node is important, if it is close to many other nodes
+        the formula.
         h- has to be strongly connected graph 
-    q- limiations of closeness centrality and solutions? op10 
-    q- what is harmonic centrality? solved what issue of closeness? 
-        op- 
-    q- what is betweeness centrality? op13 
+    **q- limiations of closeness centrality and solutions? op10 
+        nodes are close toghther --> road network may meaningful 
+        not defined for un strongly connected graphs --> a maximal N-step distance
+    *q- what is harmonic centrality? solved what issue of closeness? 
+        op- infinit lang path will 
+            affects one term of the sum, not the whole result.
+    *q- what is betweeness centrality? op13 
+        blet. other nodes 
+        a-imp. node if it is on the shortest path between 
+            many pairs of other nodes
+        Measure how relevant a vertex is for mediating flows
         what is N-1 N-2 here? 
-        h- best used for star-shaped structure 
+        h- best used for star-shaped structure
+            can get High betweenness scores 
     h- there is sth. diff. when using this metric 
+        might not desired: far from more densely connected areas
+        different from scenarios where other metrics uses 
     q- how fast can we achieve when imp. betweeness metric 
         op15
-    h-q- summerize all centrality criteria? op16 
-        what are their meaning intuitively? 
+            cubic time 
+            go down to quadratic for sparse graphs
+    h-q- summerize all centrality criteria? op16 x7 
+        what are their meaning intuitively?
+    //bef. find imp. nodes
+    //now: find community
     q- what is Community feature? op18
-        a-more likely to be connected when in two nodes in one Community
+        a-
+            more likely to be connected when in two nodes in one Community
         ... 
     h-key- social network analysis 
     q- why we study Community activity? op19 

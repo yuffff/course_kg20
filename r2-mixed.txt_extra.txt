@@ -237,43 +237,53 @@
     q- how to express path patterns? 
     q- the value cannot be distinguished from “unbound”? y 
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
----slide12---Knowledge Graph Quality and Validation
+---rem1-slide12---Knowledge Graph Quality and Validation
     q- what is quality? two dimensions of KG(from requirements)? op17 
     q- what are Functional quality of that? x3 
     q- what are non-functional? x5 
-    q- what is  TimBL’s Open Data Quality proposal, 5-star quality metric
+    *q- what is  TimBL’s Open Data Quality proposal, 5-star quality metric
+    q- diff. with software dev? measure kg quality p21 
     q- The distinction between “operational” and “declarative”
-    q- checking approach? x2x2 op30 
+    q- Quality checking: basic approaches? x2x2 op30 
     q- what is Competency questions? 
-    q- what are typical  functional metrics of kg?
+    q- what are typical  functional metrics of kg? -re op17 
+    q- in detail, we can use unit test to acc. this? y
     q- what is XML Schema used for? ext op37 
-    q- rdf schema? x2 op38 
-    q- Validating using SHACL and ShEx
-    q- diff. of thee two: SHACL and ShEx
-    h-q- many criteria to measure quality of kg, what are they?
-    q-  basic approaches for automatic quality checks?  x2
----slide13---Centrality measures
+    q- rdf schema is an otology lan? y 
+    q- key- schema lan. ? -re 
+    q- rdf schema? x2 op38 what are they stands for? 
+    q- what is sh:path, sh:datatype, sh:targetClass, sh:pattern, sh:nodeKind
+    q- the exercise 12.1! 
+    q- error messages and severity levels? 
+    q- what is a shape graph? op38 
+    less-q- CLOSED and EXTRA play the role of what in SHACL? ext 
+    q- common and diff. of the two: SHACL and ShEx op45 
+    q- complexity of the Validating? 
+    h-q- many criteria to measure quality of kg, what are they? -re
+    q-  basic approaches for automatic quality checks?  x2 -re 
+---rem1-slide13---Centrality measures
     q- what is Centrality 
     q- Possible Solution and their problems? op04 
     q- what are typical networks? they are becoming more and more imp. nowadays
     q- what is Degree centrality? op13 
+    q- wikibase:sitelinks is a pre-computed degree centrality? y
     q- pro cons of Degree centrality p15 
-    q- the random walk process? 
+    **q- the random walk process? op22 
     h-q- what is the actual operation we iteratively apply? op28 
-    q- what is eigenvector centrality op29 
+    q- what is eigenvector centrality op29
     h-q- what is the components of eigenvectors? their meaning? op30
-    q- we want well-behaved eigenvectors, how can we get them? op32 
+    q- we want well-behaved eigenvectors, how can we get them? op32
     q- what is Perron-Frobenius Theorm 
     q- what means irreducible for a matrix? op32 
-    q- what means strongly connected for a directed graph? op34 
-    invq- what means dead ends, why not good? op- 
+    q- what means strongly connected for a directed graph? op34 x2
+    invq- what means dead ends and spider traps, why not good? op- 
     invq- two cases that may lead to invalid non-meaningful centrality measure?
-    q- what is transition matrix? op21 
-    q- what is the meaning of MM? two adj. matrix multply one after an other 
+    q- what is transition matrix? op21 -re  
+    q- what is the meaning of MM? two adj. matrix multply one after an other or more? op36
     q- what is the Katz centrality
+    q- pro cons of it? 
     q- alpha must not too large, how can its value be computed? op39 
     q- centralities? eigenvector centrality and katz centrality, diff? 
-    q- pro cons of katz centrality op41 
     q- the idea of pagerank? line by line, speak first 
     q- what is the iterative computing scheme used in pagerank op44 
     q- the effect of damping factor? too large? too small? op46 
