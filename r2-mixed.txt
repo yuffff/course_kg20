@@ -2,9 +2,15 @@
     invq-   indicates inversed questions 
     a-      answers to the corres. question 
     answer filling needed, reform needed
+
+    transfer from k2rough to here: 
+        just copy here, and add a- . do not del, add only. 
+    
 //
 // from end slide 3, others in pdf file  
-
+---slide0---
+---slide1---
+---slide2--- 
 //////////////////////////////////////an overview, start tasks//////////////////////////////////////
 ---part of slide 3---
     +linked to a pdf 
@@ -105,7 +111,7 @@
         incoming requests distributed by load balancing (LVS)
         public SPARQL query service is available
     q- SPARQL query features? ext! 
----part of slide5--- core basic of the following chapters! try them out 
+---slide5--- core basic of the following chapters! try them out 
     h- core of sparql relies on basic graph patterns (BGPs)
         returns sequences or multi-sets of partial functions (“solutions”)
     q- what are property paths? op5 
@@ -239,21 +245,458 @@
     h- bgps are conjunctions of triple patterns
     q- what is miu. in this context? op04 ?? 
     h- SPARQL algebra that are under queries, which is key to understand the complexity of it 
-    
+    h- query algebra operations
+    h- "we define the multiset" are imp. 
+    h- each operation corresponds to a underlying Semantic
+    h- semantic of bind may hard 
+    h- sum on op31 
+    q- how to transfer to semantic operations. 
+    h- synta. expression -> algebra expression -> ?
+    h- can be converted into nested expressions
+    //detailready//
 ---slide7---SPARQL: Complexity and Expressivity
----slide8---SPARQL Limits/Datalog
----slide9---Rules for Querying Graphs
----slide10---Property Graphs 
----slide11--- The Cypher Query Language
+    q- what is the naive approach and its complexity
+    q- what computational models are? 
+    q- how To classify algorithms? 
+    key- Some complexity classes may hard 
+    q- prob. of Finding BGP solutions is a decision prob. and has NP complexity
+        (with respect to the size of the pattern)
+        NP-hard 
+    q- complexity hierarchy
+        https://upload.wikimedia.org/wikipedia/commons/a/a0/P_np_np-complete_np-hard.svg
+    q- many-one reduction 
+        a-
+            is a reduction which converts instances of 
+                one decision problem into instances of a 
+                second decision problem
+            pp-err- op22 
+    key- NP-hard
+        a-
+            means can be reduced to polynomial time by a non-deterministic Turing machine.
+            不是NP的一部分，最直观的就是他们不可以在P时间被验证
+            not part of NP, maybe can not be varified in P time 
+    key- NP 
+        a- can be varified in P time
+    key- NP complete 
+        a- the hardest ones in NP class  
+    如何相互转化？ 
+        A reduction from X to Y is simply an algorithm A which solves X by 
+            making use of some other algorithm B which solves problem Y
+        "polynomial time reduction" if all parts of A other than B have a polynomial time complexit
+    key- From 3-colourability to BGP matching
+    key- coNP
+        a- 
+            the complement class to NP, not equal to NP, not symmetric
+            Other complexity classes are symmetric
+            eg. No Hamiltonian Path
+        Relationships of Complexity Classes ct19s12op5
+        no-instances have short certificates
+        example: 
+            No Hamiltonian Path: Does the graph G not have a Hamiltonian path?
+            Is the propositional logic formula ϕ a tautology (true under all assignments)
+    key- PSpace
+        a- 
+            a more powerful class, sat can be solved in linear space 
+        Space seems to be more powerful than time
+        power of space 
+        ct19s9op8
+        Tautology can be solved in linear space
+        Sat can be solved in linear space
+        using an amount of memory that is polynomial 
+            in the input length (polynomial space) 
+        https://jeremykun.files.wordpress.com/2012/02/chp_venn_diagram.jpg
+        http://s3.amazonaws.com/sf-web-assets-prod/wp-content/uploads/2018/05/29144646/Scott_AAronson_Quantum_And_Classical_Uncertainty.svg
+    h- space is more powerful than time, 
+        they can be reused, take examples to have a better understand!
+    key- typical problems and their complexity
+    h- game design, start from Complexity!
+    h- SPARQL is PSpace-hard, but can be imp. 
+    h- Other widely used query languages, such as SQL, have similar complexities
+    h- SQL query
+        answers, e.g., are not, if all SQL features are allowed.
+        not computable 
+    q- why practical?
+        a- 
+            NL-complete for data complexity 
+            parallelisable
+            queries are limited
+        *In practice, databases grow very big, while queries are rather limited!
+            less than 100 
+        measure more carefully 
+        a polynomial space algorithm could still discover all solutions
+            (and stream them to an output)
+        *SPARQL is NL-complete for data complexity, hence practically tractable and well
+            parallelisable
+        Already Optional alone leads to PSpace-hardness
+        Combinations And/Union
+            and And/Select cause
+            NP-hardness
+        数据库的实现在时间复杂度上会有成熟的优化算法，比如排序（order by），分组统计（group by）和取不重复值（distinct）
+        你要争取毫秒级操作?
+    q- Complexity of SPARQL Evaluation
+        what is the complexity of 
+        "AND", "Filter", "Optional", "Union "
+        "Combinations And/Union "
 
+        a-
+            and,Filter,Union -- in P
+            Optional -- in PSpace 
+            AU -- in NP 
+        http://borneo.informatik.uni-freiburg.de/content/team/schmidt/docs/talk_disputation.pdf
+        
+    h- ext- Exploiting RDF Constraints for Query Optimization/ 
+        "sparql Query Optimization"
+    q- Where this sketch is lacking? s7op58
+    //detailready//
+---slide8---SPARQL Limits/Datalog
+    q- why not every set of RDF graphs corresponds to a query
+    h- power means characterise strictly more sets of graphs
+    q- The lower the complexity of query answering, the lower its expressivity, which complexity?
+        why? op07 (Complexity-based arguments)
+    q- why can not measure expressivity with complexity? not so correct? op08 
+    q- give a example shows that Complexity not equ. to expressivity op- 
+    q- proof that SPARQL cannot express parallel reachability. op- 
+        不是讲的特别清楚，有一些前提假设没有交代，要弄清楚还需要时间去看CT。暂时就这样背吧....
+    h- Non-regular path languages cannot be expressed--due to the use of regular expression 
+    h- 其实regex同常是够用的？ 进一步的表达性需要更多的复杂性，难以承受的计算量。
+    h- “Wide” paths consisting of repeated graph patterns cannot be expressed
+    q- what can not be expressed? op14 
+    h-  non-linear patterns
+    q- sum- limits of sparql? x4+x4 
+        express limiations + limits by design 
+    h- SPARQL cannot talk about path lengths
+    h- SPARQL has no support for recursive/iterative computation, e.g., for page rank or
+        other graph algorithms
+    h- longest path detection is NP-complete [in data complexity!]
+    q- why not support them in sparql? 
+    q- Potential reasons? x3 
+    q- what is the func. of the following code? Example 8.5 op17 
+    s-q- replaces all uses of the hasSister property with a different encoding of the same information
+    h- it can also encode results as RDF graphs (CONSTRUCT)
+    h- Rules have their consequence on the left
+    key- rule-based query language datalog 
+    q- diff. bet. datalog and prolog 
+    key- first-order logic/ atom/ predicate 
+        a-
+            布尔逻辑
+                布尔代数是数学中的称呼
+            命题逻辑
+                Propositional calculus/ zeroth-order logic/ statement logic...
+            一阶逻辑
+                predicate logic,First-order logic,谓词逻辑
+                prolog/datalog使用一阶逻辑而不是高阶逻辑
+            二阶逻辑
+                二阶逻辑是一阶逻辑的扩展，一阶逻辑是命题逻辑的扩展
+                Second Order Logic 的引入有个很大的问題，就是 Russell’s Paradox
+            高阶逻辑
+                二阶逻辑接着被高阶逻辑和类型论所扩展。
+    h- Datalog semantics is set-based (no multiplicity of results)
+    h- Datalog is a rule-based query language that can express more powerful recursive queries
+    h- datalog uses first order logic/ and prolog.
+---slide9---Rules for Querying Graphs
+    key- Datalog semantics/ syntax/ detail about them 
+    q- how apply Datalog to graph data? x2 
+    s-q- parallel s-t-reachability for predicates p and q (for triple encoding)
+    h- datalog query has a higher complex. 
+        namly P-complete in data complexity
+    q- does not imply that all P-computable problems can be
+        solved with a Datalog query, why? op10
+    key- monotonic logic 
+    lan- Stratification means arranging something, or something that has been arranged, into categories
+    h- sparql is not enough for queries in the future, 
+        we may need logic to help the QA process
+        hence, VLog is imp. and it has
+        many high-level features for knowledge
+        base management and rule manipulation.
+    key- VLog4j
+        a- 
+            VLog rule engine, support an extension of Datalog as lan.  
+        +
+            The rule language supported by VLog4j is 
+                an extension of Datalog 
+            DLGP format/ rdf format/ owl format... are supported as data source 
+            https://github.com/knowsys/vlog4j/wiki/Rule-syntax-grammar
+    hardones- Stratified negation semantic 
+    q- Query for maternal ancestors of Ada Lovelace op37 
+    //detailready// 
+---slide10---Property Graphs 
+    h- why interplay with recursion must be limited? op3 
+    h- RDF graphs which do not contain any such 'loops' 
+    q- what is “Property Graph” 
+        refers to a broad class of enriched graph structures
+    h- many details related to this 
+        What are those “labels” that one can use for edges?
+    h- attribute-value pairs (called
+        “properties”) that can be associated with nodes and edges
+        take  a look at the pic on op06 
+    key-neo4j
+        a-
+            property graph database management system
+            we can analyse networks with it 
+        you can map, store and traverse networks of 
+            highly connected data to reveal invisible 
+            contexts and hidden relationships
+        Neo4j is a property graph database management system
+        imp. Cypher
+    q- how can property graph be used? which model exists? x3 op08 
+    h- possibility: use rdf as underlying database and use property graph 
+        in higher lev. as abstract layer 
+    q- Types of “Property Graphs”? x3+ 
+    h- e different ways to interpret this model when designing actual data structures.
+    h- property graph is something build upon other data structures
+    h- property graph has a problem of implementation chaos 
+    h- a unified “(Property) Graph Query Language” GQL is under way 
+    h- e OpenCypher/Neo4j world uses completely different names for
+        concepts than the RDF world
+    q- what does it mean "Relationship types" in rdf world? 
+    key- opencyper
+        a- 
+            open query language for property graph databases
+            supported by neo4j 
+        GQL (Graph Query Language) as a new database query language.
+        Maintain and bugfix the openCypher query language
+    key- 图数据库？ graph database 
+        a- 
+            nowadays relationships becomes more and more imp. 
+            but relational dbms not handle this eff. 
+    key- NoSQL数据库    
+    key- 属性图in practice？ 
+        a- 
+            we can import rdf files to neo4j and store as property graph 
+        pp- file extension of property graph? 
+    key- opencyper in neo4j 
+        https://neo4j.com/blog/open-cypher-sql-for-graphs/
+    key- relations bet. quering lan? 
+        Datalog Datalog is a much older language than SPARQL or Cypher
+    *sum-q- what data model and corresponding quering lan. are there? libs?
+        a-
+            data model:
+                rdf, property graph... 
+            quering lan: 
+                sparql, cypher, datalog ...
+            libs:   
+                online, neo4j, vlog4j
+    *q- datatypies, object model, labeling rules in property graph? 
+        op15 round 
+    q- property graph has some limiations? 
+        a- 
+            may not suitable to model, e.g., Wikidata statements
+        Property Graph in this form is therefore not 
+            suitable to model, e.g., Wikidata statements:
+        op20 
+    q- transform From Property Graph to RDF? 
+    q- from rdf to property graph? op22 
+    h-q- the diff. from them 
+    s-q- Find up to ten people whose daughter is a professor op29 
+        Count all relationships in the database
+        Count all relationship types in the database
+        Find the person with most friends op-
+        Find pairs of siblings
+        Find friends of all people with name Paul Erdos, and return their ˝
+            name and the start date of the friendship
+    h- Cypher has many further features, Subqueries, Filter...
+    q- property graph makes data in two layers? which two? 
+    //detailready// 
+---slide11--- The Cypher Query Language
+    h- an other lan. which should also be familier with 
+    q- The shape of a Cypher query 
+    h- The order of clauses affects the semantics of queries
+    h- we can query nodes with more than one properties when using cypher
+    h- lan. semantic issues 
+    q- how to express path patterns? 
+    h- how to write a query with "optional"
+    https://console.neo4j.org/
+    use this online console to train cypher skills 
+    q- the value cannot be distinguished from “unbound”? y 
+    h- powerful path manipulation features are available
+    pp- key- what means homomorphisms, isomorphim op30 
+    //detailready// 
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
 ---slide12---Knowledge Graph Quality and Validation
+    h- we focus on quality measurment, and monitor them automatically
+    q- two dimensions of KG(from requirements)? op13 
+    q- what are Functional quality of that? x3 
+    q- what are non-functional? x5 
+    q- what is  TimBL’s Open Data Quality proposal, 5-star quality metric
+        op18 
+        the best--linked open data
+    h- the idea that see KGs as software and measure its quality 
+    h- always subjective measurments 
+    q- The distinction between “operational” and “declarative”
+    q- checking approach? x2x2 op30 
+    q- what is Competency questions? 
+        classical ones...
+        a example? op33 
+    h- similar to test case (unit test)
+    q- what are typical  functional metrics of kg?
+        x3 
+    h- Unit tests can also validate non-functional criteria.
+    h- in detail, we can use unit test to acc. this 
+    q- what is XML Schema used for? ext op37 
+    key- schema lan. 
+        An XML Schema describes the structure of an XML document.
+        define the legal building blocks of an XML document:
+        (define data types for elements and attributes) 
+        ...
+        https://www.w3schools.com/xml/schema_intro.asp
+    q- rdf schema? x2 op38 
+    q- Validating using SHACL and ShEx
+    q- diff. of thee two: SHACL and ShEx
+    h-q- many criteria to measure quality of kg, what are they?
+    q-  basic approaches for automatic quality checks?  x2
+    h- rdf schama -- RDF constraint languages 
+        like SHACL and ShEx 
+        they can declaratively specify constraints 
+    //detailready// 
 ---slide13---Centrality measures
+    q- what is Centrality 
+        a- how to return most “important” ones on top
+    q- Possible Solution and their problems? op04 
+        a- application dep. 
+    h- precompute some metrics, and use them in queries 
+    h- it is about network analysis 
+    q- what are typical networks? they are becoming more and more imp. nowadays
+    h- different notions of centrality can be measured, as for diff. types of graph/ application 
+    h- what is one-step paths
+    h- Paths might be more important if they pass through important nodes
+    h- follwing parts will focus on application free model of centrality calcu. 
+    q- what is Degree centrality? op13 
+    h- wikibase:sitelinks is a pre-computed degree centrality
+    q- pro cons of Degree centrality p15 
+    q- the random walk process? 
+        take a node randomly, uniformly 
+        the same uniform probability for each choice of edge
+    h- it will converge to some limit, we can even compute them dirc. 
+    h-q- what is the actual operation we iteratively apply? op28 
+    q- what is eigenvector centrality op29 
+    h-q- what is the components of eigenvectors? their meaning? op30
+    h- we only need the relative importance of nodes, scaling is ok  
+    q- we want well-behaved eigenvectors, how can we get them? op32 
+    q- what is Perron-Frobenius Theorm 
+    q- what means irreducible for a matrix? op32 
+    q- what means strongly connected for a directed graph? op34 
+        x2 characterise? 
+    invq- what means dead ends, why not good? op- 
+    invq- two cases that may lead to invalid non-meaningful centrality measure?
+    q- what is transition matrix? op21 
+    q- what is the meaning of MM? two adj. matrix multply one after an other 
+        or more? op36 
+    h- use path to count centrality, we have to deal with path len. issues 
+        penalize longer paths 
+    q- what is the Katz centrality
+    h- centrality is a measurment used to compare to other nodes 
+    q- alpha must not too large, how can its value be computed? op39 
+    q- centralities? eigenvector centrality and katz centrality, diff? 
+        in-degree centrality, out-degree centrality
+    q- pro cons of katz centrality op41 
+    q- the idea of pagerank? line by line, speak first 
+    q- what is the iterative computing scheme used in pagerank op44 
+        taxation? damping? 
+    q- the effect of damping factor? too large? too small? op46 
+    q- does pagerank converges quickly? y 
+    q- compare pagerank to katz centrality
+    h- centrality based on graph structure 
+    //detailready/
 ---slide14---Community detection
+    q- what is closeness centrality? op08 
+        h- has to be strongly connected graph 
+    q- limiations of closeness centrality and solutions? op10 
+    q- what is harmonic centrality? solved what issue of closeness? 
+        op- 
+    q- what is betweeness centrality? op13 
+        what is N-1 N-2 here? 
+        h- best used for star-shaped structure 
+    h- there is sth. diff. when using this metric 
+    q- how fast can we achieve when imp. betweeness metric 
+        op15
+    h-q- summerize all centrality criteria? op16 
+        what are their meaning intuitively? 
+    q- what is Community feature? op18
+        a-more likely to be connected when in two nodes in one Community
+        ... 
+    h-key- social network analysis 
+    q- why we study Community activity? op19 
+    q- approach of Girvan-Newman their algorithm? op- 
+        the idea? 
+        the algo? GN algorithm 
+    h-q- it is a hierarchical clustering algo. what this mean? 
+    q- run GN algo in this graph op28 
+    h- betweeness-based clustering 
+    lan- dandrogram tree-view 
+    q- what is the computational complexity of the betweeness centrality? 
+        how to improve that? x2 op33 
+    q- when to stop? x3 possibles op35 
+    lan- hypothetical Community partitioning 
+    h- partation quality estimation 
+    pp- op39 modularity define? 
+    q- naive appro. random graph, problem? solve? op39 
+    q- what is modularity used for? op- 
+        a- measures degree of random? 
+    q- calcu. of modularity metrics? op42 
+    q- what appro. used to gen random. data as ref? op41 
+        a- degree-preserving random graphs 
+    q- range of Q? how can it been used? the higher the better? 
+        should be higher than 0? yy
+    h- modularity based Community detection, meaning
+        not only GNalgo. 
+    q- inherent limiations of modularity- based approaches? op45 
+        cons of that? x2 
+            can not detect too small ones 
+            may too far away from optimum 
+    h- key of modularity based algorithm? detect if it has enough connections 
+        in between 
+    //further detection methods op46 
+    q- idea of minimum cuts? 
+    q- does it suitable for social Community detection? 
+    q- idea of Bi-Cliques 
+        how works? op48 
+        features of it? x3 
+            a- 
+                based on math. bkg 
+                good also for small Communities 
+                freq. used on social netw. anal.
+    q- the idea based on statistics? features of it? 
+        a- 
+            find the underlaying model, to explain data 
+            1.hard to solve 
+            2.can find overlapping ones
+            3.more insightful 
+    //detailready//
 ---slide15---Summary and Outlook 
-
-
-
+    h- to understand graphs 
+    q- what is ontology op10 
+        which parts are there? x4 x2big 
+    h- knowledge of a domain of interest 
+        特殊领域的知识库，其中还可以做推理
+    q- snomed ct? op11 
+        a- health data record sys. provides nomenclature
+    h- modeling and reasoning relationships
+    h- this ontology sys. can be used for clinical information retrival 
+    h- relationships are modelled formally 
+    q- diff. from taxonomy and databases? op10 op13 
+    q- what is an ontology language? op14 
+        a- for encode and exchange 
+    key- description logic 
+        based on first order logic 
+    h- owl based on description logic, can be transfered to rdf 
+    h- formal semantics of ontology lan. has logical meaning 
+    q- what is reasoning? 
+        a- analyse and evaluate in logical database 
+        deduce more know. based on existing database 
+        entail addition facts, hidden 
+        we can enlarge db in this way 
+    q- reasoning tasks in ontology system? x4 
+    q- what is entailment? op15 
+    q- qa process? ext 
+        a- find deduced query results 
+    q- diff. bet. ontology lan. and constraints lan.? op16 
+        and their commons
+    q- what are : ontology based query answering, ontology based data integration 
+    q- we can also use ontology to enlarge traditional db? y ext 
+    //detailready//
+    
+    
+    
 
 
 

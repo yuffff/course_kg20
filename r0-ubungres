@@ -1,0 +1,66 @@
+
+    //
+        find meaningful tasks 
+        find pics when look insite  
+
+        likely ques.: sparql query, cypher query, graph based task 
+            hpossi- > short- > sp- = cy- = emu- > possi- > the others 
+    //
+
+    u0
+        https://github.com/knowsys/Course-Knowledge-Graphs 
+    u1 
+        // others are prog. tasks
+        th-1.4 -
+    u2
+        th-2.1 -
+    u3  //-05.11.2019 
+        //th-3.1 ipad 
+        //th-3.2 wo pic
+        //th-3.3 wo pic 
+    u4  
+        short-thp-4.1
+        short-thp-4.2
+        //4.4 wrong answer pic -ans in ex5
+    u5  
+        sp-5.1  
+        sp-5.2 
+        th-5.4
+        thp-5.5  
+    u6   
+        th-6.1
+        th-6.2
+        th-6.3 
+        sp-6.4 x4 
+    u7
+        short-thp-1 
+        short-thp-2
+        sp-3
+        sp-4 x4 
+    u8 
+        short-sp-1 
+        short-th-2
+        short-4
+    u9
+        1
+        2
+        short-3
+        4
+        possi-5
+    u10     
+        possi-1
+        short-2
+    u11
+        short-1 
+        short-2
+    u12
+        possi-1
+        th-2
+        possi-3
+    u13
+        -
+    u14
+        hpossi-1
+        hpossi-2
+        hpossi-3
+

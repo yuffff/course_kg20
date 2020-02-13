@@ -10,6 +10,10 @@
 // 有些东西直接看看不懂，不如看看网上怎么讲
 
 ---slide6---SPARQL: Semantics
+    h- SPARQL is a feature-rich query language
+    h- bgps are conjunctions of triple patterns
+    q- what is miu. in this context? op04 ?? 
+    h- SPARQL algebra that are under queries, which is key to understand the complexity of it 
     h- query algebra operations
     h- "we define the multiset" are imp. 
     h- each operation corresponds to a underlying Semantic
