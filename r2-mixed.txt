@@ -809,7 +809,7 @@
     pp- key- what means homomorphisms, isomorphim op30 
     //detailready// 
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
----slide12---Knowledge Graph Quality and Validation
+---rem1-slide12---Knowledge Graph Quality and Validation
     h- we focus on quality measurment, and monitor them automatically
     q- what is quality? two dimensions of KG(from requirements)? op17 
         func. 
@@ -836,7 +836,7 @@
             Subjective:experts
             objective:clearly defined criteria
         automatically
-            Operational:Ad hoc implementation 
+            Operational:Ad hoc implementation, unit test 
             Declarative:Schema
     q- what is Competency questions? 
         classical ones...
@@ -867,10 +867,37 @@
         SHACL, ShEx 
             shape constrain lan  
             shape expression 
-    q- Validating using SHACL and ShEx
-    q- diff. of thee two: SHACL and ShEx
-    h-q- many criteria to measure quality of kg, what are they?
-    q-  basic approaches for automatic quality checks?  x2
+    key- Validating using SHACL and ShEx
+        https://shacl.org/playground/
+        take shape graph and data graph as input 
+        check value type possible 
+        pp- "a" meaning? ext pg
+        sh:path -- show which property is being restricted 
+            -> target property
+        sh:minCount and sh:maxCount: Can specify the minimum and maximum number of allowed values for the property
+        sh:nodeKind: Can be used to specify that all values of 
+            a property must be Literals, IRIs or Blank nodes.
+        sh:class what class it should belone to 
+        sh:targetClass target class, for all person eg 
+    q- what is sh:path, sh:datatype, sh:targetClass, sh:pattern, sh:nodeKind
+        sh:closed true ;
+    q- the exercise 12.1! 
+    q- error messages and severity levels? 
+    q- what is a shape graph? op38 
+    h- a rich vocabulary for specifying property constraints
+    less-q- CLOSED and EXTRA play the role of what in SHACL? ext 
+        sh:closed and sh:ingoredProperties?
+    q- common and diff. of the two: SHACL and ShEx op45 
+        common-
+            both support recursive constraints and disjunctions
+        diff-
+            SHACL can provide additional error information 
+                and has lower complexity
+    q- complexity of the Validating? 
+        NP-complete complexity in the size of the graph
+        NP-completeness seems more challenging for ShEx than for SHACL
+    h-q- many criteria to measure quality of kg, what are they? -re
+    q-  basic approaches for automatic quality checks?  x2 -re 
     h- rdf schama -- RDF constraint languages 
         like SHACL and ShEx 
         they can declaratively specify constraints 
