@@ -4,6 +4,7 @@
 // summ. tipps of studying 
 
 workflow:
+    //时间关系，中间也可以穿插跳跃
     premix
         materials finding 
         key2rough understanding 
@@ -17,7 +18,7 @@ workflow:
         answer filling 
             (keyword only! shall extended in oral)
         ...
-    ---//rememberready//
+    ---//rem ready//
     rempractice
         visual based, speak ori. 
 typical questions:

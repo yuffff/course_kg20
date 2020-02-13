@@ -4,15 +4,166 @@
     answer filling needed, reform needed
 
     transfer from k2rough to here: 
-        just copy here, and add a- . do not del, add only. 
-    
+        just copy here, and add ra- . do not del, add only. 
+    extract q- with python
+    def. should be reformed from original description 
+        and: pro cons, def, ... 
+        use ra- to represent this 
+            reformed answer 
+        can be ommited if the answer is stf. 
+    something do not need to reform! so , just give the opxx  
+    key abvility:
+        1.summ, highlev understanding 
+        2.reform of the answers 
+        3.easy prac.
 //
+
+---rem-global---
+    ok-pp- what are prefixed names in this pic? s2p22 
+    q- *The OWL Web Ontology Language extends the semantic features of RDF
+        what are semantic features here? 
+    h- theory is sth. build upon each other 
+    pp- expressivity bet. sparql and rdbms sql?
+    q- what does rdf:type mean?     
+        a- 
+            state that a res. is a instance of a class 
+    q- what means a db is normalized? 
+        a- units converted to base units ...
+    q- we can import wikidata to neo4j? y 
+    q- qa pipeline? graph db querying 
+    q- redis? 
+    h- db enlarge operation -- make it complete 
+    q- what are wikis? 
+        a- human knowledge network/ system
+    h- summ highlev s0op30
 // from end slide 3, others in pdf file  
----slide0---
----slide1---
----slide2--- 
+---rem-slide1---* usually starts from here...
+    h- the hype 
+    q- what is KG op18 
+    q- features of KG sys? op19 
+    q- why wikipedia not KG? rdbms not? op29 
+    q- def. of simple undirected graph? set of? op- 
+    q- what is hypergraph? op33 
+        a- with higher arity edges
+    q- what is graph with self-loops
+            a- having edges to itself 
+    q- what is multi-graph
+            a- multiple edges with the same vertices same dir 
+    q- what is in-degree
+            a- number of edges pointing towards it
+    q- what is out-degree 
+            a- number of edges pointing from it
+    q- what is directed path
+            a- a sequence of consecutive edges, two possible dirs
+    q- what is simple path (directed or undirected)
+            a-path without repeated vertices
+    q- what is notations of a path op-
+            v1->v2 e 
+    q- what is strongly connected
+            a- a directed path from any vertex to any other 
+    q- what is adjacency matrix
+            a- a matrix of VxV, value 1 if there is an edge
+    q- what is missed in adjacency list rep. op40 
+    q- possible rep. of a graph? x3 
+        how they can be adapted to other complex graphs? op39 
+    q- pros and cons of each? op41 
+    q- what is rdf? ext op59 
+        a- 
+            resource description framework
+            used to modeling directed, edge-labelled graphs
+            a open standard 
+    q- why we need rdf? h ext 
+        a- 
+            graphs may be modeled diff. from diff. people 
+            we want to exchange them, merge them auto. 
+            so we need a standard to describe the desired graph 
+    q- lab elling in rdf? restricted form of multi-graphs? op51 
+        a- multiple edges can exist when they have diff. labels 
+    q- what are uri/iri/url ? op54 
+    q- RDF uses IRIs in two ways? op57 
+        a- vertices and edge label 
+    q- shape of a url? op55 
+    q- URIs vs. URLs? 
+        a- url should specify the location of a digital document
+            uri not 
+    q- urn used for? op56 
+        a- isbn, used for  naming resources 
+    q- rdf identifies vertices and edge-types using? 
+        a- iris 
+---rem-slide2---
+    q- where comes from iris? x2 op5 
+        a- create reuse 
+    q- ways to construct Resolvable IRIs? s2p5
+        ...
+    q- why use domain in iris? op5 
+        a- ownership 
+    q- we should avoid existing pages? y ? 
+    q- iris should display to users? n 
+    **q- how to make iris Resolvable? x2 
+        fragments, HTTP redirects, Content negotiation
+    q- which to use to select the type of file returned? op11
+        Accept header
+    q- Why not use IRIs for data value? op16 
+        a- 
+            same meaning every where 
+            buildin understanding 
+            more interpreted
+    **q- how to rep. a value in rdf? example? xsd? 
+        a- "lexical val"^^datatype-IRI 
+            "547"^^xsd:int 
+            "18-02-2020"^^xsd:date
+        a- datatype based on xml schema 
+    **q- datatype in RDF is specified by the following components? the shape?
+        value space, lexical space, lexical to value maping 
+    q- lexical space of a integer? op20 
+    q- value space and lexical space of decimal? 
+        arbitry lang decimal numbers, decimal strings 
+    h- we can also use rdf:datatype xsd 
+    **q- rdf terms? op27 
+        IRIs, blank nodes, and literals.
+    q- a RDF literal is an expression of form? 
+        a- "lexical value"^^datatype?
+    q- language-tagged string is an expression of the form?
+        a- "string"@language
+    q- what is bnodes? 
+        a- 
+        vertices that are not identified by a IRI
+        placeholder
+        there is something at this position
+        as auxiliary vertices
+
+    **q- what is RDF graph? which types are allowed in which part? 
+        a-
+            a set of triples
+            subject: iri, bnodes 
+            predicate: iri
+            object: iri, bnodes, literal
+    q- ill-formed literals are allowed in graphs? y 
+    q- RDF Serialisations, their formats? x5 
+        op32 
+    q- encode this graph to ntriple? op34 
+    **q- procons of the rdf representations x2? op41 
+        Ntriple
+            pro: simple/fast/basic 
+            c:space/non-humanreadable
+        turtle 
+            pro:simple/humanreadable 
+            cons:can not parse by grab 
+    q- Blank nodes can be encoded using square brackets? y 
+    lan- semicolon ; colon .
+    h- xml rep. is not good, so we need rdf 
+    q- what is the usage of xsd,rdf,rdfs prefix? op43 
+    q- rdf triple, rdf graph, rdf dataset? op44 
+    *q- what is named graph, and how to encode it? op45 
+    q- RDF graphs are really hypergraphs with ternary edges? y 
+    q- we have to express The relation of predicates, so hypergraphs? y 
+    q- RDF provides several properties for describing properties
+    h- Constraint languages SHACL and SHEX can restrict graphs syntactically
+    q- what is properties? op56 
+        ra- used for edge labels 
 //////////////////////////////////////an overview, start tasks//////////////////////////////////////
 ---part of slide 3---
+    
     +linked to a pdf 
     q- what is the partial func.? vs total func. ?  ext
         a- all inputs are considered 
@@ -34,6 +185,7 @@
     q- what is Boolean queries? op50 
     q- What is evalG(eg:s eg:p eg:o) over the graph G = {eg:s eg:p eg:o}? op50
     h- sparql is meanly depend on matching graph patterns(暴力枚举？)
+    pp- Queries that cannot yield bindings for any variable op50
 ---slide4---
     h- Wikidata as a working example to try out our knowledge, other resources possible 
     h- Wikidata is a Free Knowledge Graph database that we can play with 
@@ -534,6 +686,9 @@
     h- in detail, we can use unit test to acc. this 
     q- what is XML Schema used for? ext op37 
     key- schema lan. 
+        a- 
+            schema lan. are used to describe structures of documents
+            define eg. what are legal blocks, datatypes, ... 
         An XML Schema describes the structure of an XML document.
         define the legal building blocks of an XML document:
         (define data types for elements and attributes) 
@@ -677,21 +832,28 @@
     q- what is an ontology language? op14 
         a- for encode and exchange 
     key- description logic 
-        based on first order logic 
+        a- based on first order logic 
     h- owl based on description logic, can be transfered to rdf 
     h- formal semantics of ontology lan. has logical meaning 
     q- what is reasoning? 
-        a- analyse and evaluate in logical database 
+        a- 
+            analyse and evaluate in logical database 
         deduce more know. based on existing database 
         entail addition facts, hidden 
         we can enlarge db in this way 
+    q- from view of a sys. we want non-redandent info.? y 
     q- reasoning tasks in ontology system? x4 
     q- what is entailment? op15 
-    q- qa process? ext 
-        a- find deduced query results 
+    q- QA process? ext 
+        a- 
+            find deduced query results 
     q- diff. bet. ontology lan. and constraints lan.? op16 
         and their commons
-    q- what are : ontology based query answering, ontology based data integration 
+            a- 
+                ...
+    q- what can ontology be used? 
+        a- 
+            query answering, data integration from diff. db 
     q- we can also use ontology to enlarge traditional db? y ext 
     //detailready//
     
