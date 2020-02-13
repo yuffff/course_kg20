@@ -1,0 +1,288 @@
+    invq-   indicates inversed questions 
+    extract q- with python
+---rem-global---
+    q- *The OWL Web Ontology Language extends the semantic features of RDF
+    q- what does rdf:type mean?     
+    q- what means a db is normalized? 
+    q- we can import wikidata to neo4j? y 
+    q- qa pipeline? graph db querying 
+    q- redis? 
+    q- what are wikis? 
+---rem-slide1---* usually starts from here...
+    q- what is KG op18 
+    q- features of KG sys? op19 
+    q- why wikipedia not KG? rdbms not? op29 
+    q- def. of simple undirected graph? set of? op- 
+    q- what is hypergraph? op33 
+    q- what is graph with self-loops
+    q- what is multi-graph
+    q- what is in-degree
+    q- what is out-degree 
+    q- what is directed path
+    q- what is simple path (directed or undirected)
+    q- what is notations of a path op-
+    q- what is strongly connected
+    q- what is adjacency matrix
+    q- what is missed in adjacency list rep. op40 
+    q- possible rep. of a graph? x3 
+    q- pros and cons of each? op41 
+    q- what is rdf? ext op59 
+    q- why we need rdf? h ext 
+    q- lab elling in rdf? restricted form of multi-graphs? op51 
+    q- what are uri/iri/url ? op54 
+    q- RDF uses IRIs in two ways? op57 
+    q- shape of a url? op55 
+    q- URIs vs. URLs? 
+    q- urn used for? op56 
+    q- rdf identifies vertices and edge-types using? 
+---rem-slide2---
+    q- where comes from iris? x2 op5 
+    q- ways to construct Resolvable IRIs? s2p5
+    q- why use domain in iris? op5 
+    q- we should avoid existing pages? y ? 
+    q- iris should display to users? n 
+    **q- how to make iris Resolvable? x2 
+    q- which to use to select the type of file returned? op11
+    q- Why not use IRIs for data value? op16 
+    **q- how to rep. a value in rdf? example? xsd? 
+    **q- datatype in RDF is specified by the following components? the shape?
+    q- lexical space of a integer? op20 
+    q- value space and lexical space of decimal? 
+    **q- rdf terms? op27 
+    q- a RDF literal is an expression of form? 
+    q- language-tagged string is an expression of the form?
+    q- what is bnodes? 
+    **q- what is RDF graph? which types are allowed in which part? 
+    q- ill-formed literals are allowed in graphs? y 
+    q- RDF Serialisations, their formats? x5 
+    q- encode this graph to ntriple? op34 
+    **q- procons of the rdf representations x2? op41 
+    q- Blank nodes can be encoded using square brackets? y 
+    q- what is the usage of xsd,rdf,rdfs prefix? op43 
+    q- rdf triple, rdf graph, rdf dataset? op44 
+    *q- what is named graph, and how to encode it? op45 
+    q- RDF graphs are really hypergraphs with ternary edges? y 
+    q- we have to express The relation of predicates, so hypergraphs? y 
+    q- RDF provides several properties for describing properties
+    q- what is properties? op56 
+---part of slide 3---
+    q- what is the partial func.? vs total func. ?  ext
+    p-q- what is the result of sparql formally op42 
+    q- what is solution sequence op42 
+    q- what doeas this mean? µ(σ(P)) ⊆ G op43 
+    q- what is the cardinality in this position? given a graph and a query op44
+    q- what is the result from this query? to this graph? this database? op45 
+    q- What is evalG(eg:s eg:p eg:o) over the empty graph G = ∅? op48 
+    q- what is Boolean queries? op50 
+    q- What is evalG(eg:s eg:p eg:o) over the graph G = {eg:s eg:p eg:o}? op50
+---slide4---
+    q- what are properties of wikidata? op08 
+    q- applications of wikidata? 
+    q- wikidata is a Wikimedia project? what is WMF? op17 
+    q- wikidata can be viewed and modified online? 
+    q- basic principles of wikidata? op20 x7 
+    q- what are two views of wikidata? and their properties. op28 
+    q- what is Wikidata entity documents? the content it has? - op34 
+    q- what is the main part of the page? 
+    q- how to realise entity-level information integration? 
+    p-q- how does property pages differs from entity pages? op34
+    q- Why does Wikidata use abstract (numeric) QIDs and PIDs? op35 
+    q- How to find the ID of an item? ext op35 
+    q- what is Wikidata’s basic information units? 
+    q- how statements can be build? op37 
+    q- start time is a property type? y
+    q- how does wikidata store infos. internally? op41
+    q- why Data is converted to RDF? for external use? 
+    p-q- differences bet. Wikidata’s graph view and rdf? op43 x3 
+    q- how to encode statements when where are many annotations? op46 
+    q- what is diff. bet. wdt: and p: op50 ext 
+    q- rules that trans. from wikidata to rdf? ext -h op51 
+    q- is there some information loss during that conversion? y
+    q- how to encode statements? -h 
+    q- how to encode Labels, descriptions, aliases? Sitelinks? op52 
+    q- what is content negotiation? ext 
+    q- liberal configuration, how about the timeout? how many secs? op54 
+    q- how WDQS can be used? op55 x3 
+    q- SPARQL query features? ext! 
+---slide5--- core basic of the following chapters! try them out 
+    q- what are property paths? op5 
+    s-q- Find all descendants of Johann Sebastian Bach op06 
+    q- how does this execute? ˆ!ˆeg:p1*/eg:p2?|eg:p3+ op07 
+    q- ˆ(iri*) is actually the same as the meaning of (ˆiri)*? 
+    p-q- meaning of the following ppp op09 
+    q- the semantic def. of the property paths (more formal) op11
+    q- why counting paths is not feasible in g op14 
+    q- Find all descendants of Bach that were composers op15 
+    q- how filters can be used? 
+    s-q- find out where in Germany towns have names ending in “-ow” or “-itz” op18 
+    q- how semicons can be used? ext 
+    q- The position of filters within a pattern is not relevant? y
+    q- are all pairs of resources of distinct type might be comparable? n op22 
+    q- how to check if two terms are the same (not just equal-valued) in filter? op-
+    q- how to check if a string matches a regular expression? 
+    q- howto xxx ... op- 
+    q- check test type of RDF term? in filter block op- 
+    q- what func. are there can be used to compute? 
+    q- how to extract parts of a date? -prac. op24 
+    s-q- From Wikidata, find out how many living people are know who are born in Dresden op25 
+    q- how to provide a form of negation in queries? op- 
+    q- how errors propagate in ql? 
+    q- what is effective boolean value (EBV)? op26 
+    q- why there can be calcu. correctly? ext 
+    q- how to set multiplicity of any element in the result to 1? op29 
+    s-q- Find cities and their population densities op28 
+    q- what does projection mean? ext 
+    q- what are Solution Set Modifiers? ext 
+    q- what means OFFSET? operator? op- 
+    s-q- In Wikidata, find the largest German cities, rank 6 to 15 op30
+    q- what is group graph pattern? op- 
+    s-q- In Wikidata, find everybody who is a composer by occupation or who has composed something op33
+    q- FILTER NOT EXISTS vs MINUS? op- 
+    s-q- In Wikidata, find composers, and, optionally, their spouses op35 
+    s-q- In Wikidata, find universities located in one of the 15 largest German cities op- 
+    q- what is Subqueries? 
+    q- what means BIND operator?  op39 
+    s-q- find people who are composers, or musicians, or who play some instrument op40 
+    q- what is VALUES expression op-
+    q- only IRIs or literals can be used in VALUES? y
+    q- what is the important use of VALUES? op- 
+    q- efficiently combine 100 possible options? how to do that? op41 
+    q- what is that "as" part in select? what are they actually? op42 
+    q- what is the problem here? given a piece of query code op- 
+    q- Assignments of constants to variables are better realised with VALUES? 
+    q- if we are going to assign a constant variable, which should we use? 
+    s-q- write a code to queryxxx use a constant xxx ext 
+    q- what is grouping? op44 
+    q- what is Aggregate function? op- in the select part? 
+    invq- what we should do if we want to calcu. value as return 
+    sq-  find the ten most common professions of people born in Dresden op- 
+    q- for grouping, we have to select aggregate ones? n 
+    q- is there allowed? (two para. showed)
+    p-sq- find all professions of more than 100 people born in Dresden
+---slide6---SPARQL: Semantics
+    q- what is miu. in this context? op04 ?? 
+    q- how to transfer to semantic operations. 
+---slide7---SPARQL: Complexity and Expressivity
+    q- what is the naive approach and its complexity
+    q- what computational models are? 
+    q- how To classify algorithms? 
+    q- prob. of Finding BGP solutions is a decision prob. and has NP complexity
+    q- complexity hierarchy
+    q- many-one reduction 
+    q- why practical?
+    q- Complexity of SPARQL Evaluation
+    q- Where this sketch is lacking? s7op58
+---slide8---SPARQL Limits/Datalog
+    q- why not every set of RDF graphs corresponds to a query
+    q- The lower the complexity of query answering, the lower its expressivity, which complexity?
+    q- why can not measure expressivity with complexity? not so correct? op08 
+    q- give a example shows that Complexity not equ. to expressivity op- 
+    q- proof that SPARQL cannot express parallel reachability. op- 
+    q- what can not be expressed? op14 
+    q- sum- limits of sparql? x4+x4 
+    q- why not support them in sparql? 
+    q- Potential reasons? x3 
+    q- what is the func. of the following code? Example 8.5 op17 
+    s-q- replaces all uses of the hasSister property with a different encoding of the same information
+    q- diff. bet. datalog and prolog 
+---slide9---Rules for Querying Graphs
+    q- how apply Datalog to graph data? x2 
+    s-q- parallel s-t-reachability for predicates p and q (for triple encoding)
+    q- does not imply that all P-computable problems can be
+    q- Query for maternal ancestors of Ada Lovelace op37 
+---slide10---Property Graphs 
+    q- what is “Property Graph” 
+    q- how can property graph be used? which model exists? x3 op08 
+    q- Types of “Property Graphs”? x3+ 
+    q- what does it mean "Relationship types" in rdf world? 
+    *sum-q- what data model and corresponding quering lan. are there? libs?
+    *q- datatypies, object model, labeling rules in property graph? 
+    q- property graph has some limiations? 
+    q- transform From Property Graph to RDF? 
+    q- from rdf to property graph? op22 
+    h-q- the diff. from them 
+    s-q- Find up to ten people whose daughter is a professor op29 
+    q- property graph makes data in two layers? which two? 
+---slide11--- The Cypher Query Language
+    q- The shape of a Cypher query 
+    q- how to express path patterns? 
+    q- the value cannot be distinguished from “unbound”? y 
+---slide12---Knowledge Graph Quality and Validation
+    q- two dimensions of KG(from requirements)? op13 
+    q- what are Functional quality of that? x3 
+    q- what are non-functional? x5 
+    q- what is  TimBL’s Open Data Quality proposal, 5-star quality metric
+    q- The distinction between “operational” and “declarative”
+    q- checking approach? x2x2 op30 
+    q- what is Competency questions? 
+    q- what are typical  functional metrics of kg?
+    q- what is XML Schema used for? ext op37 
+    q- rdf schema? x2 op38 
+    q- Validating using SHACL and ShEx
+    q- diff. of thee two: SHACL and ShEx
+    h-q- many criteria to measure quality of kg, what are they?
+    q-  basic approaches for automatic quality checks?  x2
+---slide13---Centrality measures
+    q- what is Centrality 
+    q- Possible Solution and their problems? op04 
+    q- what are typical networks? they are becoming more and more imp. nowadays
+    q- what is Degree centrality? op13 
+    q- pro cons of Degree centrality p15 
+    q- the random walk process? 
+    h-q- what is the actual operation we iteratively apply? op28 
+    q- what is eigenvector centrality op29 
+    h-q- what is the components of eigenvectors? their meaning? op30
+    q- we want well-behaved eigenvectors, how can we get them? op32 
+    q- what is Perron-Frobenius Theorm 
+    q- what means irreducible for a matrix? op32 
+    q- what means strongly connected for a directed graph? op34 
+    invq- what means dead ends, why not good? op- 
+    invq- two cases that may lead to invalid non-meaningful centrality measure?
+    q- what is transition matrix? op21 
+    q- what is the meaning of MM? two adj. matrix multply one after an other 
+    q- what is the Katz centrality
+    q- alpha must not too large, how can its value be computed? op39 
+    q- centralities? eigenvector centrality and katz centrality, diff? 
+    q- pro cons of katz centrality op41 
+    q- the idea of pagerank? line by line, speak first 
+    q- what is the iterative computing scheme used in pagerank op44 
+    q- the effect of damping factor? too large? too small? op46 
+    q- does pagerank converges quickly? y 
+    q- compare pagerank to katz centrality
+---slide14---Community detection
+    q- what is closeness centrality? op08 
+    q- limiations of closeness centrality and solutions? op10 
+    q- what is harmonic centrality? solved what issue of closeness? 
+    q- what is betweeness centrality? op13 
+    q- how fast can we achieve when imp. betweeness metric 
+    h-q- summerize all centrality criteria? op16 
+    q- what is Community feature? op18
+    q- why we study Community activity? op19 
+    q- approach of Girvan-Newman their algorithm? op- 
+    h-q- it is a hierarchical clustering algo. what this mean? 
+    q- run GN algo in this graph op28 
+    q- what is the computational complexity of the betweeness centrality? 
+    q- when to stop? x3 possibles op35 
+    q- naive appro. random graph, problem? solve? op39 
+    q- what is modularity used for? op- 
+    q- calcu. of modularity metrics? op42 
+    q- what appro. used to gen random. data as ref? op41 
+    q- range of Q? how can it been used? the higher the better? 
+    q- inherent limiations of modularity- based approaches? op45 
+    q- idea of minimum cuts? 
+    q- does it suitable for social Community detection? 
+    q- idea of Bi-Cliques 
+    q- the idea based on statistics? features of it? 
+---slide15---Summary and Outlook 
+    q- what is ontology op10 
+    q- snomed ct? op11 
+    q- diff. from taxonomy and databases? op10 op13 
+    q- what is an ontology language? op14 
+    q- what is reasoning? 
+    q- from view of a sys. we want non-redandent info.? y 
+    q- reasoning tasks in ontology system? x4 
+    q- what is entailment? op15 
+    q- QA process? ext 
+    q- diff. bet. ontology lan. and constraints lan.? op16 
+    q- what can ontology be used? 
+    q- we can also use ontology to enlarge traditional db? y ext 
