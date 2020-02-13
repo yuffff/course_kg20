@@ -162,9 +162,53 @@
     q- what is properties? op56 
         ra- used for edge labels 
 //////////////////////////////////////an overview, start tasks//////////////////////////////////////
----part of slide 3---
-    
-    +linked to a pdf 
+---rem-slide3---
+    q- what can be encoded in RDF? almost every thing? 
+        databese, other graphs 
+    h- tools and libs are imp. acco. to standards, which will help us 
+        dev. sth
+    q- chanllenges when translating data into rdf? op09 
+        represent n-ary relations 
+        sort 
+    *q- how to deal with them? x3 to sort, compare them op20 
+        n-ary relations 
+            Introduce auxiliary nodes 
+            RDF Reification
+            has a dedicated vocabulary to reify RDF triples
+        sort 
+            linked lists
+            order-indicating properties
+            give up     
+    q- what is sparql op23 
+    h- we can update a database use sparql
+    s-q- asks for a list of all resource IRIs together with their labels op24 
+    sq- Find up to ten people whose daughter is a professor
+    q- Count all predicates in the database op27 
+    sq- Find the person with most friends
+    sq- Find pairs of siblings
+    q-  shape of a SPARQL query? x4 which parts? op31 
+        Prologue, Select clause, Where clause,Solution set modifiers
+    q- variable assignment? pattern matching process? predicate
+    q- how to express order? 
+        desc(), ASC() ordering comparator
+    q- how to express "most"? op- 
+    q- further types of queries? x2 
+        ASK query: check the existance 
+        CONSTRUCT query: build new rdf triples 
+    q- does sparql support literals as subject? y 
+        allows variables everywhere
+    q- what is BGP? -a 
+        a set of triple patterns
+        used to describe the patterns, which will be used to query 
+        Turtle snippet that specifies patterns
+    *q- What is the meaning of blank nodes in query patterns?
+        unspecified resource
+        like var. but can not bind 
+    hq- why support literal as subject? 
+        inversed query 
+    q- What is the meaning of blank nodes in query results?
+        a variable was matched to a bnode
+        the bnode id in query and in db may differ 
     q- what is the partial func.? vs total func. ?  ext
         a- all inputs are considered 
     p-q- what is the result of sparql formally op42 
