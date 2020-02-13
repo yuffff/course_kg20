@@ -289,40 +289,43 @@
     q- the effect of damping factor? too large? too small? op46 
     q- does pagerank converges quickly? y 
     q- compare pagerank to katz centrality
----slide14---Community detection
-    q- what is closeness centrality? op08 
-    q- limiations of closeness centrality and solutions? op10 
-    q- what is harmonic centrality? solved what issue of closeness? 
-    q- what is betweeness centrality? op13 
+---rem1-slide14---Community detection
+    *q- what is closeness centrality? op08 
+    **q- limiations of closeness centrality and solutions? op10 
+    *q- what is harmonic centrality? solved what issue of closeness? 
+    *q- what is betweeness centrality? op13 
     q- how fast can we achieve when imp. betweeness metric 
-    h-q- summerize all centrality criteria? op16 
+    h-q- summerize all centrality criteria? op16 x7 
     q- what is Community feature? op18
     q- why we study Community activity? op19 
-    q- approach of Girvan-Newman their algorithm? op- 
+    **q- approach of Girvan-Newman their algorithm? op21
     h-q- it is a hierarchical clustering algo. what this mean? 
     q- run GN algo in this graph op28 
-    q- what is the computational complexity of the betweeness centrality? 
-    q- when to stop? x3 possibles op35 
+    *q- what is the computational complexity of the GN algo? how to improve that? x2 op33 
+    *q- problem of GN algo, when to stop? x3 possibles op35 
+    q- why should preserve node degrees? 
     q- naive appro. random graph, problem? solve? op39 
-    q- what is modularity used for? op- 
+    //q- what is modularity used for? op- 
     q- calcu. of modularity metrics? op42 
-    q- what appro. used to gen random. data as ref? op41 
+    q- what appro. used to gen random. data as degree preserving? op41 
     q- range of Q? how can it been used? the higher the better? 
-    q- inherent limiations of modularity- based approaches? op45 
+    q- inherent limiations of modularity-based approaches? op45 
     q- idea of minimum cuts? 
-    q- does it suitable for social Community detection? 
-    q- idea of Bi-Cliques 
-    q- the idea based on statistics? features of it? 
----slide15---Summary and Outlook 
+    //q- does it suitable for social Community detection? 
+    *q- idea of Bi-Cliques 
+    *q- the idea based on statistics? features of it? 
+---rem1-slide15---Summary and Outlook 
     q- what is ontology op10 
+    **q- which parts are there? x4 x2big 
     q- snomed ct? op11 
     q- diff. from taxonomy and databases? op10 op13 
-    q- what is an ontology language? op14 
-    q- what is reasoning? 
+    *q- what is an ontology language? op14 
+    q- owl based on description logic, can be transfered to rdf? y
+    *q- what is reasoning? ext
     q- from view of a sys. we want non-redandent info.? y 
-    q- reasoning tasks in ontology system? x4 
+    *q- reasoning tasks in ontology system? x2 op15  
     q- what is entailment? op15 
-    q- QA process? ext 
-    q- diff. bet. ontology lan. and constraints lan.? op16 
-    q- what can ontology be used? 
+    **q- QA process? ext 
+    **q- comm. diff. bet. ontology lan. and constraints lan.? op16 
+    q- what can ontology be used? h 
     q- we can also use ontology to enlarge traditional db? y ext 
