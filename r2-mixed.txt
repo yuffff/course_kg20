@@ -992,7 +992,7 @@
             pp-
     h- centrality based on graph structure 
     //detailready/
----slide14---Community detection
+---rem1-slide14---Community detection
     *q- what is closeness centrality? op08 
         close to:
         A node is important, if it is close to many other nodes
@@ -1029,56 +1029,87 @@
         ... 
     h-key- social network analysis 
     q- why we study Community activity? op19 
-    q- approach of Girvan-Newman their algorithm? op- 
+        reveal insights into how networks emerged
+        e improves our understanding
+    **q- approach of Girvan-Newman their algorithm? op21
         the idea? 
+            removing edges of high betweenness
         the algo? GN algorithm 
+            Compute betweenness for all edges
+            Remove edge with largest betweenness value
+            check connected components of remaining graph, 
+                and mark community
+            until enough amount found 
     h-q- it is a hierarchical clustering algo. what this mean? 
+        a dendrogram can be computed 
     q- run GN algo in this graph op28 
     h- betweeness-based clustering 
     lan- dandrogram tree-view 
-    q- what is the computational complexity of the betweeness centrality? 
-        how to improve that? x2 op33 
-    q- when to stop? x3 possibles op35 
+    *q- what is the computational complexity of the GN algo? how to improve that? x2 op33 
+        random sub-sampling
+    *q- problem of GN algo, when to stop? x3 possibles op35 
+        target number 
+        maximum size for communities
+        measurement for community quality
     lan- hypothetical Community partitioning 
+    h- 假想的均匀分布应该是啥样的，这样就可以在检测到均匀分布的时候停下来
+        to simulate the real community networks as good as possi. 
+    q- why should preserve node degrees? 
     h- partation quality estimation 
-    pp- op39 modularity define? 
+    pp- op36    
+    pp- op39 modularity define?
+        describes what a real community should looks like (random )
+        edges in communities as random distributed 
     q- naive appro. random graph, problem? solve? op39 
-    q- what is modularity used for? op- 
+        preserve degree 
+    //q- what is modularity used for? op- 
         a- measures degree of random? 
     q- calcu. of modularity metrics? op42 
-    q- what appro. used to gen random. data as ref? op41 
+    q- what appro. used to gen random. data as degree preserving? op41 
         a- degree-preserving random graphs 
+        idea:
+            cut each edge into two stubs, glue the stubs back together randomly
+        fomula. op42 
     q- range of Q? how can it been used? the higher the better? 
         should be higher than 0? yy
-    h- modularity based Community detection, meaning
-        not only GNalgo. 
-    q- inherent limiations of modularity- based approaches? op45 
+    h- modularity based Community detection, meaning not only GN algo. 
+    q- inherent limiations of modularity-based approaches? op45 
         cons of that? x2 
             can not detect too small ones 
-            may too far away from optimum 
+            fast approximate approaches may too far away from optimum 
+            not so real model 
     h- key of modularity based algorithm? detect if it has enough connections 
         in between 
     //further detection methods op46 
     q- idea of minimum cuts? 
-    q- does it suitable for social Community detection? 
-    q- idea of Bi-Cliques 
+        minimize some value related to it 
+        Prefer cuts that 
+            (1) cut only few edges and 
+            (2) lead to components of similar size
+    //q- does it suitable for social Community detection? 
+    *q- idea of Bi-Cliques 
         how works? op48 
+            1.Split graph into two equal-sized vertex sets
+            2.look for sub-sets
+            3.adjest by adding highly linked vertices
         features of it? x3 
             a- 
                 based on math. bkg 
                 good also for small Communities 
                 freq. used on social netw. anal.
-    q- the idea based on statistics? features of it? 
+    *q- the idea based on statistics? features of it? 
         a- 
             find the underlaying model, to explain data 
             1.hard to solve 
             2.can find overlapping ones
             3.more insightful 
     //detailready//
----slide15---Summary and Outlook 
+---rem1-slide15---Summary and Outlook 
     h- to understand graphs 
     q- what is ontology op10 
-        which parts are there? x4 x2big 
+        description of knowledge about a domain of interest
+        rdf was used to describe graph model 
+    **q- which parts are there? x4 x2big 
     h- knowledge of a domain of interest 
         特殊领域的知识库，其中还可以做推理
     q- snomed ct? op11 
@@ -1087,29 +1118,45 @@
     h- this ontology sys. can be used for clinical information retrival 
     h- relationships are modelled formally 
     q- diff. from taxonomy and databases? op10 op13 
-    q- what is an ontology language? op14 
-        a- for encode and exchange 
+    *q- what is an ontology language? op14 
+        a- 
+            a standard for encoding and sharing info. 
+            for encode and exchange 
     key- description logic 
         a- based on first order logic 
-    h- owl based on description logic, can be transfered to rdf 
+    q- owl based on description logic, can be transfered to rdf? y
     h- formal semantics of ontology lan. has logical meaning 
-    q- what is reasoning? 
+    *q- what is reasoning? ext
         a- 
             analyse and evaluate in logical database 
         deduce more know. based on existing database 
         entail addition facts, hidden 
         we can enlarge db in this way 
     q- from view of a sys. we want non-redandent info.? y 
-    q- reasoning tasks in ontology system? x4 
+    *q- reasoning tasks in ontology system? x2 op15  
+        entailment, find more relationships
+        check Consistency 
+        Query answering
     q- what is entailment? op15 
-    q- QA process? ext 
+        find out more relationships
+    **q- QA process? ext 
         a- 
             find deduced query results 
-    q- diff. bet. ontology lan. and constraints lan.? op16 
-        and their commons
-            a- 
-                ...
-    q- what can ontology be used? 
+    **q- comm. diff. bet. ontology lan. and constraints lan.? op16 
+        comm. 
+            encoded in machine-readable
+            formal semantics
+                -> evaluation
+        diff. 
+            ontology
+                descriptive
+                    -> semantic
+                domain knowledge
+            constrain
+                perscriptive 
+                    -> syntactic
+                measure quality 
+    q- what can ontology be used? h 
         a- 
             query answering, data integration from diff. db 
     q- we can also use ontology to enlarge traditional db? y ext 
