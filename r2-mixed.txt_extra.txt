@@ -1,6 +1,6 @@
     invq-   indicates inversed questions 
     extract q- with python
----rem1-global---
+---rem2-global---
     q- *The OWL Web Ontology Language extends the semantic features of RDF
     q- what does rdf:type mean?     
     q- what means a db is normalized? 
@@ -8,7 +8,7 @@
     q- qa pipeline? graph db querying 
     q- redis? 
     q- what are wikis? 
----rem1-slide1---* usually starts from here...
+---rem2-slide1---* usually starts from here...
     **q- what is KG op18 
     q- features of KG sys? op19 
     q- why wikipedia not KG? rdbms not? op29 
@@ -35,7 +35,7 @@
     q- URIs vs. URLs? 
     q- urn used for? op56 
     q- rdf identifies vertices and edge-types using? 
----rem1-slide2---
+---rem2-slide2---
     q- where comes from iris? x2 op5 
     //q- ways to construct Resolvable IRIs? s2p5
     q- why use domain in iris? op5 
@@ -188,10 +188,33 @@
     h-s-q- all possible features of sparql? -h s6op2 -and possible examples
     q- what is COUNT(*) as ?val here COUNT? ext h
 //////////////////////////////////////core theory part//////////////////////////////////////
----slide6---SPARQL: Semantics
+---rem1-slide6---SPARQL: Semantics
     q- what is miu. in this context? op04 ?? 
     q- how to transfer to semantic operations. 
----slide7---SPARQL: Complexity and Expressivity
+    ////
+    q- joins of two multisets(omga) of solution mappings? op12 notation 
+    q- multiplicity, cardinality of the solution? op13 notation
+    *q- BGP solutions using joins (higher lev.) op- notation
+    *q- BGP solutions using joins, prove that. op17 
+    *q- how to deal with bnodes? 
+    q- research- optimizations? rough 
+    q-  join--any known algorithm needs exponential time? 
+    q- Join computed the natural join of two results
+    q- sum- operators expression? Join(M1, M2), Fileterxxx op31 !
+    q- pp- diff. bet. join and union? h 
+    q- Minus(M1, M2) does not depend on cardinalities of mappings in M2? y
+    *q- diff. bet. filter inside optional or outside? op27 
+    q- subqueries return multisets?
+    *q- VALUES behaves just like a subquery with the specified result.
+    q- operators for solution set modifiers? x3 work on lists of mappings L 
+    *huge-q- From query to algebra expression? algo? 
+    q- : GROUP BY ?occupation year(?date) possible? y 
+    q- GROUP BY semantic? 
+    q- where are aggregate functions? what are they? 
+    q- how to deal with several aggregates are selected in the query? 
+    q- can further converted into nested expressions of operators? y how 
+    less-sum-q- Join, FilterG,Union,Minus,LeftJoinG,Extend
+---rem1-slide7---SPARQL: Complexity and Expressivity
     q- what is the naive approach and its complexity
     q- what computational models are? 
     q- how To classify algorithms? 
@@ -201,9 +224,34 @@
     q- why practical?
     q- Complexity of SPARQL Evaluation
     q- Where this sketch is lacking? s7op58
----slide8---SPARQL Limits/Datalog
+    ////new////
+    q- haedness compute bgp solutions? find, join after that op12 
+    q- where comes the hardnbess? 
+    q- measures of a problem’s “difficulty”? x3 
+    q- complexity hierarchy? op14 
+    q- what is NP 
+    q- varify bgp solution is  quadratic time? y 
+    q- what is polynomially many-one reducible
+    q- L1 can be reduced to L2, L2 is at least hard as L1? y 
+    q- reduce to 3Col problem:
+    q- 3col problem? 
+    q- sat problem? 
+    q- the shape of QBF, what is fai here? 
+    q- TrueQBF problem? 
+    q- assume its hardness? 
+    q- we can also express universal quantifiers? y 
+    q- we can express QBF using sparql? y 
+    *q- check SPARQL query is PSpace hard, how to proof 
+    q- why is sparql practice? roughly 
+    q- what is data-complexity query-complexity? 
+    q-  s-t-reachability problem? 
+    q- Deciding if a SPARQL query has any solutions is NL-hard? y 
+    q- Answering queries in PSpace? ys
+    //q- Where this sketch is lacking? s7op58
+    q- why practical? detailed 
+---rem1-slide8---SPARQL Limits/Datalog
     q- why not every set of RDF graphs corresponds to a query
-    q- The lower the complexity of query answering, the lower its expressivity, which complexity?
+    q- The lower the complexity of query answering, 
     q- why can not measure expressivity with complexity? not so correct? op08 
     q- give a example shows that Complexity not equ. to expressivity op- 
     q- proof that SPARQL cannot express parallel reachability. op- 
@@ -212,13 +260,45 @@
     q- why not support them in sparql? 
     q- Potential reasons? x3 
     q- what is the func. of the following code? Example 8.5 op17 
-    s-q- replaces all uses of the hasSister property with a different encoding of the same information
+    s-q- replaces all uses of the hasSister 
     q- diff. bet. datalog and prolog 
+    ////new//// 
+    q- Naive, iteration-based solution finding procedure runs in polynomial space
+    *q- what does power mean? expressive power op4 
+    *q- why not all set of rdf corresbons to a query? 
+    *q- lower complexity lower expressivity? not always true 
+    **q- proof that parallel reachability is in NL but can not be expressd in sparql 
+    *q- why data complexity talked here? 
+    *q- what patterns cannot be expressed using sparql? op14 x4 x4 detail
+    *q- what limitation does sparql have? roughly x2 
+    *q- why not support them in sparql? op15 
+    //q- what are not introduced feature? 
+    ////datalog////
+    q- datalog-- a query for all ancestors of the individual Alice 
+    q- ext- deduct with ancestor(X, Y) :- parent(X, Y). ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y)
+    *q- diff. bet. datalog and prolog 
+    *q- how to model fact in datalog 
+    q- set of Datalog rules is a Datalog program
+    q- database used in datalog is a set of facts 
 ---slide9---Rules for Querying Graphs
-    q- how apply Datalog to graph data? x2 
-    s-q- parallel s-t-reachability for predicates p and q (for triple encoding)
+    s-q- parallel s-t-reachability for predicates p and q 
     q- does not imply that all P-computable problems can be
     q- Query for maternal ancestors of Ada Lovelace op37 
+    ////new 
+    q- what is Tp? immediate consequence operator TP?  op04 
+    q- how apply Datalog to graph data? x2 
+    *s-q- query expresses parallel s-t-reachability for predicates p and q (for triple encoding):
+    q- Non-linear (e.g., tree-shaped) patterns possible with datalog, how? ext 
+    q- Datalog complexity op9 
+    q- Datalog is monotonic, what does this mean?l p problem is monotonic? n 
+    *q- query for living people born in Dresden op12 
+    q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
+    q- A rule is safe? op- 
+    q- problem with negation 
+    ////excerise 
+    exq- any datalog can be safe? 
+    exq- inferences under stratied negation and under classical logical semantics do not coincide   
+    exq- 
 ---slide10---Property Graphs 
     q- what is “Property Graph” 
     q- how can property graph be used? which model exists? x3 op08 
@@ -261,7 +341,7 @@
     q- complexity of the Validating? 
     h-q- many criteria to measure quality of kg, what are they? -re
     q-  basic approaches for automatic quality checks?  x2 -re 
----rem1-slide13---Centrality measures
+---rem1-v-slide13---Centrality measures
     q- what is Centrality 
     q- Possible Solution and their problems? op04 
     q- what are typical networks? they are becoming more and more imp. nowadays
@@ -289,8 +369,8 @@
     q- the effect of damping factor? too large? too small? op46 
     q- does pagerank converges quickly? y 
     q- compare pagerank to katz centrality
----rem1-slide14---Community detection
-    *q- what is closeness centrality? op08 
+---rem2-slide14---Community detection
+    *q- what is closeness centrality? op08 -x
     **q- limiations of closeness centrality and solutions? op10 -x
     *q- what is harmonic centrality? solved what issue of closeness? 
     *q- what is betweeness centrality? op13 
@@ -304,7 +384,6 @@
     h-q- it is a hierarchical clustering algo. what this mean? 
     q- run GN algo in this graph op28 
     *q- what is the computational complexity of the GN algo? how to improve that? x2 op33 
-        pp- 
     *q- problem of GN algo, when to stop? x3 possibles op35 
     q- why should preserve node degrees? 
     q- pp- op39 modularity define?
@@ -318,7 +397,7 @@
     //q- does it suitable for social Community detection? 
     *q- idea of Bi-Cliques 
     *q- the idea based on statistics? features of it? 
----rem1-slide15---Summary and Outlook 
+---rem2-slide15---Summary and Outlook 
     q- what is ontology op10 
     **q- which parts are there? x4 x2big 
     q- snomed ct? op11 

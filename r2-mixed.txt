@@ -19,6 +19,7 @@
     view is imp. not just try to "practice" without 
         reviewing the answer here 
     rem1 means 地毯式复习一遍，有时足够了，毕竟后面还有随机复习适应考试环境
+    先把我一些最基本的proof
 //
 
 ---rem2-global---
@@ -540,7 +541,7 @@
     q- what is COUNT(*) as ?val here COUNT? ext h
         Aggregates
 //////////////////////////////////////core theory part//////////////////////////////////////
----slide6---SPARQL: Semantics
+---rem1-slide6---SPARQL: Semantics
     h- SPARQL is a feature-rich query language
     h- bgps are conjunctions of triple patterns
     q- what is miu. in this context? op04 ?? 
@@ -558,18 +559,20 @@
     //start with op11 
     q- joins of two multisets(omga) of solution mappings? op12 notation 
     q- multiplicity, cardinality of the solution? op13 notation
-    q- BGP solutions using joins (higher lev.) op- notation
+    *q- BGP solutions using joins (higher lev.) op- notation
     h- join means combine var. from both side 
-    q- BGP solutions using joins, prove that. op17 
+    *q- BGP solutions using joins, prove that. op17 
         include from both sides 
     pp- the multiplicity of any solution will therefore be 1
-    q- how to deal with bnodes? 
-        treat bnodes like variables that are projected away later on
+    *q- how to deal with bnodes? 
+        like variables 
+        that are 
+            projected away later on
     q- research- optimizations? rough 
         Efficient data structures for finding compatible solutions to triple patterns
         Streaming joins: returning first results before join is complete
     h- pad writting p55
-    q-  any known algorithm needs exponential time? 
+    q-  join--any known algorithm needs exponential time? 
     h-  algebra operations
     q- Join computed the natural join of two results
     h-  filter expression
@@ -582,9 +585,9 @@
     h- option operation: augments solutions in M1 
     ok-pp- why need a filter in LeftJoin? op25 
         为了兼容，简化内部algebra calcu. 
-    q- diff. bet. filter inside optional or outside? op27 
-    q- (subqueries return multisets?
-    q- VALUES behaves just like a subquery with the specified result.
+    *q- diff. bet. filter inside optional or outside? op27 
+    q- subqueries return multisets?
+    *q- VALUES behaves just like a subquery with the specified result.
     h- bind -- extension of solution mappings in M
         pp- eval(µ(ϕ))
     q- operators for solution set modifiers? x3 work on lists of mappings L 
@@ -593,11 +596,17 @@
         deal with mainly three types of things, condition based 
         remove all filter outside, and filt them later 
     q- : GROUP BY ?occupation year(?date) possible? y 
-    
-    
-
-
----slide7---SPARQL: Complexity and Expressivity
+    q- GROUP BY semantic? 
+    h- Φ(µ0) = Φ(µ) op34 这里是在进行筛选，group core part 
+    q- where are aggregate functions? what are they? 
+        in selection part 
+        calcu. mulitsets to values 
+    q- how to deal with several aggregates are selected in the query? 
+        join them 
+    q- can further converted into nested expressions of operators? y how 
+        case match and convert with rules 
+    less-sum-q- Join, FilterG,Union,Minus,LeftJoinG,Extend
+---rem1-slide7---SPARQL: Complexity and Expressivity
     q- what is the naive approach and its complexity
     q- what computational models are? 
     q- how To classify algorithms? 
@@ -691,15 +700,81 @@
         "sparql Query Optimization"
     q- Where this sketch is lacking? s7op58
     //detailready//
----slide8---SPARQL Limits/Datalog
+    ////new////
+    h- BGPG(P) is the join of the solution multisets of all individual triple
+        patterns in P.
+    q- haedness compute bgp solutions? find, join after that op12 
+        find: linear 
+        join two multisets is quadratic 
+            k multisets is expotional! 
+    q- where comes the hardnbess? 
+        join of partial solutions 
+    q- measures of a problem’s “difficulty”? x3 
+        computational models 
+        constrained resources
+        resource bounds 
+    q- complexity hierarchy? op14 
+    h- np is extremely common class for challenging problems
+    q- what is NP 
+        can be varified in P time 
+    q- varify bgp solution is  quadratic time? y 
+    q- what is polynomially many-one reducible
+        "complete" problems comes from here 
+    q- L1 can be reduced to L2, L2 is at least hard as L1? y 
+    q- reduce to 3Col problem:
+        we can construct a situation that use sparql to solve the 3col problem 
+        thus the complexity is at least the one of 3col 
+        detail see slides 
+    q- 3col problem? 
+        no two adjacent vertices have the same colour
+    q- sat problem? 
+        给定公式，
+        例如，公式“a AND NOT b”是可以满足的，因为可以找到值a = TRUE且b = FALSE
+        “a AND NOT a”是不可满足的
+    h- Completeness again is defined by polynomial reductions
+    h- Quantified Boolean Formulae QBF, 一阶逻辑基本单位
+    q- the shape of QBF, what is fai here? 
+        propositional logic formula
+        quantifiers {x,x}
+        replace? fai[X/.]
+    q- TrueQBF problem? 
+        Does ϕ evaluate to true?
+        consists of two: exists, forall 
+        one can be reduced to SAT 
+        the other can be reduced to tautology checking 
+    q- assume its hardness? 
+        TrueQBF is harder than both NP and coNP
+        PSpace-complete
+    q- we can also express universal quantifiers? y 
+    q- we can express QBF using sparql? y 
+    *q- check SPARQL query is PSpace hard, how to proof 
+        We reduce QBF formulae to SPARQL queries
+    q- why is sparql practice? roughly 
+        NL-complete for data complexity 
+        parallelisable
+        queries are limited
+    q- what is data-complexity query-complexity? 
+        Does Q have answers over G?, fixed query Q
+        Does Q have answers over G? (for fixed RDF graph G)
+    q-  s-t-reachability problem? 
+        from s to t, does have a directed path? 
+    q- Deciding if a SPARQL query has any solutions is NL-hard? y 
+    q- Answering queries in PSpace? ys
+    //q- Where this sketch is lacking? s7op58
+    q- why practical? detailed 
+        a- query complexity(wrt. query) + data complexity(wrt. rdf graph)
+        stream them out(in PSpace, can have many results)
+        queries are limited
+---rem1-slide8---SPARQL Limits/Datalog
     q- why not every set of RDF graphs corresponds to a query
     h- power means characterise strictly more sets of graphs
-    q- The lower the complexity of query answering, the lower its expressivity, which complexity?
+    q- The lower the complexity of query answering, 
+        the lower its expressivity, which complexity?
         why? op07 (Complexity-based arguments)
     q- why can not measure expressivity with complexity? not so correct? op08 
     q- give a example shows that Complexity not equ. to expressivity op- 
     q- proof that SPARQL cannot express parallel reachability. op- 
-        不是讲的特别清楚，有一些前提假设没有交代，要弄清楚还需要时间去看CT。暂时就这样背吧....
+        pp- 不是讲的特别清楚，有一些前提假设没有交代，要弄清楚还需要时间去看CT。暂时就这样背吧....
     h- Non-regular path languages cannot be expressed--due to the use of regular expression 
     h- 其实regex同常是够用的？ 进一步的表达性需要更多的复杂性，难以承受的计算量。
     h- “Wide” paths consisting of repeated graph patterns cannot be expressed
@@ -713,9 +788,12 @@
     h- longest path detection is NP-complete [in data complexity!]
     q- why not support them in sparql? 
     q- Potential reasons? x3 
+    //
     q- what is the func. of the following code? Example 8.5 op17 
-    s-q- replaces all uses of the hasSister property with a different encoding of the same information
+    s-q- replaces all uses of the hasSister 
+        property with a different encoding of the same information
     h- it can also encode results as RDF graphs (CONSTRUCT)
+    // 
     h- Rules have their consequence on the left
     key- rule-based query language datalog 
     q- diff. bet. datalog and prolog 
@@ -734,12 +812,65 @@
             高阶逻辑
                 二阶逻辑接着被高阶逻辑和类型论所扩展。
     h- Datalog semantics is set-based (no multiplicity of results)
-    h- Datalog is a rule-based query language that can express more powerful recursive queries
+    h- Datalog is a rule-based query language that 
+        can express more powerful recursive queries
     h- datalog uses first order logic/ and prolog.
+    ////new//// 
+    q- Naive, iteration-based solution finding procedure runs in polynomial space
+    *q- what does power mean? expressive power op4 
+        power means characterise strictly more sets of graphs
+    *q- why not all set of rdf corresbons to a query? 
+        give a example of which we can not get by sparql 
+        formally: 
+            we have NL-hard in data complexity. 
+            to classify rdf graphs, we need  PSpace-complete complexity
+            so we can not use sparql to query all patterns 
+            -> at least PSpace complex ones can have most expressivity
+            (QBF shows that )
+    *q- lower complexity lower expressivity? not always true 
+        h- cannot even solve all problems in their own complexity class
+        the parallel reachability problem example   
+    **q- proof that parallel reachability is in NL but can not be expressd in sparql 
+        we can only use infinitly many ver. of degree 2 in rdf to match to a property path pattern
+        and limited number of nodes with higher degree 
+        but parallel problem need to check arbitry many 4 degree nodes 
+    *q- why data complexity talked here? 
+        can be seen as RDF graphs classification problem, which has 
+        fixed query. 
+    *q- what patterns cannot be expressed using sparql? op14 x4 x4 detail
+        Non-regular path 
+        Nested regular expressions
+        Tree-like patterns
+        wide paths 
+        fundamental limits:
+            dataypes
+            pathlength 
+            return paths as result 
+            no support for recursive/iterative computation
+    *q- what limitation does sparql have? roughly x2 
+    *q- why not support them in sparql? op15 
+        performance
+        history 
+        design 
+    //q- what are not introduced feature? 
+    h- datalog uses first order logic/ and prolog.
+    ////datalog////
+    q- datalog-- a query for all ancestors of the individual Alice 
+    q- ext- deduct with ancestor(X, Y) :- parent(X, Y). ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y)
+    *q- diff. bet. datalog and prolog 
+        Datalog程序对事实和规则的出现顺序不做要求,prolog does 
+    h- An atom is a formula of the form R(t1, . . . , tn) with R a predicate symbol of arity n
+    h-  A rule with empty body (m = 0) is called a fact
+    *q- how to model fact in datalog 
+        rule with empty body 
+    q- set of Datalog rules is a Datalog program
+    q- database used in datalog is a set of facts 
+    h- no multiplicity of results of datalog 
 ---slide9---Rules for Querying Graphs
     key- Datalog semantics/ syntax/ detail about them 
-    q- how apply Datalog to graph data? x2 
-    s-q- parallel s-t-reachability for predicates p and q (for triple encoding)
+    
+    s-q- parallel s-t-reachability for predicates p and q 
+        (for triple encoding)
     h- datalog query has a higher complex. 
         namly P-complete in data complexity
     q- does not imply that all P-computable problems can be
@@ -762,6 +893,40 @@
     hardones- Stratified negation semantic 
     q- Query for maternal ancestors of Ada Lovelace op37 
     //detailready// 
+    ////new 
+    q- what is Tp? immediate consequence operator TP?  op04 
+        inserting known facts for the body literals to compute a new literal
+        maps Herbrand interpretations to Herbrand interpretations
+        monotonic and even continuous
+        也就是推理的过程
+        but: the sequence is limited 
+        符号单独硬记吧，好在不重要
+    q- how apply Datalog to graph data? x2 
+        Properties as binary predicates
+            “sees” no relation between properties
+        Triples as ternary hyperedges(相对于datalog的hyper)
+            better 
+    *s-q- query expresses parallel s-t-reachability for predicates p and q (for triple encoding):
+        op08 
+    q- Non-linear (e.g., tree-shaped) patterns possible with datalog, how? ext 
+    q- Datalog complexity op9 
+    q- Datalog is monotonic, what does this mean?l p problem is monotonic? n 
+        more input facts given, the more results derived.
+        op10 
+    *q- query for living people born in Dresden op12 
+    q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
+        op15 
+    q- A rule is safe? op- 
+        all of its variables occur 
+            in non-negated atoms in its body
+    q- problem with negation 
+        fails if negation is freely used in recursion
+    ////excerise 
+    exq- any datalog can be safe? 
+        additional atoms to make rules safe 
+    exq- inferences under stratied negation and under classical logical semantics do not coincide   
+        an example shows that confict if we are going to derive goal() 
+    exq- 
 ---slide10---Property Graphs 
     h- why interplay with recursion must be limited? op3 
     h- RDF graphs which do not contain any such 'loops' 
