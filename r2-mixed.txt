@@ -20,6 +20,10 @@
         reviewing the answer here 
     rem1 means 地毯式复习一遍，有时足够了，毕竟后面还有随机复习适应考试环境
     先把我一些最基本的proof
+    ////new added! 
+    ////excerise added! 
+    认知是从基础到深入的，完成slides是最简单根本的，而后再考虑ubung，但是都要尽快
+    
 //
 
 ---rem2-global---
@@ -234,6 +238,7 @@
     q- what is the partial func.? vs total func. ?  ext
         a- all inputs are considered 
     pp- blank nodes to RDF terms op43 ? 
+        in bgp
     q- The multiset of these solutions is denoted evalG(P)? how to understand this 
     p-q- what is the result of sparql formally op42 
     q- what is solution sequence op42 
@@ -254,6 +259,7 @@
     q- What is evalG(eg:s eg:p eg:o) over the graph G = {eg:s eg:p eg:o}? op50
     h- sparql is meanly depend on matching graph patterns(暴力枚举？)
     pp- Queries that cannot yield bindings for any variable op50
+        ok 
 ---rem1-slide4---
     h- Wikidata as a working example to try out our knowledge, other resources possible 
     h- Wikidata is a Free Knowledge Graph database that we can play with 
@@ -866,7 +872,8 @@
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
     h- no multiplicity of results of datalog 
----slide9---Rules for Querying Graphs
+---rem1-slide9---Rules for Querying Graphs
+    --little bit too hard, finish it fast 
     key- Datalog semantics/ syntax/ detail about them 
     
     s-q- parallel s-t-reachability for predicates p and q 
@@ -913,21 +920,48 @@
     q- Datalog is monotonic, what does this mean?l p problem is monotonic? n 
         more input facts given, the more results derived.
         op10 
-    *q- query for living people born in Dresden op12 
+    **q- query for living people born in Dresden op12 
     q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
         op15 
     q- A rule is safe? op- 
         all of its variables occur 
             in non-negated atoms in its body
-    q- problem with negation 
+    q- problem with negation?  
         fails if negation is freely used in recursion
+    q- the idea of stratified negation ? 
+        applying rules exhaustively
+        level-by-level, we can avoid non-monotonic behaviour.
+        still has limitations 
+    q- set of facts we obtained from stratified negation is not affected by choose ,this is called? 
+        M is called perfect model or unique stable model
+    pra-lessdirct-q- algo that obtaining a stratification? op25 
+    pra-*q- deside which lev. it belones to? 
+        obtain the maximum edge with "-" in a path 
+    *q- express eg:JSBach (ˆeg:hasFather|ˆeg:hasMother)+ ?x with datalog 
+    h- Datalog with stratified negation captures and extends important parts of SPARQL
+    h-q- relation with datalog and sparql 
+        datalog has more powerful expressivity
+        can express some sparql, and support some not supported
+        and always assume DISTINCT 
+    h- datalog can not express Subqueries 
+    h- many implementations of datalog 
+    q- vlog4j supports evaluating Datlog queries over RDF files? y
+        Stratified negation and value invention
+    h- slightly different rules in vlog4j 
+    *s-q- Query for maternal ancestors of Ada Lovelace op37
+    h- Stratified negation is a simple way of adding negation to recursive queries 
     ////excerise 
     exq- any datalog can be safe? 
         additional atoms to make rules safe 
     exq- inferences under stratied negation and under classical logical semantics do not coincide   
         an example shows that confict if we are going to derive goal() 
-    exq- 
----slide10---Property Graphs 
+    *exq- Show how to express the following SPARQL features in Datalog
+        property path pattern 
+        UNION
+        MINUS 
+        NOT EXISTS
+    exq- Compute a stratifiation for the following Datalog program
+---rem1-slide10---Property Graphs 
     h- why interplay with recursion must be limited? op3 
     h- RDF graphs which do not contain any such 'loops' 
     q- what is “Property Graph” 
@@ -1005,6 +1039,85 @@
     h- Cypher has many further features, Subqueries, Filter...
     q- property graph makes data in two layers? which two? 
     //detailready// 
+        //sum-q- what data model and corresponding quering lan. are there? libs?
+        //q- datatypies, object model, labeling rules in property graph? 
+    ////new 
+    h- Adding negation is useful, but the interplay with recursion must be limited
+    q- what is “Property Graph” op05 
+        a type of graph 
+        with more features than rdf graph 
+        enriched graph structures
+        primarily hints at the attribute-value pairs
+        ori. focus on properties
+    q- how can property graph be used? which model exists? x3 op08 
+    **q- Types of “Property Graphs”? x3+ 
+        obj model 
+            entity-relationship diagram
+        on top of relational db  
+            Graphs viewed as indexing and access layer on top of RDBMS
+        on top of rdf 
+            Examples: Amazon Neptune, Stardog, BlazeGraph
+    h- 业界的角度来讲可以先把rdf转成property graph，而后用cypher查询
+    h- types of graph database? 
+        rdf
+        property graph 
+        Apache Giraph
+        AllegroGraph
+    //ext-q- Programmatic access of property graph?
+        Tinkerpop
+        Apache Gremlin
+    q- what does it mean "Relationship types" in rdf world? op14 
+        edge , they have diff. terminologies 
+    h- label -> classes rep. 
+    h- Sets of properties can be assigned to vertices and edges
+    h- • Property keys are unicode strings
+    h- Properties are key-value pairs
+    q- limitations of property graph
+        hard to model statement of wikidata 
+        Property values cannot ref. to an other vertices or edges.
+        "together with"
+    **q- transform From Property Graph to RDF? 
+        //shall be simplified, include bnodes 
+        Use reification to represent edges by auxiliary nodes
+        datatype mapping 
+    **h-q- ext- model a statement into rdf wikidata
+    q- and from rdf to property graph? op22 
+        may hard due to restrictions of the later 
+    q- datatypes in property graph x6 terms in it?  op14 op25 
+        node, relationships, 
+        labels, relationship types, and property keys
+            are plain strings
+        property values 
+        They cannot occur in the graph
+        and no further Properties
+    h- Current specification of openCypher 9:
+    h- Result formats not defined by spec. 
+    **s-q- asks for a list of all nodes that are in an EMPLOYER relationship
+        op28 
+    h-  query condition within MATCH { . . . }
+    **s-q- Find up to ten people whose daughter is a professor op29 
+    **s-q- nCount all relationships in the database:, types? 
+    h- 变量没有问号，括号包住变量，空的话就是空括号
+        和画图似的，实体有冒号，没有前缀
+        express properties in json style 
+        头不像尾像
+    q- compare sparql and cypher 
+        Easy-to-learn and human-readable
+        support distributed computing(high performance)
+        rdf has limitations 
+        pp- 
+    **s-q- : Find the person with most friends
+    **s-q- Find pairs of siblings  op33 
+    **s-q- Find friends of all people with name Paul Erdos, and return their name and the start date of the friendship op34
+    q- what are cypher features?
+        • Returning of paths and shortest paths
+        Filter expressions
+        Subqueries 
+        Unions
+        ...s
+    q- property graph makes data in two layers? which two?
+        primary layer, property graph layer 
+    h- ref to spec of the lan as a futher step 
 ---slide11--- The Cypher Query Language
     h- an other lan. which should also be familier with 
     q- The shape of a Cypher query 
@@ -1201,6 +1314,7 @@
             propagates the full (discounted) weight, splits the weight
             pagerank emph. distinguished focus 
             pp-
+                outdegree...
     h- centrality based on graph structure 
     //detailready/
 ---rem2-slide14---Community detection
@@ -1261,7 +1375,6 @@
     lan- dandrogram tree-view 
     *q- what is the computational complexity of the GN algo? how to improve that? x2 op33 
         random sub-sampling
-        pp- 
     *q- problem of GN algo, when to stop? x3 possibles op35 
         target number 
         maximum size for communities

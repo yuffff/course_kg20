@@ -1,5 +1,7 @@
     invq-   indicates inversed questions 
     extract q- with python
+    ////new added! 
+    ////excerise added! 
 ---rem2-global---
     q- *The OWL Web Ontology Language extends the semantic features of RDF
     q- what does rdf:type mean?     
@@ -280,7 +282,7 @@
     *q- how to model fact in datalog 
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
----slide9---Rules for Querying Graphs
+---rem1-slide9---Rules for Querying Graphs
     s-q- parallel s-t-reachability for predicates p and q 
     q- does not imply that all P-computable problems can be
     q- Query for maternal ancestors of Ada Lovelace op37 
@@ -291,14 +293,23 @@
     q- Non-linear (e.g., tree-shaped) patterns possible with datalog, how? ext 
     q- Datalog complexity op9 
     q- Datalog is monotonic, what does this mean?l p problem is monotonic? n 
-    *q- query for living people born in Dresden op12 
+    **q- query for living people born in Dresden op12 
     q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
     q- A rule is safe? op- 
-    q- problem with negation 
+    q- problem with negation?  
+    q- the idea of stratified negation ? 
+    q- set of facts we obtained from stratified negation is not affected by choose ,this is called? 
+    pra-lessdirct-q- algo that obtaining a stratification? op25 
+    pra-*q- deside which lev. it belones to? 
+    *q- express eg:JSBach (ˆeg:hasFather|ˆeg:hasMother)+ ?x with datalog 
+    h-q- relation with datalog and sparql 
+    q- vlog4j supports evaluating Datlog queries over RDF files? y
+    *s-q- Query for maternal ancestors of Ada Lovelace op37
     ////excerise 
     exq- any datalog can be safe? 
     exq- inferences under stratied negation and under classical logical semantics do not coincide   
-    exq- 
+    *exq- Show how to express the following SPARQL features in Datalog
+    exq- Compute a stratifiation for the following Datalog program
 ---slide10---Property Graphs 
     q- what is “Property Graph” 
     q- how can property graph be used? which model exists? x3 op08 

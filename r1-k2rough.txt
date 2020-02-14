@@ -301,6 +301,10 @@
         pp- file extension of property graph? 
     key- opencyper in neo4j 
         https://neo4j.com/blog/open-cypher-sql-for-graphs/
+        Originally contributed by Neo4j, Cypher is now used by over 10 products and tens of thousands of developers.
+        Easy-to-learn and human-readable
+        support distributed computing 
+        without requiring they understand implementation details.
     key- relations bet. quering lan? 
         Datalog Datalog is a much older language than SPARQL or Cypher
     *sum-q- what data model and corresponding quering lan. are there? 
