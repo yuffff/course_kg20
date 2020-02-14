@@ -592,6 +592,7 @@
         from inner most 
         deal with mainly three types of things, condition based 
         remove all filter outside, and filt them later 
+    q- : GROUP BY ?occupation year(?date) possible? y 
     
     
 
