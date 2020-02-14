@@ -546,6 +546,7 @@
     h-s-q- all possible features of sparql? -h s6op2 -and possible examples
     q- what is COUNT(*) as ?val here COUNT? ext h
         Aggregates
+    sum-q- feature-rich query language sparql features? x7 s6op-start
 //////////////////////////////////////core theory part//////////////////////////////////////
 ---rem1-slide6---SPARQL: Semantics
     h- SPARQL is a feature-rich query language
@@ -1118,7 +1119,7 @@
     q- property graph makes data in two layers? which two?
         primary layer, property graph layer 
     h- ref to spec of the lan as a futher step 
----slide11--- The Cypher Query Language
+---rem1-slide11--- The Cypher Query Language
     h- an other lan. which should also be familier with 
     q- The shape of a Cypher query 
     h- The order of clauses affects the semantics of queries
@@ -1132,6 +1133,79 @@
     h- powerful path manipulation features are available
     pp- key- what means homomorphisms, isomorphim op30 
     //detailready// 
+    f- WHERE followed by a filter expression
+    f- with allows expressions and aggregates
+    f- Modifier sub-clauses: ORDER BY, LIMIT, and SKIP
+    f- union can be used complete way (with RETURN for each
+    q- The shape of a Cypher query 
+    q- how to express path patterns? 
+    q- the value cannot be distinguished from “unbound”? y 
+    ////new 
+    q- what is allowed for node pattern? x3 op4 
+    *q- find a man who is Scientist and a composer at the same time op04
+        pp-  
+    q- quotes of property keys, and their value? 
+        backticks,straight quotes
+    q- find a person with particular name and birth year 
+    q- what does this mean? (a)-[:E|F*5..10]->(b)<-[e {score:0.8}]-() op- 
+    q- what can be expressed in path pattern? op5  x4 
+        variable, range, relationtypes, properties
+    q- Cypher does not support arbitrary regular expressions? y sparql does? y 
+    q- can we express  ?a (p/q)* ?b with cypher? 
+    q- express ?a (p|ˆp|q|ˆp)* ?b in cypher op07 
+    q- SPARQL bnodes correspond to Cypher node patterns without variable
+    q- Each distinct path is a distinct match in cypher? op10 
+        y, path counting feature 
+    q- relationship must be used in only one place
+    q- Query matching in Cypher is harder than NP. proof that. 
+        reduce to 3col problem 
+    q- how can we use the same relationship more than one time? ext op14 
+        use multiple clauses MATCH 
+    q- Homomorphism semantics? isomorphim? 
+        some constrains 
+        not too much restriction on Graph pattern, but restrict edges
+            distinguish edges
+        pp- 
+    q- path manipulation features available? better? y
+    q- func. that working on nodes and relationships? roughly op15 
+    h- “varname.propertyKey” is used to access the value of a property
+    h- The function id returns the (numeric) ID of a nodes or relationships
+    h- keys returns the list of all property keys of a map-like object
+        labels, type possible as function working on nodes and relationships
+    *s-q- Find all ways in which two nodes are connected, and return the list of relationship types in each case 
+        op16 
+    q- how to access the content of paths? extract sublist, path len?
+        use func. relationships() and lenght() returns number of relationships(edges)
+    q- matched case can be solved as var. ? y 
+    *s-q- Find all shortest ways in which two nodes are connected
+        use allShortestPaths.
+        upper bound can be spec.  
+    *s-q- Find nodes with more than one label
+        use labels() and size() func. 
+    h- many build in func. to use 
+    q- WHERE clauses can use any expression? 
+    **q- Find all nodes that have value "scientist" as one of their occupations, and that do not have a spouse:
+        op21 
+    ////Further Cypher Features////
+    q- if aggregated and non-aggregated results are defined, the non-aggregated ones will be the keys to group by? y 
+        implicit 
+    *s-q- Show married professors with their number of children op23 
+        distinct? pp- 
+    q- min, avg, count can be used 
+    q- WITH clauses as separators? y 
+    *s-q- Find all universities located in one of the ten largest cities op24 
+    q- Expressions that are not projected are not accessible after a WITH clause? y 
+    q- Find parent-child pairs with bi directions op25 
+        UNION automatically removes duplicates, 
+        UNION ALL can be used to keep them 
+    *s-q- Find parent-child pairs and, optionally, a spouse for the parent op26 
+    q- what happends if var. not bind? 
+    *q- err. propergate in both sparql and cypher? 
+        Cypher uses the special value null to indicate errors
+        EBV 
+    q- The use of null in Cypher is ambiguous? 
+        1. error
+        2. “unknown value”
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
 ---rem1-slide12---Knowledge Graph Quality and Validation
     h- we focus on quality measurment, and monitor them automatically

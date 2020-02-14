@@ -189,6 +189,7 @@
     *s-q- find all professions of more than 100 people born in Dresden op46
     h-s-q- all possible features of sparql? -h s6op2 -and possible examples
     q- what is COUNT(*) as ?val here COUNT? ext h
+    sum-q- feature-rich query language sparql features? x7 s6op-start
 //////////////////////////////////////core theory part//////////////////////////////////////
 ---rem1-slide6---SPARQL: Semantics
     q- what is miu. in this context? op04 ?? 
@@ -310,7 +311,7 @@
     exq- inferences under stratied negation and under classical logical semantics do not coincide   
     *exq- Show how to express the following SPARQL features in Datalog
     exq- Compute a stratifiation for the following Datalog program
----slide10---Property Graphs 
+---rem1-slide10---Property Graphs 
     q- what is “Property Graph” 
     q- how can property graph be used? which model exists? x3 op08 
     q- Types of “Property Graphs”? x3+ 
@@ -323,10 +324,72 @@
     h-q- the diff. from them 
     s-q- Find up to ten people whose daughter is a professor op29 
     q- property graph makes data in two layers? which two? 
----slide11--- The Cypher Query Language
+        //sum-q- what data model and corresponding quering lan. are there? libs?
+        //q- datatypies, object model, labeling rules in property graph? 
+    ////new 
+    q- what is “Property Graph” op05 
+    q- how can property graph be used? which model exists? x3 op08 
+    **q- Types of “Property Graphs”? x3+ 
+    //ext-q- Programmatic access of property graph?
+    q- what does it mean "Relationship types" in rdf world? op14 
+    q- limitations of property graph
+    **q- transform From Property Graph to RDF? 
+    **h-q- ext- model a statement into rdf wikidata
+    q- and from rdf to property graph? op22 
+    q- datatypes in property graph x6 terms in it?  op14 op25 
+    **s-q- asks for a list of all nodes that are in an EMPLOYER relationship
+    **s-q- Find up to ten people whose daughter is a professor op29 
+    **s-q- nCount all relationships in the database:, types? 
+    q- compare sparql and cypher 
+    **s-q- : Find the person with most friends
+    **s-q- Find pairs of siblings  op33 
+    **s-q- Find friends of all people with name Paul Erdos, and return their name and the start date of the friendship op34
+    q- what are cypher features?
+    q- property graph makes data in two layers? which two?
+---rem1-slide11--- The Cypher Query Language
     q- The shape of a Cypher query 
     q- how to express path patterns? 
     q- the value cannot be distinguished from “unbound”? y 
+    q- The shape of a Cypher query 
+    q- how to express path patterns? 
+    q- the value cannot be distinguished from “unbound”? y 
+    ////new 
+    q- what is allowed for node pattern? x3 op4 
+    *q- find a man who is Scientist and a composer at the same time op04
+    q- quotes of property keys, and their value? 
+    q- find a person with particular name and birth year 
+    q- what does this mean? (a)-[:E|F*5..10]->(b)<-[e {score:0.8}]-() op- 
+    q- what can be expressed in path pattern? op5  x4 
+    q- Cypher does not support arbitrary regular expressions? y sparql does? y 
+    q- can we express  ?a (p/q)* ?b with cypher? 
+    q- express ?a (p|ˆp|q|ˆp)* ?b in cypher op07 
+    q- SPARQL bnodes correspond to Cypher node patterns without variable
+    q- Each distinct path is a distinct match in cypher? op10 
+    q- relationship must be used in only one place
+    q- Query matching in Cypher is harder than NP. proof that. 
+    q- how can we use the same relationship more than one time? ext op14 
+    q- Homomorphism semantics? isomorphim? 
+    q- path manipulation features available? better? y
+    q- func. that working on nodes and relationships? roughly op15 
+    *s-q- Find all ways in which two nodes are connected, and return the list of relationship types in each case 
+    q- how to access the content of paths? extract sublist, path len?
+    q- matched case can be solved as var. ? y 
+    *s-q- Find all shortest ways in which two nodes are connected
+    *s-q- Find nodes with more than one label
+    q- WHERE clauses can use any expression? 
+    **q- Find all nodes that have value "scientist" as one of their occupations, and that do not have a spouse:
+    ////Further Cypher Features////
+    q- if aggregated and non-aggregated results are defined, the non-aggregated ones will be the keys to group by? y 
+    *s-q- Show married professors with their number of children op23 
+    q- min, avg, count can be used 
+    q- WITH clauses as separators? y 
+    *s-q- Find all universities located in one of the ten largest cities op24 
+    q- Expressions that are not projected are not accessible after a WITH clause? y 
+    q- Find parent-child pairs with bi directions op25 
+    *s-q- Find parent-child pairs and, optionally, a spouse for the parent op26 
+    q- what happends if var. not bind? 
+    *q- err. propergate in both sparql and cypher? 
+    q- The use of null in Cypher is ambiguous? 
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
 ---rem1-slide12---Knowledge Graph Quality and Validation
     q- what is quality? two dimensions of KG(from requirements)? op17 
