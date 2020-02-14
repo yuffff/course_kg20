@@ -16,9 +16,12 @@
         1.summ, highlev understanding 
         2.reform of the answers 
         3.easy prac.
+    view is imp. not just try to "practice" without 
+        reviewing the answer here 
+    rem1 means 地毯式复习一遍，有时足够了，毕竟后面还有随机复习适应考试环境
 //
 
----rem1-global---
+---rem2-global---
     ok-pp- what are prefixed names in this pic? s2p22 
     q- *The OWL Web Ontology Language extends the semantic features of RDF
         what are semantic features here? 
@@ -36,7 +39,7 @@
     q- what are wikis? 
         a- human knowledge network/ system
     h- summ highlev s0op30 
----rem1-slide1---* usually starts from here...
+---rem2-slide1---* usually starts from here...
     h- the hype 
     **q- what is KG op18 
         graph base that is a graph 
@@ -104,7 +107,7 @@
         a- isbn, used for  naming resources 
     q- rdf identifies vertices and edge-types using? 
         a- iris 
----rem1-slide2---
+---rem2-slide2---
     q- where comes from iris? x2 op5 
         a- create reuse 
     //q- ways to construct Resolvable IRIs? s2p5
@@ -156,7 +159,7 @@
     q- RDF Serialisations, their formats? x5 
         op32 
     q- encode this graph to ntriple? op34 
-    **q- procons of the rdf representations x2? op41 
+    **q- procons of the rdf Serialisations x2? op41 
         Ntriple
             pro: simple/fast/basic 
             c:space/non-humanreadable
@@ -544,13 +547,46 @@
     h- SPARQL algebra that are under queries, which is key to understand the complexity of it 
     h- query algebra operations
     h- "we define the multiset" are imp. 
-    h- each operation corresponds to a underlying Semantic
+    *h- each operation corresponds to a underlying Semantic
     h- semantic of bind may hard 
-    h- sum on op31 
+    *h- sum on op31 
     q- how to transfer to semantic operations. 
     h- synta. expression -> algebra expression -> ?
     h- can be converted into nested expressions
     //detailready//
+    ////
+    //start with op11 
+    q- joins of two multisets(omga) of solution mappings? op12 notation 
+    q- multiplicity, cardinality of the solution? op13 notation
+    q- BGP solutions using joins (higher lev.) op- notation
+    h- join means combine var. from both side 
+    q- BGP solutions using joins, prove that. op17 
+        include from both sides 
+    pp- the multiplicity of any solution will therefore be 1
+    q- how to deal with bnodes? 
+        treat bnodes like variables that are projected away later on
+    q- research- optimizations? rough 
+        Efficient data structures for finding compatible solutions to triple patterns
+        Streaming joins: returning first results before join is complete
+    h- pad writting p55
+    q-  any known algorithm needs exponential time? 
+    h-  algebra operations
+    q- Join computed the natural join of two results
+    h-  filter expression
+    q- sum- operators expression? Join(M1, M2), Fileterxxx op31 !
+    h- the para. of those operators? multiset ... 
+    q- pp- diff. bet. join and union? h 
+        union has higher lev. 
+    h- operators can be expressed with help of set theory 
+    q- Minus(M1, M2) does not depend on cardinalities of mappings in M2? y
+    h- option operation: augments solutions in M1 
+    pp- a filter in LeftJoin? op25 
+    q- diff. bet. filter inside optional or outside? op27 
+    q- (subqueries return multisets?
+    q- VALUES behaves just like a subquery with the specified result.
+    h- bind -- extension of solution mappings in M
+    
+
 ---slide7---SPARQL: Complexity and Expressivity
     q- what is the naive approach and its complexity
     q- what computational models are? 
@@ -902,7 +938,7 @@
         like SHACL and ShEx 
         they can declaratively specify constraints 
     //detailready// 
----rem1-slide13---Centrality measures
+---rem1-v-slide13---Centrality measures
     q- what is Centrality 
         a- how to return most “important” ones on top
     q- Possible Solution and their problems? op04 
@@ -992,13 +1028,13 @@
             pp-
     h- centrality based on graph structure 
     //detailready/
----rem1-slide14---Community detection
-    *q- what is closeness centrality? op08 
+---rem2-slide14---Community detection
+    *q- what is closeness centrality? op08 -x
         close to:
         A node is important, if it is close to many other nodes
         the formula.
         h- has to be strongly connected graph 
-    **q- limiations of closeness centrality and solutions? op10 
+    **q- limiations of closeness centrality and solutions? op10 -x
         nodes are close toghther --> road network may meaningful 
         not defined for un strongly connected graphs --> a maximal N-step distance
     *q- what is harmonic centrality? solved what issue of closeness? 
@@ -1012,20 +1048,23 @@
         what is N-1 N-2 here? 
         h- best used for star-shaped structure
             can get High betweenness scores 
-    h- there is sth. diff. when using this metric 
+    q- there is sth. diff. when using this metric? ext 
         might not desired: far from more densely connected areas
         different from scenarios where other metrics uses 
     q- how fast can we achieve when imp. betweeness metric 
         op15
+            pp-
             cubic time 
             go down to quadratic for sparse graphs
     h-q- summerize all centrality criteria? op16 x7 
         what are their meaning intuitively?
     //bef. find imp. nodes
     //now: find community
+    ////
     q- what is Community feature? op18
         a-
-            more likely to be connected when in two nodes in one Community
+            more likely to be connected when 
+                in two nodes in one Community
         ... 
     h-key- social network analysis 
     q- why we study Community activity? op19 
@@ -1047,6 +1086,7 @@
     lan- dandrogram tree-view 
     *q- what is the computational complexity of the GN algo? how to improve that? x2 op33 
         random sub-sampling
+        pp- 
     *q- problem of GN algo, when to stop? x3 possibles op35 
         target number 
         maximum size for communities
@@ -1057,7 +1097,7 @@
     q- why should preserve node degrees? 
     h- partation quality estimation 
     pp- op36    
-    pp- op39 modularity define?
+    q- pp- op39 modularity define?
         describes what a real community should looks like (random )
         edges in communities as random distributed 
     q- naive appro. random graph, problem? solve? op39 
@@ -1096,7 +1136,7 @@
             a- 
                 based on math. bkg 
                 good also for small Communities 
-                freq. used on social netw. anal.
+                //freq. used on social netw. anal.
     *q- the idea based on statistics? features of it? 
         a- 
             find the underlaying model, to explain data 
@@ -1104,7 +1144,7 @@
             2.can find overlapping ones
             3.more insightful 
     //detailready//
----rem1-slide15---Summary and Outlook 
+---rem2-slide15---Summary and Outlook 
     h- to understand graphs 
     q- what is ontology op10 
         description of knowledge about a domain of interest
@@ -1113,6 +1153,7 @@
     h- knowledge of a domain of interest 
         特殊领域的知识库，其中还可以做推理
     q- snomed ct? op11 
+        health data db that use ontology model 
         a- health data record sys. provides nomenclature
     h- modeling and reasoning relationships
     h- this ontology sys. can be used for clinical information retrival 
@@ -1120,6 +1161,7 @@
     q- diff. from taxonomy and databases? op10 op13 
     *q- what is an ontology language? op14 
         a- 
+            instance-level relationships, schema-lev relationships
             a standard for encoding and sharing info. 
             for encode and exchange 
     key- description logic 

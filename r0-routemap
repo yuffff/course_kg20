@@ -25,7 +25,7 @@ hard ones:
     algo/formula details missing !
     exercises not even started! they are not only sparql! 
     wikidata dump file format! huge amount of reading 
-     
+
 
 detail task design before exam: 
     12---
@@ -33,6 +33,7 @@ detail task design before exam:
         premix--find solutions to ubungen 
     13---
         detailmix--finish detail, question/ problem extraction...
+            50%
         detailexercise--understand what you find meaningful...
         rem1
             rem--queries, algos, fixed formats 
@@ -42,12 +43,14 @@ detail task design before exam:
                 answer filling
             online train  
     14---
+        detailmix
         detailexercise--understand what you find meaningful...
         disscussion 
         rem2
             postmix+rem
             online train 
     15---
+        detailmix
         detailexercise--understand what you find meaningful...
         rem3 
             postmix+rem 
