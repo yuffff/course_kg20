@@ -580,12 +580,21 @@
     h- operators can be expressed with help of set theory 
     q- Minus(M1, M2) does not depend on cardinalities of mappings in M2? y
     h- option operation: augments solutions in M1 
-    pp- a filter in LeftJoin? op25 
+    ok-pp- why need a filter in LeftJoin? op25 
+        为了兼容，简化内部algebra calcu. 
     q- diff. bet. filter inside optional or outside? op27 
     q- (subqueries return multisets?
     q- VALUES behaves just like a subquery with the specified result.
     h- bind -- extension of solution mappings in M
+        pp- eval(µ(ϕ))
+    q- operators for solution set modifiers? x3 work on lists of mappings L 
+    *huge-q- From query to algebra expression? algo? 
+        from inner most 
+        deal with mainly three types of things, condition based 
+        remove all filter outside, and filt them later 
     
+    
+
 
 ---slide7---SPARQL: Complexity and Expressivity
     q- what is the naive approach and its complexity
