@@ -9,12 +9,12 @@
 
     u0
         https://github.com/knowsys/Course-Knowledge-Graphs 
-    u1 
+    //u1 
         // others are prog. tasks
         th-1.4 -
-    u2
+    //u2
         th-2.1 -
-    u3  //-05.11.2019 
+    //u3  //-05.11.2019 
         //th-3.1 ipad 
         //th-3.2 wo pic
         //th-3.3 wo pic 
@@ -41,7 +41,7 @@
         short-sp-1 
         short-th-2
         short-4
-    u9
+    ok-u9
         1
         2
         short-3
@@ -53,9 +53,9 @@
     u11
         short-1 
         short-2
-    u12
+    ok-u12
         ok-possi-1
-        imp-th-2
+        //th-2
     u13
         short-1 
     u14

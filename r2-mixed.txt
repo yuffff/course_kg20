@@ -260,7 +260,7 @@
     h- sparql is meanly depend on matching graph patterns(暴力枚举？)
     pp- Queries that cannot yield bindings for any variable op50
         ok 
----rem1-slide4---
+---rem1-ex-st-slide4---
     h- Wikidata as a working example to try out our knowledge, other resources possible 
     h- Wikidata is a Free Knowledge Graph database that we can play with 
     q- what are properties of wikidata? op08 x2
@@ -873,7 +873,7 @@
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
     h- no multiplicity of results of datalog 
----rem1-slide9---Rules for Querying Graphs
+---rem1-ex-slide9---Rules for Querying Graphs
     --little bit too hard, finish it fast 
     key- Datalog semantics/ syntax/ detail about them 
     
@@ -952,16 +952,16 @@
     *s-q- Query for maternal ancestors of Ada Lovelace op37
     h- Stratified negation is a simple way of adding negation to recursive queries 
     ////excerise 
-    exq- any datalog can be safe? 
+    1-exq- any datalog can be safe? 
         additional atoms to make rules safe 
-    exq- inferences under stratied negation and under classical logical semantics do not coincide   
+    2-exq- inferences under stratied negation and under classical logical semantics do not coincide   
         an example shows that confict if we are going to derive goal() 
-    *exq- Show how to express the following SPARQL features in Datalog
+    *3-exq- Show how to express the following SPARQL features in Datalog
         property path pattern 
         UNION
         MINUS 
         NOT EXISTS
-    exq- Compute a stratifiation for the following Datalog program
+    4-exq- Compute a stratifiation for the following Datalog program
 ---rem1-slide10---Property Graphs 
     h- why interplay with recursion must be limited? op3 
     h- RDF graphs which do not contain any such 'loops' 
@@ -1207,7 +1207,7 @@
         1. error
         2. “unknown value”
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
----rem1-slide12---Knowledge Graph Quality and Validation
+---rem1-ex-slide12---Knowledge Graph Quality and Validation
     h- we focus on quality measurment, and monitor them automatically
     q- what is quality? two dimensions of KG(from requirements)? op17 
         func. 
@@ -1300,6 +1300,9 @@
         like SHACL and ShEx 
         they can declaratively specify constraints 
     //detailready// 
+    ////exercise 
+    1-exq- Develop a SHACL schema that validates statement values
+        ref.
 ---rem1-v-slide13---Centrality measures
     q- what is Centrality 
         a- how to return most “important” ones on top
