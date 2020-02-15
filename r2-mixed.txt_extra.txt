@@ -319,7 +319,7 @@
     *q- how to model fact in datalog 
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
----rem1-ex-slide9---Rules for Querying Graphs
+---rem1-ex1-slide9---Rules for Querying Graphs
     s-q- parallel s-t-reachability for predicates p and q 
     q- does not imply that all P-computable problems can be
     q- Query for maternal ancestors of Ada Lovelace op37 
@@ -327,10 +327,12 @@
     q- what is Tp? immediate consequence operator TP?  op04 
     q- how apply Datalog to graph data? x2 
     *s-q- query expresses parallel s-t-reachability for predicates p and q (for triple encoding):
+    q- what means nullary result predicate? 
     q- Non-linear (e.g., tree-shaped) patterns possible with datalog, how? ext 
     q- Datalog complexity op9 
     q- Datalog is monotonic, what does this mean?l p problem is monotonic? n 
-    **q- query for living people born in Dresden op12 
+    **s-q- query for living people born in Dresden op12 
+    q- require all rules to be safe, and this does not restrict expressivity (exercise)
     q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
     q- A rule is safe? op- 
     q- problem with negation?  
@@ -341,19 +343,22 @@
     *q- express eg:JSBach (ˆeg:hasFather|ˆeg:hasMother)+ ?x with datalog 
     h-q- relation with datalog and sparql 
     q- vlog4j supports evaluating Datlog queries over RDF files? y
+    s-q- Ancestor of alice and not composer op36 
+    s-q- how to define ancestor?
     *s-q- Query for maternal ancestors of Ada Lovelace op37
     ////excerise 
     1-exq- any datalog can be safe? 
-    2-exq- inferences under stratied negation and under classical logical semantics do not coincide   
+    *2-exq- inferences under stratied negation and under classical logical semantics do not coincide   
     *3-exq- Show how to express the following SPARQL features in Datalog
-    4-exq- Compute a stratifiation for the following Datalog program
----rem1-ex-slide10---Property Graphs 
+    *4-exq- Compute a stratifiation for the following Datalog program
+---rem1-ex1-slide10---Property Graphs 
     ////
         1-q- Datalog query that finds a Hamiltonian cycle 
-        1-q- dcide Hamiltonian cycle with datalog fixed query? n 
-        huge-2-q- express graph patterns Datalog?  x12 
+        *1-q- decide Hamiltonian cycle with datalog fixed query? n 
+        *huge-2-q- express graph patterns Datalog?  x12 
+            q- how to define a path? --recur. defi.
         3-q- 
-        4-q- movies example in Neo4j -tao pic 
+        *4-q- movies example in Neo4j -tao pic 
             sub-q- ... 
     ////
     q- what is “Property Graph” 
@@ -390,14 +395,14 @@
     **s-q- Find friends of all people with name Paul Erdos, and return their name and the start date of the friendship op34
     q- what are cypher features?
     q- property graph makes data in two layers? which two?
----rem1-ex-slide11--- The Cypher Query Language
+---rem1-ex1-slide11--- The Cypher Query Language
     ////ex 
-        1-q- Do the query results change if count(DISTINCT child) is used instead?
+        *1-q- Do the query results change if count(DISTINCT child) is used instead?
         **2-q- graph patterns are expressible in Cypher? x12 
         3-q- encode TrueQBF with cypher, what can we say about that?  
             q- cypher has PSpace in query complexity
             sub-q- ... 
-        4-q- neo4j movie example x7 
+        *4-q- neo4j movie example x7 
     ////
     q- The shape of a Cypher query 
     q- how to express path patterns? 
@@ -415,6 +420,7 @@
     q- Cypher does not support arbitrary regular expressions? y sparql does? y 
     q- can we express  ?a (p/q)* ?b with cypher? 
     q- express ?a (p|ˆp|q|ˆp)* ?b in cypher op07 
+    q- pp- But do their semantics agree? op09 
     q- SPARQL bnodes correspond to Cypher node patterns without variable
     q- Each distinct path is a distinct match in cypher? op10 
     q- relationship must be used in only one place
@@ -424,6 +430,7 @@
     q- path manipulation features available? better? y
     q- func. that working on nodes and relationships? roughly op15 
     *s-q- Find all ways in which two nodes are connected, and return the list of relationship types in each case 
+        op16 //// the nodes are naming after n1 and n2 
     q- how to access the content of paths? extract sublist, path len?
     q- matched case can be solved as var. ? y 
     *s-q- Find all shortest ways in which two nodes are connected
@@ -443,9 +450,10 @@
     *q- err. propergate in both sparql and cypher? 
     q- The use of null in Cypher is ambiguous? 
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
----rem1-ex-slide12---Knowledge Graph Quality and Validation
+---rem1-ex1-slide12---Knowledge Graph Quality and Validation
      ////ex 
-        1-q- Develop a SHACL schema that validates statement values for geographic coordinates
+        *1-q- Develop a SHACL schema that validates statement values for geographic coordinates
+            subq- write a SHACL schema for this property. with Q5?! 
         2-q- proof that ShEx schema is NP-hard by reducing from 3-colourability
             subq- 
             subq- ...
@@ -477,11 +485,15 @@
     q-  basic approaches for automatic quality checks?  x2 -re 
     ////exercise 
     1-exq- Develop a SHACL schema that validates statement values
----rem1-ex-v-slide13---Centrality measures
-    ////ex 
-        1-q- Compute the rst three partial sums of the Katz centrality
-        2-q- find a small graph for which not re-calculating and show error 
+---rem1-ex1-v-slide13---Centrality measures
+    ////ex -may not be asked 
+        *1-q- Compute the rst three partial sums of the Katz centrality
+        *2-q- find a small graph for which not re-calculating and show error 
         4-q- 
+        q- Adjacency matrix for directed edge? op36 
+        q- centrality can be computed to a sum number? y not a matrix or vec. 
+        q- pp- 2 is not correct, bet. centrality should lower than 1 
+        q- how to measure bet. centrality for a given graph? 
     ////
     q- what is Centrality 
     q- Possible Solution and their problems? op04 
@@ -510,17 +522,18 @@
     q- the effect of damping factor? too large? too small? op46 
     q- does pagerank converges quickly? y 
     q- compare pagerank to katz centrality
----rem2-ex-slide14---Community detection
-    ////ex 
-        1q- Find the minimal cuts, cardinality? normalised cut value? 
-        2q- Find all bi-cliques in the following graph. Which bi-cliques are maximal?
-        3q- Find a point base for the following graph. How does the point base change
+---rem2-ex1-slide14---Community detection
+    ////ex
+        *1q- Find the minimal cuts, cardinality? normalised cut value? 
+        *2q- Find all bi-cliques in the following graph. Which bi-cliques are maximal?
+        *3q- Find a point base for the following graph. How does the point base change
         4q- ...
     ////
     *q- what is closeness centrality? op08 -x
     **q- limiations of closeness centrality and solutions? op10 -x
     *q- what is harmonic centrality? solved what issue of closeness? 
     *q- what is betweeness centrality? op13 
+    q- why normalised with (N-1)(N-2)? op13
     q- there is sth. diff. when using this metric? ext 
     q- how fast can we achieve when imp. betweeness metric 
     h-q- summerize all centrality criteria? op16 x7 

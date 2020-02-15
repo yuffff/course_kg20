@@ -925,7 +925,7 @@
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
     h- no multiplicity of results of datalog 
----rem1-ex-slide9---Rules for Querying Graphs
+---rem1-ex1-slide9---Rules for Querying Graphs
     --little bit too hard, finish it fast 
     key- Datalog semantics/ syntax/ detail about them 
     
@@ -968,12 +968,18 @@
             better 
     *s-q- query expresses parallel s-t-reachability for predicates p and q (for triple encoding):
         op08 
+        直观来讲，是把两个加一起，the simplest case 
+    q- what means nullary result predicate? 
+        this is a boolean query. op- 
     q- Non-linear (e.g., tree-shaped) patterns possible with datalog, how? ext 
     q- Datalog complexity op9 
     q- Datalog is monotonic, what does this mean?l p problem is monotonic? n 
         more input facts given, the more results derived.
         op10 
-    **q- query for living people born in Dresden op12 
+    **s-q- query for living people born in Dresden op12 
+        P19 born, P570 dead date, Q1731 dresden 
+    q- require all rules to be safe, and this does not restrict expressivity (exercise)
+        add more rules to make it safe 
     q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
         op15 
     q- A rule is safe? op- 
@@ -991,6 +997,7 @@
     pra-*q- deside which lev. it belones to? 
         obtain the maximum edge with "-" in a path 
     *q- express eg:JSBach (ˆeg:hasFather|ˆeg:hasMother)+ ?x with datalog 
+        带入法理解！ 把短的代入长的中进行推理
     h- Datalog with stratified negation captures and extends important parts of SPARQL
     h-q- relation with datalog and sparql 
         datalog has more powerful expressivity
@@ -1001,27 +1008,34 @@
     q- vlog4j supports evaluating Datlog queries over RDF files? y
         Stratified negation and value invention
     h- slightly different rules in vlog4j 
+    s-q- Ancestor of alice and not composer op36 
+    s-q- how to define ancestor?
+        h- 中间变量法！ 定义中间变量：爷爷我中间是爸爸 
     *s-q- Query for maternal ancestors of Ada Lovelace op37
     h- Stratified negation is a simple way of adding negation to recursive queries 
     ////excerise 
     1-exq- any datalog can be safe? 
         additional atoms to make rules safe 
-    2-exq- inferences under stratied negation and under classical logical semantics do not coincide   
+    *2-exq- inferences under stratied negation and under classical logical semantics do not coincide   
+        simplest case! 
         an example shows that confict if we are going to derive goal() 
     *3-exq- Show how to express the following SPARQL features in Datalog
         property path pattern 
         UNION
         MINUS 
         NOT EXISTS
-    4-exq- Compute a stratifiation for the following Datalog program
----rem1-ex-slide10---Property Graphs 
+    *4-exq- Compute a stratifiation for the following Datalog program
+---rem1-ex1-slide10---Property Graphs 
     ////
         1-q- Datalog query that finds a Hamiltonian cycle 
-        1-q- dcide Hamiltonian cycle with datalog fixed query? n 
+        *1-q- decide Hamiltonian cycle with datalog fixed query? n 
             Hamiltonian cycle is in NP-complete, datalog is in P-complete 
-        huge-2-q- express graph patterns Datalog?  x12 
+        *huge-2-q- express graph patterns Datalog?  x12 
+            No.6 pp- err? 
+                based on 5!
+            q- how to define a path? --recur. defi.
         3-q- 
-        4-q- movies example in Neo4j -tao pic 
+        *4-q- movies example in Neo4j -tao pic 
             sub-q- ... 
     ////
     h- why interplay with recursion must be limited? op3 
@@ -1180,16 +1194,24 @@
     q- property graph makes data in two layers? which two?
         primary layer, property graph layer 
     h- ref to spec of the lan as a futher step 
----rem1-ex-slide11--- The Cypher Query Language
+---rem1-ex1-slide11--- The Cypher Query Language
     ////ex 
-        1-q- Do the query results change if count(DISTINCT child) is used instead?
+        *1-q- Do the query results change if count(DISTINCT child) is used instead?
+            depends on the graph 
         **2-q- graph patterns are expressible in Cypher? x12 
             已经出现3次了！在ubung中，看起开必须会
             可能是挑一个考三个语言 
+            pp- 6 op106 
+            6 ferr
+            7 ferr 
+            9 ferr 
+                UNWIND expands a list into a sequence of rows
+                pp- 
         3-q- encode TrueQBF with cypher, what can we say about that?  
             q- cypher has PSpace in query complexity
             sub-q- ... 
-        4-q- neo4j movie example x7 
+        *4-q- neo4j movie example x7 
+            see ex10 
     ////
     h- an other lan. which should also be familier with 
     q- The shape of a Cypher query 
@@ -1213,6 +1235,9 @@
     q- the value cannot be distinguished from “unbound”? y 
     ////new 
     q- what is allowed for node pattern? x3 op4 
+        variable
+        label 
+        properties
     *q- find a man who is Scientist and a composer at the same time op04
         pp-  
     q- quotes of property keys, and their value? 
@@ -1220,10 +1245,11 @@
     q- find a person with particular name and birth year 
     q- what does this mean? (a)-[:E|F*5..10]->(b)<-[e {score:0.8}]-() op- 
     q- what can be expressed in path pattern? op5  x4 
-        variable, range, relationtypes, properties
+        variable, range, relation types, properties
     q- Cypher does not support arbitrary regular expressions? y sparql does? y 
     q- can we express  ?a (p/q)* ?b with cypher? 
     q- express ?a (p|ˆp|q|ˆp)* ?b in cypher op07 
+    q- pp- But do their semantics agree? op09 
     q- SPARQL bnodes correspond to Cypher node patterns without variable
     q- Each distinct path is a distinct match in cypher? op10 
         y, path counting feature 
@@ -1244,7 +1270,7 @@
     h- keys returns the list of all property keys of a map-like object
         labels, type possible as function working on nodes and relationships
     *s-q- Find all ways in which two nodes are connected, and return the list of relationship types in each case 
-        op16 
+        op16 //// the nodes are naming after n1 and n2 
     q- how to access the content of paths? extract sublist, path len?
         use func. relationships() and lenght() returns number of relationships(edges)
     q- matched case can be solved as var. ? y 
@@ -1278,9 +1304,12 @@
         1. error
         2. “unknown value”
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
----rem1-ex-slide12---Knowledge Graph Quality and Validation
+---rem1-ex1-slide12---Knowledge Graph Quality and Validation
      ////ex 
-        1-q- Develop a SHACL schema that validates statement values for geographic coordinates
+        *1-q- Develop a SHACL schema that validates statement values for geographic coordinates
+            h- 首先定义一个shape，而后说明是针对谁的
+            subq- write a SHACL schema for this property. with Q5?! 
+                use sh:nodeKind sh:class !
         2-q- proof that ShEx schema is NP-hard by reducing from 3-colourability
             subq- 
         3-q-
@@ -1383,12 +1412,20 @@
     ////exercise 
     1-exq- Develop a SHACL schema that validates statement values
         ref.
----rem1-ex-v-slide13---Centrality measures
-    ////ex 
-        1-q- Compute the rst three partial sums of the Katz centrality
-        2-q- find a small graph for which not re-calculating and show error 
+---rem1-ex1-v-slide13---Centrality measures
+    ////ex -may not be asked 
+        *1-q- Compute the rst three partial sums of the Katz centrality
+        *2-q- find a small graph for which not re-calculating and show error 
         3-q-
         4-q- 
+
+        q- Adjacency matrix for directed edge? op36 
+            比较特殊，从列往下看，是方向！ 不是对称矩阵！ 
+        q- centrality can be computed to a sum number? y not a matrix or vec. 
+        q- pp- 2 is not correct, bet. centrality should lower than 1 
+        q- how to measure bet. centrality for a given graph? 
+            calcu. how many paths that will pass this current edge 
+            devide by total num of shortest paths in the graph 
     ////
     q- what is Centrality 
         a- how to return most “important” ones on top
@@ -1480,13 +1517,21 @@
                 outdegree...
     h- centrality based on graph structure 
     //detailready/
----rem2-ex-slide14---Community detection
-    ////ex 
-        1q- Find the minimal cuts, cardinality? normalised cut value? 
-        2q- Find all bi-cliques in the following graph. Which bi-cliques are maximal?
-        3q- Find a point base for the following graph. How does the point base change
-            h- point base of G-- basic points that can reach all v 
+---rem2-ex1-slide14---Community detection
+    ////ex
+        *1q- Find the minimal cuts, cardinality? normalised cut value? 
+        *2q- Find all bi-cliques in the following graph. Which bi-cliques are maximal?
+        *3q- Find a point base for the following graph. How does the point base change
         4q- ...
+
+        h- cut 是分割的一个策略
+            cut-set是具体的分割点构成的集合，也就是分割边
+            cardinality of the cut-set 是割边的数量
+            normalised cut value其实就是该集合中所有边，加上边界的边
+                是个基于边的分割算法
+        h- 其实就是找最大的二分图，其他的都可以从这个二分图中导出
+            如果连通的，则必须包括所有点
+        h- point base of G-- basic points that can reach all v 
     ////
     *q- what is closeness centrality? op08 -x
         close to:
@@ -1507,6 +1552,8 @@
         what is N-1 N-2 here? 
         h- best used for star-shaped structure
             can get High betweenness scores 
+    q- why normalised with (N-1)(N-2)? op13
+        A2 N-1 
     q- there is sth. diff. when using this metric? ext 
         might not desired: far from more densely connected areas
         different from scenarios where other metrics uses 
@@ -1663,7 +1710,7 @@
     //detailready//
     
     
-    
+    s
 
 
 
