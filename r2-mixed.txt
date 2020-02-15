@@ -26,7 +26,10 @@
     
 //
 
----rem2-global---
+---rem2-ex-global---
+    ////ex all sparql subtasks found in ubung: 
+        sub-q- xxx 
+    ////
     ok-pp- what are prefixed names in this pic? s2p22 
     q- *The OWL Web Ontology Language extends the semantic features of RDF
         what are semantic features here? 
@@ -261,6 +264,13 @@
     pp- Queries that cannot yield bindings for any variable op50
         ok 
 ---rem1-ex-st-slide4---
+    ////exercise 
+    1- Write a SPARQL query that counts the number of directed triangles 
+    2- Write a SPARQL query that nds all pairs of actors that have co-starred in two movies.
+        aux 是辅助节点，查询时利用嵌套
+    3- more than one nobel price 
+        see ex5 
+    ////exercise
     h- Wikidata as a working example to try out our knowledge, other resources possible 
     h- Wikidata is a Free Knowledge Graph database that we can play with 
     q- what are properties of wikidata? op08 x2
@@ -391,7 +401,22 @@
         incoming requests distributed by load balancing (LVS)
         public SPARQL query service is available
     q- SPARQL query features? go to ext! 
----rem1-slide5--- core basic of the following chapters! try them out 
+---rem1-ex-slide5--- core basic of the following chapters! try them out 
+    ////exercise 
+    1-q- all people that have returned from two spaceights operated by organisations from dierent countries and amount of time 
+        ////human space flight Q752783 
+        ////instanceof P31 
+        ////lunch time P619 
+        ////astronaut mission (P450)
+    2-q- find all people that have received more than one Nobel Prize
+        ////award received (P166)
+    5-q- check for the existence of a 5-clique in the P3373 (“sibling”)
+        return label 
+    ////ex
+    q- what is the diff. of wdt:Pxxx and p:Pxxx and ps:Pxxx ? 
+        statement access, see the pic below:  
+        https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format
+    ////exercise 
     h- core of sparql relies on basic graph patterns (BGPs)
         returns sequences or multi-sets of partial functions (“solutions”)
     q- what are property paths? op5 
@@ -548,7 +573,16 @@
         Aggregates
     sum-q- feature-rich query language sparql features? x7 s6op-start
 //////////////////////////////////////core theory part//////////////////////////////////////
----rem1-slide6---SPARQL: Semantics
+---rem1-ex-slide6---SPARQL: Semantics
+    ////ex 
+        ok-1- fails in the presence of blank nodes
+        2- there are sets of solution mappings such that xxx 
+        3- show that equivalent of two statements: graph related 
+        q- 4- (little too complex, mixed many parts )
+            <>////top 30 composers with the most musical works, whose English label is longer than
+                //// the average English label of musical works
+            //// 
+    ////ex 
     h- SPARQL is a feature-rich query language
     h- bgps are conjunctions of triple patterns
     q- what is miu. in this context? op04 ?? 
@@ -613,7 +647,17 @@
     q- can further converted into nested expressions of operators? y how 
         case match and convert with rules 
     less-sum-q- Join, FilterG,Union,Minus,LeftJoinG,Extend
----rem1-slide7---SPARQL: Complexity and Expressivity
+---rem1-ex-slide7---SPARQL: Complexity and Expressivity
+    ////ex
+        q-1- transferm to algebra, too large task, prac. basic part
+            q- subtask: 
+        q-2- Evaluate the following expression of the SPARQL algebra
+            q- subtask:join means combine 2 things that should compatible
+            q- subtask:LeftJoin means? 
+                optional, filter    
+        q-4- see task6   
+    ////
+
     q- what is the naive approach and its complexity
     q- what computational models are? 
     q- how To classify algorithms? 
@@ -772,7 +816,15 @@
         a- query complexity(wrt. query) + data complexity(wrt. rdf graph)
         stream them out(in PSpace, can have many results)
         queries are limited
----rem1-slide8---SPARQL Limits/Datalog
+---rem1-*ex-slide8---SPARQL Limits/Datalog
+    ////ex
+        1-q- are expressible in SPARQL? try express them! x12 
+        2-q- show how to decide ϕ ∈ SAT using a SPARQL query that does not contain any BGPs
+            sub-q- express the SAT prob. formally 
+        3-q- find a  SPARQL queries exponential say about that.
+            sub-q- find a  SPARQL queries exponential
+        *4-q- Which of the following QBF are satisfiable?
+    ////
     q- why not every set of RDF graphs corresponds to a query
     h- power means characterise strictly more sets of graphs
     q- The lower the complexity of query answering, 
@@ -962,7 +1014,16 @@
         MINUS 
         NOT EXISTS
     4-exq- Compute a stratifiation for the following Datalog program
----rem1-slide10---Property Graphs 
+---rem1-ex-slide10---Property Graphs 
+    ////
+        1-q- Datalog query that finds a Hamiltonian cycle 
+        1-q- dcide Hamiltonian cycle with datalog fixed query? n 
+            Hamiltonian cycle is in NP-complete, datalog is in P-complete 
+        huge-2-q- express graph patterns Datalog?  x12 
+        3-q- 
+        4-q- movies example in Neo4j -tao pic 
+            sub-q- ... 
+    ////
     h- why interplay with recursion must be limited? op3 
     h- RDF graphs which do not contain any such 'loops' 
     q- what is “Property Graph” 
@@ -1119,7 +1180,17 @@
     q- property graph makes data in two layers? which two?
         primary layer, property graph layer 
     h- ref to spec of the lan as a futher step 
----rem1-slide11--- The Cypher Query Language
+---rem1-ex-slide11--- The Cypher Query Language
+    ////ex 
+        1-q- Do the query results change if count(DISTINCT child) is used instead?
+        **2-q- graph patterns are expressible in Cypher? x12 
+            已经出现3次了！在ubung中，看起开必须会
+            可能是挑一个考三个语言 
+        3-q- encode TrueQBF with cypher, what can we say about that?  
+            q- cypher has PSpace in query complexity
+            sub-q- ... 
+        4-q- neo4j movie example x7 
+    ////
     h- an other lan. which should also be familier with 
     q- The shape of a Cypher query 
     h- The order of clauses affects the semantics of queries
@@ -1208,6 +1279,15 @@
         2. “unknown value”
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
 ---rem1-ex-slide12---Knowledge Graph Quality and Validation
+     ////ex 
+        1-q- Develop a SHACL schema that validates statement values for geographic coordinates
+        2-q- proof that ShEx schema is NP-hard by reducing from 3-colourability
+            subq- 
+        3-q-
+            subq- ...
+        4-q- 
+            subq- ...
+    ////
     h- we focus on quality measurment, and monitor them automatically
     q- what is quality? two dimensions of KG(from requirements)? op17 
         func. 
@@ -1303,7 +1383,13 @@
     ////exercise 
     1-exq- Develop a SHACL schema that validates statement values
         ref.
----rem1-v-slide13---Centrality measures
+---rem1-ex-v-slide13---Centrality measures
+    ////ex 
+        1-q- Compute the rst three partial sums of the Katz centrality
+        2-q- find a small graph for which not re-calculating and show error 
+        3-q-
+        4-q- 
+    ////
     q- what is Centrality 
         a- how to return most “important” ones on top
     q- Possible Solution and their problems? op04 
@@ -1394,7 +1480,14 @@
                 outdegree...
     h- centrality based on graph structure 
     //detailready/
----rem2-slide14---Community detection
+---rem2-ex-slide14---Community detection
+    ////ex 
+        1q- Find the minimal cuts, cardinality? normalised cut value? 
+        2q- Find all bi-cliques in the following graph. Which bi-cliques are maximal?
+        3q- Find a point base for the following graph. How does the point base change
+            h- point base of G-- basic points that can reach all v 
+        4q- ...
+    ////
     *q- what is closeness centrality? op08 -x
         close to:
         A node is important, if it is close to many other nodes

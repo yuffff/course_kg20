@@ -2,7 +2,10 @@
     extract q- with python
     ////new added! 
     ////excerise added! 
----rem2-global---
+---rem2-ex-global---
+    ////ex all sparql subtasks found in ubung: 
+        sub-q- xxx 
+    ////
     q- *The OWL Web Ontology Language extends the semantic features of RDF
     q- what does rdf:type mean?     
     q- what means a db is normalized? 
@@ -97,7 +100,9 @@
     q- What is evalG(eg:s eg:p eg:o) over the empty graph G = ∅? op48 
     q- what is Boolean queries? op50 
     q- What is evalG(eg:s eg:p eg:o) over the graph G = {eg:s eg:p eg:o}? op50
----rem1-slide4---
+---rem1-ex-st-slide4---
+    ////exercise 
+    ////exercise
     q- what are properties of wikidata? op08 x2
     q- applications of wikidata? ext x2
     q- Wikimedia wikidata and wikipedia? what is WMF? op17 
@@ -127,7 +132,19 @@
     q- liberal configuration, how about the timeout? how many secs? op54 
     q- what is the backend of wdqs? ext 
     q- SPARQL query features? go to ext! 
----rem1-slide5--- core basic of the following chapters! try them out 
+---rem1-ex-slide5--- core basic of the following chapters! try them out 
+    ////exercise 
+    1-q- all people that have returned from two spaceights operated by organisations from dierent countries and amount of time 
+        ////human space flight Q752783 
+        ////instanceof P31 
+        ////lunch time P619 
+        ////astronaut mission (P450)
+    2-q- find all people that have received more than one Nobel Prize
+        ////award received (P166)
+    5-q- check for the existence of a 5-clique in the P3373 (“sibling”)
+    ////ex
+    q- what is the diff. of wdt:Pxxx and p:Pxxx and ps:Pxxx ? 
+    ////exercise 
     q- what are property paths? op5 
     **s-q- Find all descendants of Johann Sebastian Bach op06 
     q- how does this execute? ˆ!ˆeg:p1*/eg:p2?|eg:p3+ op07 
@@ -191,7 +208,13 @@
     q- what is COUNT(*) as ?val here COUNT? ext h
     sum-q- feature-rich query language sparql features? x7 s6op-start
 //////////////////////////////////////core theory part//////////////////////////////////////
----rem1-slide6---SPARQL: Semantics
+---rem1-ex-slide6---SPARQL: Semantics
+    ////ex 
+        q- 4- (little too complex, mixed many parts )
+            <>////top 30 composers with the most musical works, whose English label is longer than
+                //// the average English label of musical works
+            //// 
+    ////ex 
     q- what is miu. in this context? op04 ?? 
     q- how to transfer to semantic operations. 
     ////
@@ -217,7 +240,12 @@
     q- how to deal with several aggregates are selected in the query? 
     q- can further converted into nested expressions of operators? y how 
     less-sum-q- Join, FilterG,Union,Minus,LeftJoinG,Extend
----rem1-slide7---SPARQL: Complexity and Expressivity
+---rem1-ex-slide7---SPARQL: Complexity and Expressivity
+    ////ex
+            q- subtask: 
+            q- subtask:join means combine 2 things that should compatible
+            q- subtask:LeftJoin means? 
+    ////
     q- what is the naive approach and its complexity
     q- what computational models are? 
     q- how To classify algorithms? 
@@ -252,7 +280,15 @@
     q- Answering queries in PSpace? ys
     //q- Where this sketch is lacking? s7op58
     q- why practical? detailed 
----rem1-slide8---SPARQL Limits/Datalog
+---rem1-*ex-slide8---SPARQL Limits/Datalog
+    ////ex
+        1-q- are expressible in SPARQL? try express them! x12 
+        2-q- show how to decide ϕ ∈ SAT using a SPARQL query that does not contain any BGPs
+            sub-q- express the SAT prob. formally 
+        3-q- find a  SPARQL queries exponential say about that.
+            sub-q- find a  SPARQL queries exponential
+        *4-q- Which of the following QBF are satisfiable?
+    ////
     q- why not every set of RDF graphs corresponds to a query
     q- The lower the complexity of query answering, 
     q- why can not measure expressivity with complexity? not so correct? op08 
@@ -283,7 +319,7 @@
     *q- how to model fact in datalog 
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
----rem1-slide9---Rules for Querying Graphs
+---rem1-ex-slide9---Rules for Querying Graphs
     s-q- parallel s-t-reachability for predicates p and q 
     q- does not imply that all P-computable problems can be
     q- Query for maternal ancestors of Ada Lovelace op37 
@@ -307,11 +343,19 @@
     q- vlog4j supports evaluating Datlog queries over RDF files? y
     *s-q- Query for maternal ancestors of Ada Lovelace op37
     ////excerise 
-    exq- any datalog can be safe? 
-    exq- inferences under stratied negation and under classical logical semantics do not coincide   
-    *exq- Show how to express the following SPARQL features in Datalog
-    exq- Compute a stratifiation for the following Datalog program
----rem1-slide10---Property Graphs 
+    1-exq- any datalog can be safe? 
+    2-exq- inferences under stratied negation and under classical logical semantics do not coincide   
+    *3-exq- Show how to express the following SPARQL features in Datalog
+    4-exq- Compute a stratifiation for the following Datalog program
+---rem1-ex-slide10---Property Graphs 
+    ////
+        1-q- Datalog query that finds a Hamiltonian cycle 
+        1-q- dcide Hamiltonian cycle with datalog fixed query? n 
+        huge-2-q- express graph patterns Datalog?  x12 
+        3-q- 
+        4-q- movies example in Neo4j -tao pic 
+            sub-q- ... 
+    ////
     q- what is “Property Graph” 
     q- how can property graph be used? which model exists? x3 op08 
     q- Types of “Property Graphs”? x3+ 
@@ -346,7 +390,15 @@
     **s-q- Find friends of all people with name Paul Erdos, and return their name and the start date of the friendship op34
     q- what are cypher features?
     q- property graph makes data in two layers? which two?
----rem1-slide11--- The Cypher Query Language
+---rem1-ex-slide11--- The Cypher Query Language
+    ////ex 
+        1-q- Do the query results change if count(DISTINCT child) is used instead?
+        **2-q- graph patterns are expressible in Cypher? x12 
+        3-q- encode TrueQBF with cypher, what can we say about that?  
+            q- cypher has PSpace in query complexity
+            sub-q- ... 
+        4-q- neo4j movie example x7 
+    ////
     q- The shape of a Cypher query 
     q- how to express path patterns? 
     q- the value cannot be distinguished from “unbound”? y 
@@ -391,7 +443,15 @@
     *q- err. propergate in both sparql and cypher? 
     q- The use of null in Cypher is ambiguous? 
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
----rem1-slide12---Knowledge Graph Quality and Validation
+---rem1-ex-slide12---Knowledge Graph Quality and Validation
+     ////ex 
+        1-q- Develop a SHACL schema that validates statement values for geographic coordinates
+        2-q- proof that ShEx schema is NP-hard by reducing from 3-colourability
+            subq- 
+            subq- ...
+        4-q- 
+            subq- ...
+    ////
     q- what is quality? two dimensions of KG(from requirements)? op17 
     q- what are Functional quality of that? x3 
     q- what are non-functional? x5 
@@ -415,7 +475,14 @@
     q- complexity of the Validating? 
     h-q- many criteria to measure quality of kg, what are they? -re
     q-  basic approaches for automatic quality checks?  x2 -re 
----rem1-v-slide13---Centrality measures
+    ////exercise 
+    1-exq- Develop a SHACL schema that validates statement values
+---rem1-ex-v-slide13---Centrality measures
+    ////ex 
+        1-q- Compute the rst three partial sums of the Katz centrality
+        2-q- find a small graph for which not re-calculating and show error 
+        4-q- 
+    ////
     q- what is Centrality 
     q- Possible Solution and their problems? op04 
     q- what are typical networks? they are becoming more and more imp. nowadays
@@ -443,7 +510,13 @@
     q- the effect of damping factor? too large? too small? op46 
     q- does pagerank converges quickly? y 
     q- compare pagerank to katz centrality
----rem2-slide14---Community detection
+---rem2-ex-slide14---Community detection
+    ////ex 
+        1q- Find the minimal cuts, cardinality? normalised cut value? 
+        2q- Find all bi-cliques in the following graph. Which bi-cliques are maximal?
+        3q- Find a point base for the following graph. How does the point base change
+        4q- ...
+    ////
     *q- what is closeness centrality? op08 -x
     **q- limiations of closeness centrality and solutions? op10 -x
     *q- what is harmonic centrality? solved what issue of closeness? 
