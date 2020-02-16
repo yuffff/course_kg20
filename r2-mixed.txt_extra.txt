@@ -251,7 +251,7 @@
     q- what is COUNT(*) as ?val here COUNT? ext h
     sum-q- feature-rich query language sparql features? x7 s6op-start
 //////////////////////////////////////core theory part//////////////////////////////////////
----rem1v-ex1-slide6---SPARQL: Semantics
+---rem1vp-ex1-slide6---SPARQL: Semantics
     ////ex 
         *ok-1-q- fails in the presence of blank nodes
         2-q- there are sets of solution mappings such that xxx 
@@ -303,7 +303,7 @@
     q- complexity hierarchy
     q- many-one reduction 
     q- key- NP-hard
-    *q- why practical?
+    q- why practical?
     q- Complexity of SPARQL Evaluation
     q- Where this sketch is lacking? s7op58
     ////new////
@@ -356,23 +356,26 @@
     s-q- replaces all uses of the hasSister 
     q- diff. bet. datalog and prolog 
     ////new//// 
-    q- Naive, iteration-based solution finding procedure runs in polynomial space
+    q- Naive, iteration-based solution finding procedure 
+        <> runs in polynomial space
     *q- what does power mean? expressive power op4 
-    *q- why not all set of rdf corresbons to a query? 
-    *q- lower complexity lower expressivity? not always true 
-    **q- proof that parallel reachability is in NL but can not be expressd in sparql 
+    *q- why not all set of rdf corresponds to a query? 
+    *q- higher complexity higher expressivity? not always true 
+    **q- proof that parallel reachability is in NL 
+        <> but can not be expressd in sparql 
     *q- why data complexity talked here? 
     *q- what patterns cannot be expressed using sparql? op14 x4 x4 detail
     *q- what limitation does sparql have? roughly x2 
     *q- why not support them in sparql? op15 
     //q- what are not introduced feature? 
     ////datalog////
-    q- datalog-- a query for all ancestors of the individual Alice 
-    q- ext- deduct with ancestor(X, Y) :- parent(X, Y). ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y)
+    *d-q- datalog-- a query for all ancestors of the individual Alice 
+    //q- ext- deduct with ancestor(X, Y) :- parent(X, Y). ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y)
     *q- diff. bet. datalog and prolog 
-    *q- how to model fact in datalog 
+    **q- how to model fact in datalog x2 
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
+    q- no multiplicity of results of datalog? y  
 ---rem1-ex1-slide9---Rules for Querying Graphs
     s-q- parallel s-t-reachability for predicates p and q 
     q- does not imply that all P-computable problems can be

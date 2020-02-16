@@ -1015,21 +1015,25 @@
             so we can not use sparql to query all patterns 
             -> at least PSpace complex ones can have most expressivity
             (QBF shows that )
-    *q- lower complexity lower expressivity? not always true 
+    *q- higher complexity higher expressivity? not always true 
         h- cannot even solve all problems in their own complexity class
         the parallel reachability problem example   
-    **q- proof that parallel reachability is in NL but can not be expressd in sparql 
-        we can only use infinitly many ver. of degree 2 in rdf to match to a property path pattern
-        and limited number of nodes with higher degree 
-        but parallel problem need to check arbitry many 4 degree nodes 
+    **q- proof that parallel reachability is in NL 
+        <> but can not be expressd in sparql 
+        a- 
+            higher degrees can only be enforced for a limited number of nodes
+            we can only use infinitly many ver. of degree 2 in rdf to match to a property path pattern
+                and limited number of nodes with higher degree 
+                but parallel problem need to check arbitry many 4 degree nodes 
     *q- why data complexity talked here? 
         can be seen as RDF graphs classification problem, which has 
         fixed query. 
     *q- what patterns cannot be expressed using sparql? op14 x4 x4 detail
-        Non-regular path 
-        Nested regular expressions
-        Tree-like patterns
-        wide paths 
+        pattern limits 
+            Non-regular path 
+            Nested regular expressions
+            Tree-like patterns
+            wide paths 
         fundamental limits:
             dataypes
             pathlength 
@@ -1043,17 +1047,20 @@
     //q- what are not introduced feature? 
     h- datalog uses first order logic/ and prolog.
     ////datalog////
-    q- datalog-- a query for all ancestors of the individual Alice 
-    q- ext- deduct with ancestor(X, Y) :- parent(X, Y). ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y)
+    *d-q- datalog-- a query for all ancestors of the individual Alice 
+    //q- ext- deduct with ancestor(X, Y) :- parent(X, Y). ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y)
     *q- diff. bet. datalog and prolog 
-        Datalog程序对事实和规则的出现顺序不做要求,prolog does 
-    h- An atom is a formula of the form R(t1, . . . , tn) with R a predicate symbol of arity n
+        datalog do not require a spec. order of s.,prolog does 
+        order is not imp. in datalog, but for prolog. 
+    h- An atom is a formula of the form R(t1, . . . , tn)   
+        with R a predicate symbol of arity n
     h-  A rule with empty body (m = 0) is called a fact
-    *q- how to model fact in datalog 
+    **q- how to model fact in datalog x2 
         rule with empty body 
+        model rdf terms in datalog? !! 
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
-    h- no multiplicity of results of datalog 
+    q- no multiplicity of results of datalog? y  
 ---rem1-ex1-slide9---Rules for Querying Graphs
     --little bit too hard, finish it fast 
     key- Datalog semantics/ syntax/ detail about them 
