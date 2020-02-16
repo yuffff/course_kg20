@@ -333,11 +333,13 @@
     //q- Where this sketch is lacking? s7op58
     q- why practical? detailed 
     q- limitations of sparql? see s8! 
----rem1vps-*ex1*-left-slide8---SPARQL Limits/Datalog
+---rem1vps-*ex1*-spql-slide8---SPARQL Limits/Datalog
     ////ex
         *1-q- are expressible in SPARQL? try express them! x12 
-            q- nd nodes that are cousinsn not possible? y 
+                subq- find all kinds of paths with sparql? 
+            q- find nodes that are cousinsn not possible? y 
             q- can not expressive parallel reachability? y not the same thing with complexity
+                subq- select all nodes? 
         *2-q- show how to decide ϕ ∈ SAT using a SPARQL query that does not contain any BGPs
             sub-q- express the SAT prob. formally 
         3-q- find a  SPARQL queries exponential say about that.
@@ -377,7 +379,7 @@
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
     q- no multiplicity of results of datalog? y  
----rem1vps-ex1-left-slide9---Rules for Querying Graphs
+---rem1vps-ex1-dl-slide9---Rules for Querying Graphs
     ////excerise 
         1-exq- any datalog can be safe? 
         *2-exq- inferences under stratied negation and under classical logical semantics do not coincide   
@@ -416,12 +418,13 @@
     *s-q- Ancestor of alice and not composer op36 
     s-q- how to define ancestor?
     *s-q- Query for maternal ancestors of Ada Lovelace op37
----rem1vps-ex1-left-slide10---Property Graphs 
+---rem1vps-ex1-dl-slide10---Property Graphs 
     ////
         1-q- Datalog query that finds a Hamiltonian cycle 
         *1-q- decide Hamiltonian cycle with datalog fixed query? n 
         *huge-2-q- express graph patterns Datalog?  x12 
             q- how to define a path? --recur. defi.
+            q- datalog can not count or iterate !!!?? pp- 
         3-q- 
         *4-q- movies example in Neo4j -tao pic 
             sub-q- ... 
@@ -461,7 +464,7 @@
         <> and return their name and the start date of the friendship op34
     q- what are cypher features?
     q- property graph makes data in two layers? which two?
----rem1vps-ex1-left-slide11--- The Cypher Query Language
+---rem1vps-ex1-cypher-slide11--- The Cypher Query Language
     ////ex 
         *1-q- Do the query results change if count(DISTINCT child) is used instead?
         **2-q- graph patterns are expressible in Cypher? x12 
