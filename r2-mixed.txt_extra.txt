@@ -553,7 +553,7 @@
     *q-  basic approaches for automatic quality checks?  x2 -re 
     ////exercise 
     1-exq- Develop a SHACL schema that validates statement values
----rem1v-ex1-v-slide13---Centrality measures
+---rem1vps-ex1-v-slide13---Centrality measures
     ////ex -may not be asked 
         *1-q- Compute the rst three partial sums of the Katz centrality
         *2-q- find a small graph for which not re-calculating and show error 
@@ -590,44 +590,44 @@
     q- the effect of damping factor? too large? too small? op46 
     q- does pagerank converges quickly? y 
     ***q- compare pagerank to katz centrality
----rem2-ex1-slide14---Community detection
+---rem2vps-ex1-slide14---Community detection
     ////ex
         *1q- Find the minimal cuts, cardinality? normalised cut value? 
         *2q- Find all bi-cliques in the following graph. Which bi-cliques are maximal?
         *3q- Find a point base for the following graph. How does the point base change
         4q- ...
     ////
-    *q- what is closeness centrality? op08 -x
+    *q- what is closeness centrality? op08 ferr and its notations? 
     **q- limiations of closeness centrality and solutions? op10 -x
     *q- what is harmonic centrality? solved what issue of closeness? 
     *q- what is betweeness centrality? op13 
-    q- why normalised with (N-1)(N-2)? op13
+    extq- why normalised with (N-1)(N-2)? op13
     q- there is sth. diff. when using this metric? ext 
     q- how fast can we achieve when imp. betweeness metric 
-    h-q- summerize all centrality criteria? op16 x7 
+    *h-q- summerize all centrality criteria? op16 x7 
     ////
     q- what is Community feature? op18
     q- why we study Community activity? op19 
     **q- approach of Girvan-Newman their algorithm? op21
-    h-q- it is a hierarchical clustering algo. what this mean? 
+    *h-q- it is a hierarchical clustering algo. what this mean? 
     q- run GN algo in this graph op28 
     *q- what is the computational complexity of the GN algo? how to improve that? x2 op33 
-    *q- problem of GN algo, when to stop? x3 possibles op35 
+    ***q- problem of GN algo, when to stop? x3 possibles op35 
     q- why should preserve node degrees? 
     q- pp- op39 modularity define?
     q- naive appro. random graph, problem? solve? op39 
     //q- what is modularity used for? op- 
-    q- calcu. of modularity metrics? op42 
-    q- what appro. used to gen random. data as degree preserving? op41 
-    q- range of Q? how can it been used? the higher the better? 
-    q- inherent limiations of modularity-based approaches? op45 
+    *q- calcu. of modularity metrics? op42 
+    **q- what appro. used to gen random. data as degree preserving? op41 
+    *q- range of Q? how can it been used? the higher the better? 
+    *q- inherent limiations of modularity-based approaches? op45 
     q- idea of minimum cuts? 
     //q- does it suitable for social Community detection? 
     *q- idea of Bi-Cliques 
     *q- the idea based on statistics? features of it? 
----rem2-slide15---Summary and Outlook 
+---rem2vps-slide15---Summary and Outlook 
     q- what is ontology op10 
-    **q- which parts are there? x4 x2big 
+    **q- which parts are there? x4  
     q- snomed ct? op11 
     q- diff. from taxonomy and databases? op10 op13 
     *q- what is an ontology language? op14 
@@ -635,8 +635,8 @@
     *q- what is reasoning? ext
     q- from view of a sys. we want non-redandent info.? y 
     *q- reasoning tasks in ontology system? x2 op15  
-    q- what is entailment? op15 
+    *q- what is entailment? op15 
     **q- QA process? ext 
-    **q- comm. diff. bet. ontology lan. and constraints lan.? op16 
+    ****q- comm. diff. bet. ontology lan. and constraints lan.? op16 
     q- what can ontology be used? h 
     q- we can also use ontology to enlarge traditional db? y ext 

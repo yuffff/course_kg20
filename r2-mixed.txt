@@ -941,16 +941,22 @@
         stream them out(in PSpace, can have many results)
         queries are limited
     q- limitations of sparql? see s8! 
----rem1vps-*ex1*-left-slide8---SPARQL Limits/Datalog
+---rem1vps-*ex1*-spql-slide8---SPARQL Limits/Datalog
     ////ex
         *1-q- are expressible in SPARQL? try express them! x12 
-            4 pp- 
-            q- nd nodes that are cousinsn not possible? y 
+            4 pp- ferr 
+                subq- find all kinds of paths with sparql? 
+            q- find nodes that are cousinsn not possible? y 
             q- can not expressive parallel reachability? y not the same thing with complexity
             10 ferr 
+                h- both possible direction 
+                h- all predicate not equ. to all path !!
+                pp- can be rewritten with Nr.4? 
                 not that easy 
             11 hard pp- 
-            12 ferr 
+                h- we have to use eg:iri in this task to get a closer view 
+            12 ferr ferr 
+                subq- select all nodes? 
                 collect the num. of nodes? !!
         *2-q- show how to decide ϕ ∈ SAT using a SPARQL query that does not contain any BGPs
             sub-q- express the SAT prob. formally 
@@ -1070,7 +1076,7 @@
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
     q- no multiplicity of results of datalog? y  
----rem1vps-ex1-left-slide9---Rules for Querying Graphs
+---rem1vps-ex1-dl-slide9---Rules for Querying Graphs
     --little bit too hard, finish it fast 
     ////excerise 
         1-exq- any datalog can be safe? 
@@ -1177,15 +1183,21 @@
         h- 中间变量法！ 定义中间变量：爷爷我中间是爸爸 
     *s-q- Query for maternal ancestors of Ada Lovelace op37
     h- Stratified negation is a simple way of adding negation to recursive queries   
----rem1vps-ex1-left-slide10---Property Graphs 
+---rem1vps-ex1-dl-slide10---Property Graphs 
     ////
         1-q- Datalog query that finds a Hamiltonian cycle 
         *1-q- decide Hamiltonian cycle with datalog fixed query? n 
             Hamiltonian cycle is in NP-complete, datalog is in P-complete 
         *huge-2-q- express graph patterns Datalog?  x12 
+            No.2 ferr 
+                use step! 
+            4. ferr 
+                var name!!
             No.6 pp- err? 
                 based on 5!
+                same level!! 
             q- how to define a path? --recur. defi.
+            q- datalog can not count or iterate !!!?? pp- 
         3-q- 
         *4-q- movies example in Neo4j -tao pic 
             sub-q- ... 
@@ -1349,13 +1361,15 @@
     q- property graph makes data in two layers? which two?
         primary layer, property graph layer 
     h- ref to spec of the lan as a futher step 
----rem1vps-ex1-left-slide11--- The Cypher Query Language
+---rem1vps-ex1-cypher-slide11--- The Cypher Query Language
     ////ex 
         *1-q- Do the query results change if count(DISTINCT child) is used instead?
             depends on the graph 
         **2-q- graph patterns are expressible in Cypher? x12 
             已经出现3次了！在ubung中，看起开必须会
             可能是挑一个考三个语言 
+            从练习来看cypher 表达能力确实强！！
+            h- 3-filter 4-negation !!! 
             pp- 6 op106 
             6 ferr
             7 ferr 
@@ -1571,7 +1585,7 @@
     ////exercise 
     1-exq- Develop a SHACL schema that validates statement values
         ref.
----rem1v-ex1-v-slide13---Centrality measures
+---rem1vps-ex1-v-slide13---Centrality measures
     ////ex -may not be asked 
         *1-q- Compute the rst three partial sums of the Katz centrality
         *2-q- find a small graph for which not re-calculating and show error 
@@ -1676,7 +1690,7 @@
                 outdegree...
     h- centrality based on graph structure 
     //detailready/
----rem2-ex1-slide14---Community detection
+---rem2vps-ex1-slide14---Community detection
     ////ex
         *1q- Find the minimal cuts, cardinality? normalised cut value? 
         *2q- Find all bi-cliques in the following graph. Which bi-cliques are maximal?
@@ -1692,7 +1706,7 @@
             如果连通的，则必须包括所有点
         h- point base of G-- basic points that can reach all v 
     ////
-    *q- what is closeness centrality? op08 -x
+    *q- what is closeness centrality? op08 ferr and its notations? 
         close to:
         A node is important, if it is close to many other nodes
         the formula.
@@ -1705,13 +1719,14 @@
             affects one term of the sum, not the whole result.
     *q- what is betweeness centrality? op13 
         blet. other nodes 
-        a-imp. node if it is on the shortest path between 
-            many pairs of other nodes
+        a-imp. node if it is 
+            on the shortest path 
+                between many pairs of other nodes
         Measure how relevant a vertex is for mediating flows
         what is N-1 N-2 here? 
         h- best used for star-shaped structure
             can get High betweenness scores 
-    q- why normalised with (N-1)(N-2)? op13
+    extq- why normalised with (N-1)(N-2)? op13
         A2 N-1 
     q- there is sth. diff. when using this metric? ext 
         might not desired: far from more densely connected areas
@@ -1721,7 +1736,7 @@
             pp-
             cubic time 
             go down to quadratic for sparse graphs
-    h-q- summerize all centrality criteria? op16 x7 
+    *h-q- summerize all centrality criteria? op16 x7 
         what are their meaning intuitively?
     //bef. find imp. nodes
     //now: find community
@@ -1744,14 +1759,14 @@
             check connected components of remaining graph, 
                 and mark community
             until enough amount found 
-    h-q- it is a hierarchical clustering algo. what this mean? 
+    *h-q- it is a hierarchical clustering algo. what this mean? 
         a dendrogram can be computed 
     q- run GN algo in this graph op28 
     h- betweeness-based clustering 
     lan- dandrogram tree-view 
     *q- what is the computational complexity of the GN algo? how to improve that? x2 op33 
         random sub-sampling
-    *q- problem of GN algo, when to stop? x3 possibles op35 
+    ***q- problem of GN algo, when to stop? x3 possibles op35 
         target number 
         maximum size for communities
         measurement for community quality
@@ -1768,20 +1783,20 @@
         preserve degree 
     //q- what is modularity used for? op- 
         a- measures degree of random? 
-    q- calcu. of modularity metrics? op42 
-    q- what appro. used to gen random. data as degree preserving? op41 
+    *q- calcu. of modularity metrics? op42 
+    **q- what appro. used to gen random. data as degree preserving? op41 
         a- degree-preserving random graphs 
         idea:
             cut each edge into two stubs, glue the stubs back together randomly
         fomula. op42 
-    q- range of Q? how can it been used? the higher the better? 
+    *q- range of Q? how can it been used? the higher the better? 
         should be higher than 0? yy
     h- modularity based Community detection, meaning not only GN algo. 
-    q- inherent limiations of modularity-based approaches? op45 
+    *q- inherent limiations of modularity-based approaches? op45 
         cons of that? x2 
-            can not detect too small ones 
+            not too small ones 
             fast approximate approaches may too far away from optimum 
-            not so real model 
+            //not so real model 
     h- key of modularity based algorithm? detect if it has enough connections 
         in between 
     //further detection methods op46 
@@ -1808,12 +1823,12 @@
             2.can find overlapping ones
             3.more insightful 
     //detailready//
----rem2-slide15---Summary and Outlook 
+---rem2vps-slide15---Summary and Outlook 
     h- to understand graphs 
     q- what is ontology op10 
         description of knowledge about a domain of interest
         rdf was used to describe graph model 
-    **q- which parts are there? x4 x2big 
+    **q- which parts are there? x4  
     h- knowledge of a domain of interest 
         特殊领域的知识库，其中还可以做推理
     q- snomed ct? op11 
@@ -1835,7 +1850,8 @@
     *q- what is reasoning? ext
         a- 
             analyse and evaluate in logical database 
-        deduce more know. based on existing database 
+        a-
+            deduce more know. based on existing database 
         entail addition facts, hidden 
         we can enlarge db in this way 
     q- from view of a sys. we want non-redandent info.? y 
@@ -1843,24 +1859,22 @@
         entailment, find more relationships
         check Consistency 
         Query answering
-    q- what is entailment? op15 
+    *q- what is entailment? op15 
         find out more relationships
     **q- QA process? ext 
         a- 
             find deduced query results 
-    **q- comm. diff. bet. ontology lan. and constraints lan.? op16 
+    ****q- comm. diff. bet. ontology lan. and constraints lan.? op16 
         comm. 
-            encoded in machine-readable
-            formal semantics
-                -> evaluation
+            encoded in machine-readable standardised formats
+                --> stored as machine readable fromats 
+            have a formal semantics
         diff. 
             ontology
-                descriptive
-                    -> semantic
+                semantic
                 domain knowledge
             constrain
-                perscriptive 
-                    -> syntactic
+                syntactic
                 measure quality 
     q- what can ontology be used? h 
         a- 
