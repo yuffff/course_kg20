@@ -22,14 +22,30 @@
     先把我一些最基本的proof
     ////new added! 
     ////excerise added! 
+    <> added! 
+    //// do not modify extracted file!! 
     认知是从基础到深入的，完成slides是最简单根本的，而后再考虑ubung，但是都要尽快
-    
+    ditan practice + random practice 
+    measuring review state? 
+        reviewstage1: literal finished 
+        reviewstage2: direct memory(提笔就来)
+        reviewstage3: fast and good  
+                                    |---|
+                                    |--|   |
+                                    |      |
+                                    |      |----
+                                    |
+            |-----------------------|   examdate
+        ----|            important to rem and practice!
+        long prepare! break out! 
+        fastReactRate(FRR) = 0.5 
 //
 
 ---rem2-ex-global---
     ////ex all sparql subtasks found in ubung: 
         sub-q- xxx 
     ////
+    q- all common complexity clases? ! 
     ok-pp- what are prefixed names in this pic? s2p22 
     q- *The OWL Web Ontology Language extends the semantic features of RDF
         what are semantic features here? 
@@ -263,13 +279,13 @@
     h- sparql is meanly depend on matching graph patterns(暴力枚举？)
     pp- Queries that cannot yield bindings for any variable op50
         ok 
----rem1-ex-st-slide4---
+---rem1-ex1-st-slide4---
     ////exercise 
-    1- Write a SPARQL query that counts the number of directed triangles 
-    2- Write a SPARQL query that nds all pairs of actors that have co-starred in two movies.
-        aux 是辅助节点，查询时利用嵌套
-    3- more than one nobel price 
-        see ex5 
+        *1- Write a SPARQL query that counts the number of directed triangles 
+        *2- Write a SPARQL query that nds all pairs of actors that have co-starred in two movies.
+            aux 是辅助节点，查询时利用嵌套
+        *3- more than one nobel price 
+            see ex5 
     ////exercise
     h- Wikidata as a working example to try out our knowledge, other resources possible 
     h- Wikidata is a Free Knowledge Graph database that we can play with 
@@ -401,17 +417,17 @@
         incoming requests distributed by load balancing (LVS)
         public SPARQL query service is available
     q- SPARQL query features? go to ext! 
----rem1-ex-slide5--- core basic of the following chapters! try them out 
+---rem1-ex1-slide5--- core basic of the following chapters! try them out 
     ////exercise 
-    1-q- all people that have returned from two spaceights operated by organisations from dierent countries and amount of time 
-        ////human space flight Q752783 
-        ////instanceof P31 
-        ////lunch time P619 
-        ////astronaut mission (P450)
-    2-q- find all people that have received more than one Nobel Prize
-        ////award received (P166)
-    5-q- check for the existence of a 5-clique in the P3373 (“sibling”)
-        return label 
+        *1-q- all people that have returned from two spaceights operated by organisations from dierent countries and amount of time 
+            ////human space flight Q752783 
+            ////instanceof P31 
+            ////lunch time P619 
+            ////astronaut mission (P450)
+        *2-q- find all people that have received more than one Nobel Prize
+            ////award received (P166)
+        *5-q- check for the existence of a 5-clique in the P3373 (“sibling”)
+            return label 
     ////ex
     q- what is the diff. of wdt:Pxxx and p:Pxxx and ps:Pxxx ? 
         statement access, see the pic below:  
@@ -573,15 +589,16 @@
         Aggregates
     sum-q- feature-rich query language sparql features? x7 s6op-start
 //////////////////////////////////////core theory part//////////////////////////////////////
----rem1-ex-slide6---SPARQL: Semantics
+---rem1-ex1-slide6---SPARQL: Semantics
     ////ex 
-        ok-1- fails in the presence of blank nodes
-        2- there are sets of solution mappings such that xxx 
-        3- show that equivalent of two statements: graph related 
-        q- 4- (little too complex, mixed many parts )
-            <>////top 30 composers with the most musical works, whose English label is longer than
-                //// the average English label of musical works
-            //// 
+        *ok-1-q- fails in the presence of blank nodes
+        2-q- there are sets of solution mappings such that xxx 
+        *th-hard-3-q- show that equivalent of two statements: graph related 
+        4q- (little too complex, mixed many parts )
+            <> top 30 composers with the most musical works, whose English label is longer than
+                <> the average English label of musical works
+            subq- ...
+             
     ////ex 
     h- SPARQL is a feature-rich query language
     h- bgps are conjunctions of triple patterns
@@ -647,11 +664,11 @@
     q- can further converted into nested expressions of operators? y how 
         case match and convert with rules 
     less-sum-q- Join, FilterG,Union,Minus,LeftJoinG,Extend
----rem1-ex-slide7---SPARQL: Complexity and Expressivity
+---rem1-ex1-slide7---SPARQL: Complexity and Expressivity
     ////ex
         q-1- transferm to algebra, too large task, prac. basic part
             q- subtask: 
-        q-2- Evaluate the following expression of the SPARQL algebra
+        *q-2- Evaluate the following expression of the SPARQL algebra
             q- subtask:join means combine 2 things that should compatible
             q- subtask:LeftJoin means? 
                 optional, filter    
@@ -816,14 +833,24 @@
         a- query complexity(wrt. query) + data complexity(wrt. rdf graph)
         stream them out(in PSpace, can have many results)
         queries are limited
----rem1-*ex-slide8---SPARQL Limits/Datalog
+---rem1-*ex1-slide8---SPARQL Limits/Datalog
     ////ex
-        1-q- are expressible in SPARQL? try express them! x12 
-        2-q- show how to decide ϕ ∈ SAT using a SPARQL query that does not contain any BGPs
+        *1-q- are expressible in SPARQL? try express them! x12 
+            4 pp- 
+            q- nd nodes that are cousinsn not possible? y 
+            q- can not expressive parallel reachability? y not the same thing with complexity
+            10 ferr 
+                not that easy 
+            11 hard pp- 
+            12 ferr 
+                collect the num. of nodes? !!
+        *2-q- show how to decide ϕ ∈ SAT using a SPARQL query that does not contain any BGPs
             sub-q- express the SAT prob. formally 
         3-q- find a  SPARQL queries exponential say about that.
             sub-q- find a  SPARQL queries exponential
         *4-q- Which of the following QBF are satisfiable?
+            没有明确的背景，not 满足！
+            possible always true? just assign val. for one var.! 
     ////
     q- why not every set of RDF graphs corresponds to a query
     h- power means characterise strictly more sets of graphs

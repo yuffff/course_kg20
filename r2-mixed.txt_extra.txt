@@ -2,10 +2,16 @@
     extract q- with python
     ////new added! 
     ////excerise added! 
+    <> added! 
+                                    |---|
+                                    |      |----
+            |-----------------------|   examdate
+        ----|            important to rem and practice!
 ---rem2-ex-global---
     ////ex all sparql subtasks found in ubung: 
         sub-q- xxx 
     ////
+    q- all common complexity clases? ! 
     q- *The OWL Web Ontology Language extends the semantic features of RDF
     q- what does rdf:type mean?     
     q- what means a db is normalized? 
@@ -100,7 +106,7 @@
     q- What is evalG(eg:s eg:p eg:o) over the empty graph G = ∅? op48 
     q- what is Boolean queries? op50 
     q- What is evalG(eg:s eg:p eg:o) over the graph G = {eg:s eg:p eg:o}? op50
----rem1-ex-st-slide4---
+---rem1-ex1-st-slide4---
     ////exercise 
     ////exercise
     q- what are properties of wikidata? op08 x2
@@ -132,16 +138,16 @@
     q- liberal configuration, how about the timeout? how many secs? op54 
     q- what is the backend of wdqs? ext 
     q- SPARQL query features? go to ext! 
----rem1-ex-slide5--- core basic of the following chapters! try them out 
+---rem1-ex1-slide5--- core basic of the following chapters! try them out 
     ////exercise 
-    1-q- all people that have returned from two spaceights operated by organisations from dierent countries and amount of time 
-        ////human space flight Q752783 
-        ////instanceof P31 
-        ////lunch time P619 
-        ////astronaut mission (P450)
-    2-q- find all people that have received more than one Nobel Prize
-        ////award received (P166)
-    5-q- check for the existence of a 5-clique in the P3373 (“sibling”)
+        *1-q- all people that have returned from two spaceights operated by organisations from dierent countries and amount of time 
+            ////human space flight Q752783 
+            ////instanceof P31 
+            ////lunch time P619 
+            ////astronaut mission (P450)
+        *2-q- find all people that have received more than one Nobel Prize
+            ////award received (P166)
+        *5-q- check for the existence of a 5-clique in the P3373 (“sibling”)
     ////ex
     q- what is the diff. of wdt:Pxxx and p:Pxxx and ps:Pxxx ? 
     ////exercise 
@@ -208,12 +214,15 @@
     q- what is COUNT(*) as ?val here COUNT? ext h
     sum-q- feature-rich query language sparql features? x7 s6op-start
 //////////////////////////////////////core theory part//////////////////////////////////////
----rem1-ex-slide6---SPARQL: Semantics
+---rem1-ex1-slide6---SPARQL: Semantics
     ////ex 
-        q- 4- (little too complex, mixed many parts )
-            <>////top 30 composers with the most musical works, whose English label is longer than
-                //// the average English label of musical works
-            //// 
+        *ok-1-q- fails in the presence of blank nodes
+        2-q- there are sets of solution mappings such that xxx 
+        *th-hard-3-q- show that equivalent of two statements: graph related 
+        4q- (little too complex, mixed many parts )
+            <> top 30 composers with the most musical works, whose English label is longer than
+                <> the average English label of musical works
+            subq- ...
     ////ex 
     q- what is miu. in this context? op04 ?? 
     q- how to transfer to semantic operations. 
@@ -240,7 +249,7 @@
     q- how to deal with several aggregates are selected in the query? 
     q- can further converted into nested expressions of operators? y how 
     less-sum-q- Join, FilterG,Union,Minus,LeftJoinG,Extend
----rem1-ex-slide7---SPARQL: Complexity and Expressivity
+---rem1-ex1-slide7---SPARQL: Complexity and Expressivity
     ////ex
             q- subtask: 
             q- subtask:join means combine 2 things that should compatible
@@ -280,10 +289,12 @@
     q- Answering queries in PSpace? ys
     //q- Where this sketch is lacking? s7op58
     q- why practical? detailed 
----rem1-*ex-slide8---SPARQL Limits/Datalog
+---rem1-*ex1-slide8---SPARQL Limits/Datalog
     ////ex
-        1-q- are expressible in SPARQL? try express them! x12 
-        2-q- show how to decide ϕ ∈ SAT using a SPARQL query that does not contain any BGPs
+        *1-q- are expressible in SPARQL? try express them! x12 
+            q- nd nodes that are cousinsn not possible? y 
+            q- can not expressive parallel reachability? y not the same thing with complexity
+        *2-q- show how to decide ϕ ∈ SAT using a SPARQL query that does not contain any BGPs
             sub-q- express the SAT prob. formally 
         3-q- find a  SPARQL queries exponential say about that.
             sub-q- find a  SPARQL queries exponential

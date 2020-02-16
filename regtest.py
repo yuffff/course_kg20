@@ -30,6 +30,9 @@ def extractp(file_name):
             x = re.search("q- ", linetxt)
             splitslide = re.search("---", linetxt)
             sectionmark = re.search("////", linetxt)
+            preservmark = re.search("<> ", linetxt)
+            if preservmark != None:
+                resulttxtlist.append(linetxt)
             if sectionmark != None:
                 resulttxtlist.append(linetxt)
             if splitslide != None:
