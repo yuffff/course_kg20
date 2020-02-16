@@ -12,6 +12,7 @@
     ////ex all sparql subtasks found in ubung: 
         sub-q- xxx 
     ////
+    q- well-known theorems 
     q- all common complexity clases? ! 
         <> basic: 
             <> st-reachability
@@ -460,7 +461,7 @@
         <> and return their name and the start date of the friendship op34
     q- what are cypher features?
     q- property graph makes data in two layers? which two?
----rem1v-ex1-slide11--- The Cypher Query Language
+---rem1vps-ex1-left-slide11--- The Cypher Query Language
     ////ex 
         *1-q- Do the query results change if count(DISTINCT child) is used instead?
         **2-q- graph patterns are expressible in Cypher? x12 
@@ -506,17 +507,18 @@
     ////Further Cypher Features////
     q- if aggregated and non-aggregated results are defined, the non-aggregated ones will be the keys to group by? y 
     *s-q- Show married professors with their number of children op23 
+        sub-q- find all professors in graph op23 
     q- min, avg, count can be used 
     q- WITH clauses as separators? y 
     *s-q- Find all universities located in one of the ten largest cities op24 
     q- Expressions that are not projected are not accessible after a WITH clause? y 
     q- Find parent-child pairs with bi directions op25 
-    *s-q- Find parent-child pairs and, optionally, a spouse for the parent op26 
+    *s-q- Find parent-child pairs and, optionally, a spouse for the parent op26
     q- what happends if var. not bind? 
     **q- err. propergate in both sparql and cypher? 
     **q- The use of null in Cypher is ambiguous? 
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
----rem1-ex1-slide12---Knowledge Graph Quality and Validation
+---rem1vps-ex1-slide12---Knowledge Graph Quality and Validation
      ////ex 
         *1-q- Develop a SHACL schema that validates statement values for geographic coordinates
             subq- write a SHACL schema for this property. with Q5?! 
@@ -526,10 +528,10 @@
         4-q- 
             subq- ...
     ////
-    q- what is quality? two dimensions of KG(from requirements)? op17 
+    **q- what is quality? two dimensions of KG(from requirements)? op17 
     q- what are Functional quality of that? x3 
     q- what are non-functional? x5 
-    *q- what is  TimBL’s Open Data Quality proposal, 5-star quality metric
+    *q- what is TimBL’s Open Data Quality proposal, 5-star quality metric
     q- diff. with software dev? measure kg quality p21 
     q- The distinction between “operational” and “declarative”
     q- Quality checking: basic approaches? x2x2 op30 
@@ -545,13 +547,13 @@
     q- error messages and severity levels? 
     q- what is a shape graph? op38 
     less-q- CLOSED and EXTRA play the role of what in SHACL? ext 
-    q- common and diff. of the two: SHACL and ShEx op45 
+    **q- common and diff. of the two: SHACL and ShEx op45 
     q- complexity of the Validating? 
-    h-q- many criteria to measure quality of kg, what are they? -re
-    q-  basic approaches for automatic quality checks?  x2 -re 
+    **h-q- many criteria to measure quality of kg, what are they? -re
+    *q-  basic approaches for automatic quality checks?  x2 -re 
     ////exercise 
     1-exq- Develop a SHACL schema that validates statement values
----rem1-ex1-v-slide13---Centrality measures
+---rem1v-ex1-v-slide13---Centrality measures
     ////ex -may not be asked 
         *1-q- Compute the rst three partial sums of the Katz centrality
         *2-q- find a small graph for which not re-calculating and show error 
@@ -570,24 +572,24 @@
     **q- the random walk process? op22 
     h-q- what is the actual operation we iteratively apply? op28 
     q- what is eigenvector centrality op29
-    h-q- what is the components of eigenvectors? their meaning? op30
+    //h-q- what is the components of eigenvectors? their meaning? op30
     q- we want well-behaved eigenvectors, how can we get them? op32
     q- what is Perron-Frobenius Theorm 
     q- what means irreducible for a matrix? op32 
     q- what means strongly connected for a directed graph? op34 x2
-    invq- what means dead ends and spider traps, why not good? op- 
-    invq- two cases that may lead to invalid non-meaningful centrality measure?
+    **invq- what means dead ends and spider traps, why not good? op- 
+    **invq- two cases that may lead to invalid non-meaningful centrality measure?
     q- what is transition matrix? op21 -re  
     q- what is the meaning of MM? two adj. matrix multply one after an other or more? op36
     q- what is the Katz centrality
-    q- pro cons of it? 
+    *q- pro cons of it? 
     q- alpha must not too large, how can its value be computed? op39 
     q- centralities? eigenvector centrality and katz centrality, diff? 
     q- the idea of pagerank? line by line, speak first 
     q- what is the iterative computing scheme used in pagerank op44 
     q- the effect of damping factor? too large? too small? op46 
     q- does pagerank converges quickly? y 
-    q- compare pagerank to katz centrality
+    ***q- compare pagerank to katz centrality
 ---rem2-ex1-slide14---Community detection
     ////ex
         *1q- Find the minimal cuts, cardinality? normalised cut value? 

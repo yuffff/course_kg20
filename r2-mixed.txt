@@ -62,12 +62,19 @@
         rem 
             shorted, graph based, description based ......
         jiangshi, write again and again for years ...
+        paint it! -- a rem. stratigy 
+            how it looks like? draw again.
+        
 //
 
 ---rem2vp-ex-global---
     ////ex all sparql subtasks found in ubung: 
         sub-q- xxx 
     ////
+    q- well-known theorems 
+        TimBL’s propersal 
+        Perron-Frobenius Theorm 
+        GN algorithm 
     q- all common complexity clases? ! 
         <> basic: 
             <> st-reachability
@@ -1169,8 +1176,7 @@
     s-q- how to define ancestor?
         h- 中间变量法！ 定义中间变量：爷爷我中间是爸爸 
     *s-q- Query for maternal ancestors of Ada Lovelace op37
-    h- Stratified negation is a simple way of adding negation to recursive queries 
-    
+    h- Stratified negation is a simple way of adding negation to recursive queries   
 ---rem1vps-ex1-left-slide10---Property Graphs 
     ////
         1-q- Datalog query that finds a Hamiltonian cycle 
@@ -1343,7 +1349,7 @@
     q- property graph makes data in two layers? which two?
         primary layer, property graph layer 
     h- ref to spec of the lan as a futher step 
----rem1v-ex1-slide11--- The Cypher Query Language
+---rem1vps-ex1-left-slide11--- The Cypher Query Language
     ////ex 
         *1-q- Do the query results change if count(DISTINCT child) is used instead?
             depends on the graph 
@@ -1438,6 +1444,7 @@
         implicit 
     *s-q- Show married professors with their number of children op23 
         distinct? pp- 
+        sub-q- find all professors in graph op23 
     q- min, avg, count can be used 
     q- WITH clauses as separators? y 
     *s-q- Find all universities located in one of the ten largest cities op24 
@@ -1445,7 +1452,8 @@
     q- Find parent-child pairs with bi directions op25 
         UNION automatically removes duplicates, 
         UNION ALL can be used to keep them 
-    *s-q- Find parent-child pairs and, optionally, a spouse for the parent op26 
+    *s-q- Find parent-child pairs and, optionally, a spouse for the parent op26
+        ferr no direction!  
     q- what happends if var. not bind? 
     **q- err. propergate in both sparql and cypher? 
         Cypher uses the special value null to indicate errors
@@ -1454,7 +1462,7 @@
         1. error
         2. “unknown value”
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
----rem1-ex1-slide12---Knowledge Graph Quality and Validation
+---rem1vps-ex1-slide12---Knowledge Graph Quality and Validation
      ////ex 
         *1-q- Develop a SHACL schema that validates statement values for geographic coordinates
             h- 首先定义一个shape，而后说明是针对谁的
@@ -1468,21 +1476,22 @@
             subq- ...
     ////
     h- we focus on quality measurment, and monitor them automatically
-    q- what is quality? two dimensions of KG(from requirements)? op17 
+    **q- what is quality? two dimensions of KG(from requirements)? op17 
         func. 
             correct, complete, performance 
         non-func. 
             documentation, style guides 
     q- what are Functional quality of that? x3 
     q- what are non-functional? x5 
-    *q- what is  TimBL’s Open Data Quality proposal, 5-star quality metric
+    *q- what is TimBL’s Open Data Quality proposal, 5-star quality metric
         op18 
         the best--linked open data
-        available on the Web
-        structured
-        non-proprietary
-        use URIs to denote things
-        linked open data
+            available on the Web
+            structured
+            non-proprietary
+            //
+            use URIs to denote things
+            linked open data
     h- the idea that see KGs as software and measure its quality 
     h- always subjective measurments 
     q- diff. with software dev? measure kg quality p21 
@@ -1544,7 +1553,7 @@
     h- a rich vocabulary for specifying property constraints
     less-q- CLOSED and EXTRA play the role of what in SHACL? ext 
         sh:closed and sh:ingoredProperties?
-    q- common and diff. of the two: SHACL and ShEx op45 
+    **q- common and diff. of the two: SHACL and ShEx op45 
         common-
             both support recursive constraints and disjunctions
         diff-
@@ -1553,8 +1562,8 @@
     q- complexity of the Validating? 
         NP-complete complexity in the size of the graph
         NP-completeness seems more challenging for ShEx than for SHACL
-    h-q- many criteria to measure quality of kg, what are they? -re
-    q-  basic approaches for automatic quality checks?  x2 -re 
+    **h-q- many criteria to measure quality of kg, what are they? -re
+    *q-  basic approaches for automatic quality checks?  x2 -re 
     h- rdf schama -- RDF constraint languages 
         like SHACL and ShEx 
         they can declaratively specify constraints 
@@ -1562,7 +1571,7 @@
     ////exercise 
     1-exq- Develop a SHACL schema that validates statement values
         ref.
----rem1-ex1-v-slide13---Centrality measures
+---rem1v-ex1-v-slide13---Centrality measures
     ////ex -may not be asked 
         *1-q- Compute the rst three partial sums of the Katz centrality
         *2-q- find a small graph for which not re-calculating and show error 
@@ -1611,32 +1620,32 @@
         we calcu. eigenvector acc. to the radom walk model 
         and use it as centrality measurment 
         not perfect 
-    h-q- what is the components of eigenvectors? their meaning? op30
+    //h-q- what is the components of eigenvectors? their meaning? op30
     h- we only need the relative importance of nodes, scaling is ok  
     q- we want well-behaved eigenvectors, how can we get them? op32
         strongly connected
             no dead ends
             no spider traps
     q- what is Perron-Frobenius Theorm 
-        if graph is  strongly connected, eigenvector will be well-behaved 
+        if graph is  strongly connected,irreducible, eigenvector will be well-behaved 
     q- what means irreducible for a matrix? op32 
     q- what means strongly connected for a directed graph? op34 x2
         x2 characterise? 
-    invq- what means dead ends and spider traps, why not good? op- 
+    **invq- what means dead ends and spider traps, why not good? op- 
         dead ends 
             don’t let a random walker continue
             weight of node will be lost 
         Spider traps
             no path back to all other nodes 
             weight is drained
-    invq- two cases that may lead to invalid non-meaningful centrality measure?
+    **invq- two cases that may lead to invalid non-meaningful centrality measure?
     q- what is transition matrix? op21 -re  
     q- what is the meaning of MM? two adj. matrix multply one after an other or more? op36
         number of length-n paths 
     h- use path to count centrality, we have to deal with path len. issues 
         penalize longer paths 
     q- what is the Katz centrality
-    q- pro cons of it? 
+    *q- pro cons of it? 
         +
             solve the prob. with eigenvector centrality
         -
@@ -1656,12 +1665,12 @@
     q- the effect of damping factor? too large? too small? op46 
         small:  more local perspective that ignores long paths
     q- does pagerank converges quickly? y 
-    q- compare pagerank to katz centrality
+    ***q- compare pagerank to katz centrality
         comm:
             all-paths criteria
             penalize
         diff.
-            propagates the full (discounted) weight, splits the weight
+            propagates the discounted weight, splits the weight
             pagerank emph. distinguished focus 
             pp-
                 outdegree...
