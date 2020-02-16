@@ -376,7 +376,7 @@
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
     q- no multiplicity of results of datalog? y  
----rem1v-ex1-slide9---Rules for Querying Graphs
+---rem1vps-ex1-left-slide9---Rules for Querying Graphs
     ////excerise 
         1-exq- any datalog can be safe? 
         *2-exq- inferences under stratied negation and under classical logical semantics do not coincide   
@@ -415,7 +415,7 @@
     *s-q- Ancestor of alice and not composer op36 
     s-q- how to define ancestor?
     *s-q- Query for maternal ancestors of Ada Lovelace op37
----rem1-ex1-slide10---Property Graphs 
+---rem1vps-ex1-left-slide10---Property Graphs 
     ////
         1-q- Datalog query that finds a Hamiltonian cycle 
         *1-q- decide Hamiltonian cycle with datalog fixed query? n 
@@ -426,7 +426,7 @@
             sub-q- ... 
     ////
     q- what is “Property Graph” 
-    q- how can property graph be used? which model exists? x3 op08 
+    **q- how can property graph be used? which model exists? x3 op08 
     q- Types of “Property Graphs”? x3+ 
     q- what does it mean "Relationship types" in rdf world? 
     *sum-q- what data model and corresponding quering lan. are there? libs?
@@ -440,30 +440,31 @@
         //sum-q- what data model and corresponding quering lan. are there? libs?
         //q- datatypies, object model, labeling rules in property graph? 
     ////new 
-    q- what is “Property Graph” op05 
+    *q- what is “Property Graph” op05 
     q- how can property graph be used? which model exists? x3 op08 
     **q- Types of “Property Graphs”? x3+ 
     //ext-q- Programmatic access of property graph?
-    q- what does it mean "Relationship types" in rdf world? op14 
+    q- what does it mean "Relationship types" in rdf world? op14 terminologies!
     q- limitations of property graph
     **q- transform From Property Graph to RDF? 
     **h-q- ext- model a statement into rdf wikidata
     q- and from rdf to property graph? op22 
-    q- datatypes in property graph x6 terms in it?  op14 op25 
+    **q- datatypes in property graph x6 terms in it?  op14 op25
     **s-q- asks for a list of all nodes that are in an EMPLOYER relationship
     **s-q- Find up to ten people whose daughter is a professor op29 
     **s-q- nCount all relationships in the database:, types? 
-    q- compare sparql and cypher 
-    **s-q- : Find the person with most friends
+    ***q- compare sparql and cypher 
+    **s-q- Find the person with most friends
     **s-q- Find pairs of siblings  op33 
-    **s-q- Find friends of all people with name Paul Erdos, and return their name and the start date of the friendship op34
+    **s-q- Find friends of all people with name Paul Erdos, 
+        <> and return their name and the start date of the friendship op34
     q- what are cypher features?
     q- property graph makes data in two layers? which two?
----rem1-ex1-slide11--- The Cypher Query Language
+---rem1v-ex1-slide11--- The Cypher Query Language
     ////ex 
         *1-q- Do the query results change if count(DISTINCT child) is used instead?
         **2-q- graph patterns are expressible in Cypher? x12 
-        3-q- encode TrueQBF with cypher, what can we say about that?  
+        *3-q- encode TrueQBF with cypher, what can we say about that?  
             q- cypher has PSpace in query complexity
             sub-q- ... 
         *4-q- neo4j movie example x7 
@@ -493,11 +494,12 @@
     q- Homomorphism semantics? isomorphim? 
     q- path manipulation features available? better? y
     q- func. that working on nodes and relationships? roughly op15 
-    *s-q- Find all ways in which two nodes are connected, and return the list of relationship types in each case 
+    *s-q- Find all ways in which two nodes are connected, and return
+        <> the list of relationship types in each case 
         op16 //// the nodes are naming after n1 and n2 
     q- how to access the content of paths? extract sublist, path len?
     q- matched case can be solved as var. ? y 
-    *s-q- Find all shortest ways in which two nodes are connected
+    *s-q- Find all shortest ways in which two nodes are connected, and limit its length to 10 
     *s-q- Find nodes with more than one label
     q- WHERE clauses can use any expression? 
     **q- Find all nodes that have value "scientist" as one of their occupations, and that do not have a spouse:
@@ -511,8 +513,8 @@
     q- Find parent-child pairs with bi directions op25 
     *s-q- Find parent-child pairs and, optionally, a spouse for the parent op26 
     q- what happends if var. not bind? 
-    *q- err. propergate in both sparql and cypher? 
-    q- The use of null in Cypher is ambiguous? 
+    **q- err. propergate in both sparql and cypher? 
+    **q- The use of null in Cypher is ambiguous? 
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
 ---rem1-ex1-slide12---Knowledge Graph Quality and Validation
      ////ex 

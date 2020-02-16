@@ -61,6 +61,7 @@
             twanswer(all)/rwOanswer()/twOanswer(all)  ? 
         rem 
             shorted, graph based, description based ......
+        jiangshi, write again and again for years ...
 //
 
 ---rem2vp-ex-global---
@@ -1170,7 +1171,7 @@
     *s-q- Query for maternal ancestors of Ada Lovelace op37
     h- Stratified negation is a simple way of adding negation to recursive queries 
     
----rem1-ex1-slide10---Property Graphs 
+---rem1vps-ex1-left-slide10---Property Graphs 
     ////
         1-q- Datalog query that finds a Hamiltonian cycle 
         *1-q- decide Hamiltonian cycle with datalog fixed query? n 
@@ -1186,7 +1187,8 @@
     h- why interplay with recursion must be limited? op3 
     h- RDF graphs which do not contain any such 'loops' 
     q- what is “Property Graph” 
-        refers to a broad class of enriched graph structures
+        refers to a broad class of 
+            enriched graph structures
     h- many details related to this 
         What are those “labels” that one can use for edges?
     h- attribute-value pairs (called
@@ -1201,7 +1203,7 @@
             contexts and hidden relationships
         Neo4j is a property graph database management system
         imp. Cypher
-    q- how can property graph be used? which model exists? x3 op08 
+    **q- how can property graph be used? which model exists? x3 op08 
     h- possibility: use rdf as underlying database and use property graph 
         in higher lev. as abstract layer 
     q- Types of “Property Graphs”? x3+ 
@@ -1264,7 +1266,7 @@
         //q- datatypies, object model, labeling rules in property graph? 
     ////new 
     h- Adding negation is useful, but the interplay with recursion must be limited
-    q- what is “Property Graph” op05 
+    *q- what is “Property Graph” op05 
         a type of graph 
         with more features than rdf graph 
         enriched graph structures
@@ -1287,11 +1289,11 @@
     //ext-q- Programmatic access of property graph?
         Tinkerpop
         Apache Gremlin
-    q- what does it mean "Relationship types" in rdf world? op14 
-        edge , they have diff. terminologies 
+    q- what does it mean "Relationship types" in rdf world? op14 terminologies!
+        edge label, they have diff. terminologies 
     h- label -> classes rep. 
     h- Sets of properties can be assigned to vertices and edges
-    h- • Property keys are unicode strings
+    h- Property keys are unicode strings
     h- Properties are key-value pairs
     q- limitations of property graph
         hard to model statement of wikidata 
@@ -1304,11 +1306,12 @@
     **h-q- ext- model a statement into rdf wikidata
     q- and from rdf to property graph? op22 
         may hard due to restrictions of the later 
-    q- datatypes in property graph x6 terms in it?  op14 op25 
-        node, relationships, 
+    **q- datatypes in property graph x6 terms in it?  op14 op25
+        也是有bnodes的！  
+        node, relationships, iri
         labels, relationship types, and property keys
             are plain strings
-        property values 
+        property values, literal 
         They cannot occur in the graph
         and no further Properties
     h- Current specification of openCypher 9:
@@ -1322,16 +1325,17 @@
         和画图似的，实体有冒号，没有前缀
         express properties in json style 
         头不像尾像
-    q- compare sparql and cypher 
+    ***q- compare sparql and cypher 
         Easy-to-learn and human-readable
         support distributed computing(high performance)
         rdf has limitations 
         pp- 
-    **s-q- : Find the person with most friends
+    **s-q- Find the person with most friends
     **s-q- Find pairs of siblings  op33 
-    **s-q- Find friends of all people with name Paul Erdos, and return their name and the start date of the friendship op34
+    **s-q- Find friends of all people with name Paul Erdos, 
+        <> and return their name and the start date of the friendship op34
     q- what are cypher features?
-        • Returning of paths and shortest paths
+        Returning of paths and shortest paths
         Filter expressions
         Subqueries 
         Unions
@@ -1339,7 +1343,7 @@
     q- property graph makes data in two layers? which two?
         primary layer, property graph layer 
     h- ref to spec of the lan as a futher step 
----rem1-ex1-slide11--- The Cypher Query Language
+---rem1v-ex1-slide11--- The Cypher Query Language
     ////ex 
         *1-q- Do the query results change if count(DISTINCT child) is used instead?
             depends on the graph 
@@ -1352,7 +1356,7 @@
             9 ferr 
                 UNWIND expands a list into a sequence of rows
                 pp- 
-        3-q- encode TrueQBF with cypher, what can we say about that?  
+        *3-q- encode TrueQBF with cypher, what can we say about that?  
             q- cypher has PSpace in query complexity
             sub-q- ... 
         *4-q- neo4j movie example x7 
@@ -1414,12 +1418,13 @@
     h- The function id returns the (numeric) ID of a nodes or relationships
     h- keys returns the list of all property keys of a map-like object
         labels, type possible as function working on nodes and relationships
-    *s-q- Find all ways in which two nodes are connected, and return the list of relationship types in each case 
+    *s-q- Find all ways in which two nodes are connected, and return
+        <> the list of relationship types in each case 
         op16 //// the nodes are naming after n1 and n2 
     q- how to access the content of paths? extract sublist, path len?
         use func. relationships() and lenght() returns number of relationships(edges)
     q- matched case can be solved as var. ? y 
-    *s-q- Find all shortest ways in which two nodes are connected
+    *s-q- Find all shortest ways in which two nodes are connected, and limit its length to 10 
         use allShortestPaths.
         upper bound can be spec.  
     *s-q- Find nodes with more than one label
@@ -1442,10 +1447,10 @@
         UNION ALL can be used to keep them 
     *s-q- Find parent-child pairs and, optionally, a spouse for the parent op26 
     q- what happends if var. not bind? 
-    *q- err. propergate in both sparql and cypher? 
+    **q- err. propergate in both sparql and cypher? 
         Cypher uses the special value null to indicate errors
         EBV 
-    q- The use of null in Cypher is ambiguous? 
+    **q- The use of null in Cypher is ambiguous? 
         1. error
         2. “unknown value”
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
