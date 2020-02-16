@@ -332,7 +332,7 @@
     //q- Where this sketch is lacking? s7op58
     q- why practical? detailed 
     q- limitations of sparql? see s8! 
----rem1-*ex1-slide8---SPARQL Limits/Datalog
+---rem1vps-*ex1*-left-slide8---SPARQL Limits/Datalog
     ////ex
         *1-q- are expressible in SPARQL? try express them! x12 
             q- nd nodes that are cousinsn not possible? y 
@@ -376,38 +376,45 @@
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
     q- no multiplicity of results of datalog? y  
----rem1-ex1-slide9---Rules for Querying Graphs
+---rem1v-ex1-slide9---Rules for Querying Graphs
+    ////excerise 
+        1-exq- any datalog can be safe? 
+        *2-exq- inferences under stratied negation and under classical logical semantics do not coincide   
+        *3-exq- Show how to express the following SPARQL features in Datalog
+        *4-exq- Compute a stratifiation for the following Datalog program
+    ////
     s-q- parallel s-t-reachability for predicates p and q 
     q- does not imply that all P-computable problems can be
     q- Query for maternal ancestors of Ada Lovelace op37 
     ////new 
-    q- what is Tp? immediate consequence operator TP?  op04 
-    q- how apply Datalog to graph data? x2 
-    *s-q- query expresses parallel s-t-reachability for predicates p and q (for triple encoding):
-    q- what means nullary result predicate? 
-    q- Non-linear (e.g., tree-shaped) patterns possible with datalog, how? ext 
+    /q- what is Tp? immediate consequence operator TP?  op04 
+    *q- how apply Datalog to graph data? x2 
+    *s-q- query expresses parallel s-t-reachability for 
+        <> predicates p and q (for triple encoding):
+    *q- what means nullary result predicate? 
+    q- Non-linear (e.g., tree-shaped) patterns 
+        <> possible with datalog, how? ext 
     q- Datalog complexity op9 
-    q- Datalog is monotonic, what does this mean?l p problem is monotonic? n 
+    *q- Datalog is monotonic, what does this mean?l 
+        <> p problem is monotonic? n 
     **s-q- query for living people born in Dresden op12 
-    q- require all rules to be safe, and this does not restrict expressivity (exercise)
+    q- require all rules to be safe, and 
+        <> this does not restrict expressivity (exercise)
     q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
-    q- A rule is safe? op- 
-    q- problem with negation?  
+    **q- A rule is safe? op- 
+    *q- problem with negation?  
     q- the idea of stratified negation ? 
-    q- set of facts we obtained from stratified negation is not affected by choose ,this is called? 
+    q- set of facts we obtained from stratified negation is 
+        <> not affected by choose ,this is called? 
     pra-lessdirct-q- algo that obtaining a stratification? op25 
-    pra-*q- deside which lev. it belones to? 
+    *pra-*q- deside which lev. it belones to? 
     *q- express eg:JSBach (ˆeg:hasFather|ˆeg:hasMother)+ ?x with datalog 
     h-q- relation with datalog and sparql 
     q- vlog4j supports evaluating Datlog queries over RDF files? y
-    s-q- Ancestor of alice and not composer op36 
+    q- slightly different rules in vlog4j? y 
+    *s-q- Ancestor of alice and not composer op36 
     s-q- how to define ancestor?
     *s-q- Query for maternal ancestors of Ada Lovelace op37
-    ////excerise 
-    1-exq- any datalog can be safe? 
-    *2-exq- inferences under stratied negation and under classical logical semantics do not coincide   
-    *3-exq- Show how to express the following SPARQL features in Datalog
-    *4-exq- Compute a stratifiation for the following Datalog program
 ---rem1-ex1-slide10---Property Graphs 
     ////
         1-q- Datalog query that finds a Hamiltonian cycle 
