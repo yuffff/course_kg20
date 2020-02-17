@@ -268,8 +268,7 @@
     q- joins of two multisets(omga) of solution mappings? op12 notation 
     q- multiplicity, cardinality of the solution? op13 notation
     *q- BGP solutions using joins (higher lev.) op- notation
-    **q- BGP solutions using joins, proof that. op17 
-        lan- 
+    ****q- BGP solutions using joins, proof that. op17  ferr
     *q- how to deal with bnodes? 
     q- research- optimizations? rough 
     q- join--any known algorithm needs exponential time? 
@@ -327,7 +326,7 @@
     *q- TrueQBF problem? 
     *q- assume its hardness? 
     q- we can also express universal quantifiers? y 
-    **q- express QBF using sparql? op41 
+    ****q- express QBF using sparql? op41 
     *q- check SPARQL query is PSpace hard, how to proof -re
     ***q- why is sparql practice? roughly 
     *q- what is data-complexity query-complexity? 
