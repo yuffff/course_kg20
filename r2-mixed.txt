@@ -652,6 +652,7 @@
     *q- what is COUNT(*) as ?val here COUNT? ext h
         Aggregates
     sum-q- feature-rich query language sparql features? x7 s6op-start
+    **q- express filter after aggregation? how op46 
 //////////////////////////////////////core theory part//////////////////////////////////////
 ---rem1vp-ex1-slide6---SPARQL: Semantics
     ////ex 
@@ -1186,10 +1187,14 @@
         *1-q- decide Hamiltonian cycle with datalog fixed query? n 
             Hamiltonian cycle is in NP-complete, datalog is in P-complete 
         *huge-2-q- express graph patterns Datalog?  x12 
+            1. ferr 
+                recur!!! 
             No.2 ferr 
                 use step! 
             4. ferr 
                 var name!!
+            5 
+                commen ancestor! result!
             No.6 pp- err? 
                 based on 5!
                 same level!! 
@@ -1384,6 +1389,7 @@
             see ex10 
             4 ferr 
                 h- what should be returned!! take care !
+            6,7 good! 
     ////
     h- an other lan. which should also be familier with 
     q- The shape of a Cypher query 
