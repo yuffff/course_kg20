@@ -17,10 +17,13 @@
         <> property graph
             some wikidata statements  
         <> ...
-    *q- well-known theorems 
+    *q- well-known items  
         <> TimBL’s propersal 
         <> Perron-Frobenius Theorm 
         <> GN algorithm 
+        <> dendrogram
+        <> hypothetical Community partitioning
+        <> sufficiently dense communities, large bi-cliques must exist
     *q- all common complexity clases? ! 
         <> basic: 
             <> st-reachability
@@ -387,7 +390,7 @@
     h- Property types cannot be changed once created.
     *q- how does wikidata store infos. internally? op41
         a- document-centric form using a JSON format
-    ***q- why Data is converted to RDF? x3 op43 
+    *q- why Data is converted to RDF? x3 op43 
         for external use, exchange 
         entity-specific linked data exportsn via web -> wikipedia 
         query service
@@ -409,7 +412,7 @@
     h- wikidata has rdf dump, converts will happen inside this process, encoding statements in RDF
         is not easy. 
     h- some predefined prefix:https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format
-    ***q- how to encode statements when where are many annotations? op46 
+    **q- how to encode statements when where are many annotations? op46 
         a- in the style of reification
         h- annotations are predicate-object pairs, include bnodes can help 
     *q- what is diff. bet. wdt: and p: op50 ext 
@@ -1474,10 +1477,9 @@
             linked open data
     h- the idea that see KGs as software and measure its quality 
     h- always subjective measurments 
-    q- diff. with software dev? measure kg quality p21 
+    *q- what is the diff. when compared to software dev? measure kg quality p21 
         unclear development life cycle
-    q- The distinction between “operational” and “declarative”
-    q- Quality checking: basic approaches? x2x2 op30 
+    ***q- Quality checking approaches? x2x2 op30 
         Manual
             Subjective:experts
             objective:clearly defined criteria
@@ -1492,7 +1494,7 @@
     h- effort needed, we want to monimize it
         modelling effort, maintenance 
     h- similar to test case (unit test)
-    q- what are typical  functional metrics of kg? -re op17 
+    q- what are typical functional metrics of kg? -re op17 
         x3 
     h- Unit tests can also validate non-functional criteria.
     q- in detail, we can use unit test to acc. this? y
@@ -1501,7 +1503,8 @@
     q- rdf schema is an otology lan? y 
     q- key- schema lan. ? -re 
         a- 
-            schema lan. are used to describe structures of documents
+            schema lan. are used to 
+                *describe structures of documents
             define eg. what are legal blocks, datatypes, ...
             constrain the syntactic form 
         An XML Schema describes the structure of an XML document.
@@ -1509,7 +1512,7 @@
         (define data types for elements and attributes) 
         ...
         https://www.w3schools.com/xml/schema_intro.asp
-    q- rdf schema? x2 op38 what are they stands for? 
+    **q- rdf schema? x2 op38 what are they stands for? 
         SHACL, ShEx 
             shape constrain lan  
             shape expression 
@@ -1528,14 +1531,15 @@
     q- what is sh:path, sh:datatype, sh:targetClass, sh:pattern, sh:nodeKind
         sh:closed true ;
     q- the exercise 12.1! 
-    q- error messages and severity levels? 
+    h- error messages and severity levels? 
     q- what is a shape graph? op38 
     h- a rich vocabulary for specifying property constraints
     less-q- CLOSED and EXTRA play the role of what in SHACL? ext 
         sh:closed and sh:ingoredProperties?
     **q- common and diff. of the two: SHACL and ShEx op45 
         common-
-            both support recursive constraints and disjunctions
+            both support 
+                *recursive constraints and disjunctions
         diff-
             SHACL can provide additional error information 
                 and has lower complexity
@@ -1566,7 +1570,7 @@
             calcu. how many paths that will pass this current edge 
             devide by total num of shortest paths in the graph 
     ////
-    q- what is Centrality 
+    *q- what is Centrality 
         a- how to return most “important” ones on top
     q- Possible Solution and their problems? op04 
         a- 
@@ -1596,20 +1600,20 @@
     h- it will converge to some limit, we can even compute them dirc. 
     h-q- what is the actual operation we iteratively apply? op28 
         matrix multiplication
-    q- what is eigenvector centrality op29
+    *q- what is eigenvector centrality op29
         we calcu. eigenvector acc. to the radom walk model 
         and use it as centrality measurment 
         not perfect 
     //h-q- what is the components of eigenvectors? their meaning? op30
     h- we only need the relative importance of nodes, scaling is ok  
-    q- we want well-behaved eigenvectors, how can we get them? op32
+    *q- we want well-behaved eigenvectors, how can we get them? op32
         strongly connected
             no dead ends
             no spider traps
-    q- what is Perron-Frobenius Theorm 
+    *q- what is Perron-Frobenius Theorm 
         if graph is  strongly connected,irreducible, eigenvector will be well-behaved 
     q- what means irreducible for a matrix? op32 
-    q- what means strongly connected for a directed graph? op34 x2
+    *q- what means strongly connected for a directed graph? op34 x2 -re 
         x2 characterise? 
     **invq- what means dead ends and spider traps, why not good? op- 
         dead ends 
@@ -1618,13 +1622,13 @@
         Spider traps
             no path back to all other nodes 
             weight is drained
-    **invq- two cases that may lead to invalid non-meaningful centrality measure?
+    invq- two cases that may lead to invalid non-meaningful centrality measure? -re 
     q- what is transition matrix? op21 -re  
-    q- what is the meaning of MM? two adj. matrix multply one after an other or more? op36
+    *q- what is the meaning of MM? two adj. matrix multply one after an other or more? op36
         number of length-n paths 
     h- use path to count centrality, we have to deal with path len. issues 
         penalize longer paths 
-    q- what is the Katz centrality
+    *q- what is the Katz centrality
     *q- pro cons of it? 
         +
             solve the prob. with eigenvector centrality
@@ -1634,13 +1638,13 @@
 
     h- centrality is a measurment used to compare to other nodes 
     q- alpha must not too large, how can its value be computed? op39 
-    q- centralities? eigenvector centrality and katz centrality, diff? 
+    h-q- centralities? eigenvector centrality and katz centrality, diff? 
         in-degree centrality, out-degree centrality
     //
-    q- the idea of pagerank? line by line, speak first 
+    *q- the idea of pagerank? line by line, speak first 
         1.random walk by stochastic transition matrix
         2.also allow walkers to teleport to a random new location
-    q- what is the iterative computing scheme used in pagerank op44 
+    *q- what is the iterative computing scheme used in pagerank op44 
         taxation? damping? 
     q- the effect of damping factor? too large? too small? op46 
         small:  more local perspective that ignores long paths
@@ -1692,17 +1696,16 @@
         what is N-1 N-2 here? 
         h- best used for star-shaped structure
             can get High betweenness scores 
-    extq- why normalised with (N-1)(N-2)? op13
+    *extq- why normalised with (N-1)(N-2)? op13
         A2 N-1 
     q- there is sth. diff. when using this metric? ext 
         might not desired: far from more densely connected areas
         different from scenarios where other metrics uses 
-    q- how fast can we achieve when imp. betweeness metric 
+    *q- how fast can we achieve when imp. betweeness metric 
         op15
-            pp-
             cubic time 
             go down to quadratic for sparse graphs
-    *h-q- summerize all centrality criteria? op16 x7 
+    h-q- summerize all centrality criteria? op16 x7 
         what are their meaning intuitively?
     //bef. find imp. nodes
     //now: find community
@@ -1728,6 +1731,7 @@
     *h-q- it is a hierarchical clustering algo. what this mean? 
         a dendrogram can be computed 
     q- run GN algo in this graph op28 
+        will err if not re-calcu. the bet. cent.
     h- betweeness-based clustering 
     lan- dandrogram tree-view 
     *q- what is the computational complexity of the GN algo? how to improve that? x2 op33 
@@ -1742,9 +1746,9 @@
     q- why should preserve node degrees? 
     h- partation quality estimation 
     pp- op36    
-    q- pp- op39 modularity define?
-        describes what a real community should looks like (random )
-        edges in communities as random distributed 
+    *q- pp- op39 modularity define?
+        //describes what a real community should looks like (random )
+        *edges in communities when random distributed 
     q- naive appro. random graph, problem? solve? op39 
         preserve degree 
     //q- what is modularity used for? op- 
@@ -1756,11 +1760,11 @@
             cut each edge into two stubs, glue the stubs back together randomly
         fomula. op42 
     *q- range of Q? how can it been used? the higher the better? 
-        should be higher than 0? yy
+        should be higher than 0? y
     h- modularity based Community detection, meaning not only GN algo. 
     *q- inherent limiations of modularity-based approaches? op45 
         cons of that? x2 
-            not too small ones 
+            *not too small ones 
             fast approximate approaches may too far away from optimum 
             //not so real model 
     h- key of modularity based algorithm? detect if it has enough connections 
@@ -1776,10 +1780,11 @@
         how works? op48 
             1.Split graph into two equal-sized vertex sets
             2.look for sub-sets
-            3.adjest by adding highly linked vertices
+            3.Grow communities by adding highly linked vertices
         features of it? x3 
             a- 
                 based on math. bkg 
+                    sufficiently dense communities, large bi-cliques must exist
                 good also for small Communities 
                 //freq. used on social netw. anal.
     *q- the idea based on statistics? features of it? 
@@ -1825,12 +1830,12 @@
         entailment, find more relationships
         check Consistency 
         Query answering
-    *q- what is entailment? op15 
+    **q- what is entailment? op15 
         find out more relationships
     **q- QA process? ext 
         a- 
             find deduced query results 
-    ****q- comm. diff. bet. ontology lan. and constraints lan.? op16 
+    ***q- comm. diff. bet. ontology lan. and constraints lan.? op16 
         comm. 
             encoded in machine-readable standardised formats
                 --> stored as machine readable fromats 
@@ -1844,13 +1849,9 @@
                 measure quality 
     q- what can ontology be used? h 
         a- 
-            query answering, data integration from diff. db 
+            query answering
+            data integration
     q- we can also use ontology to enlarge traditional db? y ext 
     //detailready//
-    
-    
-    s
-
-
 
 
