@@ -251,6 +251,7 @@
     *h-s-q- all possible features of sparql? -h s6op2 -and possible examples
     *q- what is COUNT(*) as ?val here COUNT? ext h
     sum-q- feature-rich query language sparql features? x7 s6op-start
+    **q- express filter after aggregation? how op46 
 //////////////////////////////////////core theory part//////////////////////////////////////
 ---rem1vp-ex1-slide6---SPARQL: Semantics
     ////ex 
