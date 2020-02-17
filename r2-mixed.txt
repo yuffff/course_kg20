@@ -1,7 +1,5 @@
 
 ---rem2vp-ex-global---
-    exq- all sparql subtasks found in exercise: 
-        ...
     *q- well-known theorems 
         <> TimBL’s propersal 
         <> Perron-Frobenius Theorm 
@@ -36,18 +34,20 @@
             at least PSpace complete in query complexity
         <> schema checking 
             NP-hard 
+    exq- all sparql subtasks found in exercise: 
+        ...
     ok-pp- what are prefixed names in this pic? s2p22 
-    q- The OWL Web Ontology Language extends the semantic features of RDF
+    h- The OWL Web Ontology Language extends the semantic features of RDF
         what are semantic features here? 
     h- theory is sth. build upon each other 
     pp- expressivity bet. sparql and rdbms sql?
-    q- what does rdf:type mean?     
+    h- what does rdf:type mean?     
         a- 
             state that a res. is a instance of a class 
     *q- what means a db is normalized? 
         a- units converted to base units ...
     q- we can import wikidata to neo4j? y 
-    q- qa pipeline? graph db querying 
+    q- QA pipeline? graph db querying ext  
     q- redis? 
     h- db enlarge operation -- make it complete 
     q- what are wikis? 
@@ -428,18 +428,17 @@
         incoming requests distributed by load balancing (LVS)
         public SPARQL query service is available
     q- SPARQL query features? go to ext! 
----rem1vp-ex1-slide5--- core basic of the following chapters! try them out 
+---rem1vp-ex1-slide5--- core basic for the following chapters! try them out 
     ////exercise 
         *1-q- all people that have returned from two spaceights operated by organisations from dierent countries and amount of time 
-            ////human space flight Q752783 
-            ////instanceof P31 
-            ////lunch time P619 
-            ////astronaut mission (P450)
+            <> human space flight Q752783 
+            <> instanceof P31 
+            <> lunch time P619 
+            <> astronaut mission (P450)
         *2-q- find all people that have received more than one Nobel Prize
-            ////award received (P166)
+            <> award received (P166)
         *5-q- check for the existence of a 5-clique in the P3373 (“sibling”)
             return label 
-
         q- what is the diff. of wdt:Pxxx and p:Pxxx and ps:Pxxx ? 
             statement access, see the pic below:  
             https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format
@@ -578,26 +577,26 @@
         some hidden var. exists 
     q- what means BIND operator?  op39 
         a- Define derived values by applying functions to query results 
-    s-q- find people who are composers, or musicians, 
+    *s-q- find people who are composers, or musicians, 
         <> or who play some instrument op40 -ferr 
     q- what is VALUES expression op-
         a- it defines solution mappings
             similar to subqueries
     h- VALUES behaves just like a subquery with the specified result
     q- only IRIs or literals can be used in VALUES? y
-    **q- what is the important use of VALUES? op- 
+    *q- what is the important use of VALUES? op- 
         a- 
             much more efficient than sending 100 small queries, 
             or nested UNION
-    **invq- efficiently combine 100 possible options? how to do that? op41 
+    invq- efficiently combine 100 possible options? how to do that? op41 
     h- BIND can be used instead of expression assignments with AS in SELECT
-    q- what is that "as" part in select? what are they actually? op42 
+    *q- what is that "as" part in select? what are they actually? op42 
     h- cannnot be used before they were assigned.
     q- what is the problem here? given a piece of query code op- 
     q- Assignments of constants to variables are better realised with VALUES? 
-    q- if we are going to assign a constant variable, which should we use? 
+    *q- if we are going to assign a constant variable, which should we use? 
     s-q- write a code to queryxxx use a constant xxx ext 
-    q- what is grouping? op44 
+    *q- what is grouping? op44 
         a- split a multiset of solutions into several multisets
     q- what is Aggregate function? op- in the select part? 
     invq- what we should do if we want to calcu. value as return 
@@ -614,7 +613,7 @@
     h- SPARQL aggregate functions: op45 
     (keep a snippets file to prac. )
     *h-s-q- all possible features of sparql? -h s6op2 -and possible examples
-    q- what is COUNT(*) as ?val here COUNT? ext h
+    *q- what is COUNT(*) as ?val here COUNT? ext h
         Aggregates
     sum-q- feature-rich query language sparql features? x7 s6op-start
 //////////////////////////////////////core theory part//////////////////////////////////////
