@@ -1,3 +1,5 @@
+        q-   -- question may be asked 
+        q-   -- ques. should be asked 
 ---rem2vp-ex-global---
     *q- their limiations? 
         <> sparql
