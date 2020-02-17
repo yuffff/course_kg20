@@ -6,7 +6,7 @@
     r2-mixed   -- mixed detail learned from slides 
         pp-  -- problems not solved 
         q-   -- question may be asked 
-        q-   -- ques. should be asked 
+        *q-   -- ques. should be asked 
         opxx -- the corresponding page number on slides
     r3-question_list_extraction  -- ques. list extracted from mixed.txt
     r3-hlev_extraction   -- high level understanding of the contents (global view) for further use
@@ -682,9 +682,26 @@
     q- multiplicity, cardinality of the solution? op13 notation
     *q- BGP solutions using joins (higher lev.) op- notation
     h- join means combine var. from both side 
-    **q- BGP solutions using joins, proof that. op17 
+    ****q- BGP solutions using joins, proof that. op17  ferr
         include from both sides 
         use subset method from both side 
+        lan-
+            https://www.youtube.com/watch?v=yCwnifwVjIg 
+            miu. is a memeber of BGP(P)
+            A union B 
+        a- 
+            pick up ... 
+            assume... 
+            compatible...
+
+            pick up... 
+            from the def, we know that there is miu1 and miu2 ... 
+            * pad written p218 
+                the two are equal!
+                pp- 
+            from the right side, we know that ... 
+            so, 
+            and that means... 
     pp- the multiplicity of any solution will therefore be 1
     *q- how to deal with bnodes? 
         like variables 
@@ -892,7 +909,7 @@
         TrueQBF is harder than both NP and coNP
         PSpace-complete
     q- we can also express universal quantifiers? y 
-    **q- express QBF using sparql? op41 
+    ****q- express QBF using sparql? op41 
         pq example 
     *q- check SPARQL query is PSpace hard, how to proof -re
         We reduce QBF formulae to SPARQL queries
@@ -1354,7 +1371,8 @@
             从练习来看cypher 表达能力确实强！！
             h- 3-filter 4-negation !!! 
             pp- 6 op106 
-            6 ferr
+            6 ferr ferr 
+                name? three points should be attention! 
             7 ferr 
             9 ferr 
                 UNWIND expands a list into a sequence of rows

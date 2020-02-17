@@ -1,5 +1,5 @@
         q-   -- question may be asked 
-        q-   -- ques. should be asked 
+        *q-   -- ques. should be asked 
 ---rem2vp-ex-global---
     *q- their limiations? 
         <> sparql
@@ -269,6 +269,7 @@
     q- multiplicity, cardinality of the solution? op13 notation
     *q- BGP solutions using joins (higher lev.) op- notation
     **q- BGP solutions using joins, proof that. op17 
+        lan- 
     *q- how to deal with bnodes? 
     q- research- optimizations? rough 
     q- join--any known algorithm needs exponential time? 
