@@ -40,7 +40,7 @@ def extractp(file_name):
             if x != None:
                 resulttxtlist.append(linetxt)
     #print(resulttxtlist)
-    with open(file_name + "_extra.txt","w",encoding='utf-8') as fout:
+    with open("r3-question_list_extraction.txt","w",encoding='utf-8') as fout:
         for l in resulttxtlist:
             fout.write(l)
 extractp("r2-mixed.txt")

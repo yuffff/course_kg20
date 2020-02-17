@@ -1,14 +1,5 @@
 
 
-// heuristic as key in slides, understand the whole thing at a high speed
-// global understanding tells us what are imp. at an initial look 
-// this file will be part of my notes from now on 
-// goal: to achieve a detailready state for each chapter
-// use this to mark: //detailready// 
-// search online possible, chinese words possible (similar to ext before)
-// 目的只有一个， detailready！！
-// 有些东西直接看看不懂，不如看看网上怎么讲
-
 ---slide6---SPARQL: Semantics
     h- SPARQL is a feature-rich query language
     h- bgps are conjunctions of triple patterns

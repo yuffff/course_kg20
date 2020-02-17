@@ -1,0 +1,93 @@
+
+    // mainly on 1st pass: attended by later iterations 
+    ppt-1
+        what is kg, as a summ.  p13
+        what means normalized ? p14 -
+            and 
+                connected 
+                explicit 
+                structured
+                declarative
+                annotated
+            ... 
+        are relational databases KG? why 
+        graph def in math? 
+        pro and cons of each kind of representations of a graph x2 p22 
+        why we still use matrix representations of a graph? p22 
+        what can not be represented with adj. list data structure? p21 
+        why Encoding Graphs in RDF? 
+        what does rdf do? 
+        versions of rdf? 
+        what is uri? p28 
+        what is uri, url, iri? ext, p28 
+        urn? 
+        *which does rdf use? IRI !
+        what parts are there? given a url
+            http://zhirongtec.top:719/dNotiz/index.php?fp=new_notes/links.json#mtable 
+        what are typical kg? p15 
+        what means normalized for a database?
+            https://www.mediawiki.org/wiki/Wikibase/Indexing/RDF_Dump_Format#Normalized_values
+        
+    ppt-2
+        Where do the IRIs that we use in graphs come from? p3 
+        ways to construct Resolvable IRIs? p5 
+        how to request diff. file formats when we have only one url? 
+            what tech. can be used here? p6 
+        Why not use IRIs for data values ? p7 x3 
+        IRIs are application-specific? 
+        Using a hypothetical scheme “integer,” the IRIs integer:42
+            and integer:+42 would be?
+        the format of a datavalue? p8 
+            the date example 
+        datatype in RDF is specified by xml schema, it has three components, which? p9 
+        Important datatypes in RDF? roughly
+        rdf11 has built-in datatypes
+        what is the default datatype? 
+        to encode human readable tags? with lan. support, how? 
+        why we need bnodes? 
+        predicate must be iri? p15 
+        most common RDF Serialisations x5 p17 
+        what does this mean? _:1 has global meaning? 
+        pros and cons of N-triple? p20 
+        take a look at the full specification from official
+        prefixed names are written without brackets?
+        how can we use prefix and base? p22 
+        explain the graph follows p23 what means ; , ?
+        can numbers and booleans be written directly? 
+        pro cons for turtle format? p26 
+        focus on n-triple and turtle? 
+        what is RDF dataset? named graphs, default graph? 
+        how can one encode with a named graph? p29 
+        the meaning of iri is application-dependent(?)
+        standard abbreviations
+        how to understand this: ? p32 
+            RDF graphs are really hypergraphs with ternary edges
+            the graph is simple (each triple at most once).
+        RDF provides several properties for describing properties? 
+        *The OWL Web Ontology Language extends the semantic features of RDF
+            what are semantic features here? 
+        why we not use rdfs sometimes? p34 
+        pro cons of rdf standard? vs rdfs and owl
+        def. of rdf! p35 
+    ppt-3
+        three types of rdf terms? p2 
+        what is rdf graphs 
+        how can we encoding this graph? p3 
+        -see ipad/ exported pdf file 
+        ...
+    ppt-4
+        ...
+        ...
+    ppt-5
+        ...
+        ok -linked 
+    ---
+    ppt-6
+    ppt-7
+    ppt-8
+    ppt-9
+    ppt-10
+    ppt-11
+    ppt-12
+    ppt-13
+    ppt-14

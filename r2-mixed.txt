@@ -1,81 +1,12 @@
-//
-    invq-   indicates inversed questions 
-    a-      answers to the corres. question 
-    answer filling needed, reform needed
-
-    transfer from k2rough to here: 
-        just copy here, and add ra- . do not del, add only. 
-    extract q- with python
-    def. should be reformed from original description 
-        and: pro cons, def, ... 
-        use ra- to represent this 
-            reformed answer 
-        can be ommited if the answer is stf. 
-    something do not need to reform! so , just give the opxx  
-    key abvility:
-        1.summ, highlev understanding 
-        2.reform of the answers 
-        3.easy prac.
-    view is imp. not just try to "practice" without 
-        reviewing the answer here 
-    rem1 means 地毯式复习一遍，有时足够了，毕竟后面还有随机复习适应考试环境
-    先把我一些最基本的proof
-    ////new added! 
-    ////excerise added! 
-    <> added! 
-    //// do not modify extracted file!! 
-    认知是从基础到深入的，完成slides是最简单根本的，而后再考虑ubung，但是都要尽快
-    ditan practice + random practice 
-    measuring review state? 
-        reviewstage1: literal finished 
-        reviewstage2: direct memory(提笔就来)
-        reviewstage3: fast and good  
-                                    |---|
-                                    |--|   |
-                                    |      |
-                                    |      |----
-                                    |
-            |-----------------------|   examdate
-        ----|            important to rem and practice!
-        long prepare! break out! 
-        fastReactRate(FRR) = 0.5 
-        GoThrough! 
-            1.ThroughwithAnswer twanswer 
-            2.twOanswer 
-            3.srwOanswer -- stratified random without showing answer 
-        prefetch()
-            gothrough: 
-                case hardtounderstand -> netext as "key"
-                case q, h, write down. 
-            markas detailready
-        detail()
-            gothrough:
-                p, pp-, h-, possible 
-            markas remready 
-        finalgeathering()
-            //bi-latency review style:(workflow)
-            for i,j in (s,t) 2 as unit 
-                twanswer(i)/twanswer(j)/twOanswer(i)/twOanswer(j)
-                srwOanswer(eachchep2most*)
-        randomfinaltraining()
-            twanswer(all)/rwOanswer()/twOanswer(all)  ? 
-        rem 
-            shorted, graph based, description based ......
-        jiangshi, write again and again for years ...
-        paint it! -- a rem. stratigy 
-            how it looks like? draw again.
-        
-//
 
 ---rem2vp-ex-global---
-    ////ex all sparql subtasks found in ubung: 
-        sub-q- xxx 
-    ////
-    q- well-known theorems 
-        TimBL’s propersal 
-        Perron-Frobenius Theorm 
-        GN algorithm 
-    q- all common complexity clases? ! 
+    exq- all sparql subtasks found in exercise: 
+        ...
+    *q- well-known theorems 
+        <> TimBL’s propersal 
+        <> Perron-Frobenius Theorm 
+        <> GN algorithm 
+    *q- all common complexity clases? ! 
         <> basic: 
             <> st-reachability
                 NL-complete 
@@ -106,14 +37,14 @@
         <> schema checking 
             NP-hard 
     ok-pp- what are prefixed names in this pic? s2p22 
-    q- *The OWL Web Ontology Language extends the semantic features of RDF
+    q- The OWL Web Ontology Language extends the semantic features of RDF
         what are semantic features here? 
     h- theory is sth. build upon each other 
     pp- expressivity bet. sparql and rdbms sql?
     q- what does rdf:type mean?     
         a- 
             state that a res. is a instance of a class 
-    q- what means a db is normalized? 
+    *q- what means a db is normalized? 
         a- units converted to base units ...
     q- we can import wikidata to neo4j? y 
     q- qa pipeline? graph db querying 
@@ -128,11 +59,11 @@
         graph base that is a graph 
         collection of facts rules or other knowledge
         that express somekind of relations and connections 
-    q- features of KG sys? op19 x3 
+    *q- features of KG sys? op19 x3 
         structured
         normalised
         connected
-    q- why wikipedia not KG? rdbms not? op29 
+    *q- why wikipedia not KG? rdbms not? op29 
     q- def. of simple undirected graph? set of? op- 
     q- what is hypergraph? op33 
         a- with higher arity edges
@@ -140,13 +71,13 @@
             a- having edges to itself 
     q- what is multi-graph
             a- multiple edges with the same vertices same dir 
-    q- what is in-degree
+    *q- what is in-degree
             a- number of edges pointing towards it
     q- what is out-degree 
             a- number of edges pointing from it
     q- what is directed path
             a- a sequence of consecutive edges, two possible dirs
-    q- what is simple path (directed or undirected)
+    *q- what is simple path (directed or undirected)
             a-path without repeated vertices
     q- what is notations of a path op-
             v1->v2 e 
@@ -156,9 +87,9 @@
             a- a matrix of VxV, value 1 if there is an edge
     q- what is missed in adjacency list rep. op40 
         vertices without edges
-    q- possible rep. of a graph? x3 
+    *q- possible rep. of a graph? x3 
         how they can be adapted to other complex graphs? op39 
-    q- pros and cons of each? op42 x2x1
+    *q- pros and cons of each? op42 x2x1
         matrix
             +
                 space eff. for dense graph 
@@ -171,7 +102,7 @@
                 easy labeling 
             -
                 hard to process 
-    q- what is rdf? ext op59 what kind of graph? 
+    *q- what is rdf? ext op59 what kind of graph? 
         a- 
             resource description framework
             used to modeling directed, edge-labelled graphs
@@ -209,23 +140,23 @@
         Content negotiation
     q- which to use to select the type of file returned? op11
         Accept header
-    q- Why not use IRIs for data value? op16 x1 
+    *q- Why not use IRIs for data value? op16 x1 
         a- 
             same meaning every where 
             //buildin understanding 
             //more interpreted
-    **q- how to rep. a value in rdf?shape?example? xsd? 
+    *q- how to rep. a value in rdf?shape?example? xsd? 
         a- "lexical val"^^datatype-IRI 
             "547"^^xsd:int 
             "18-02-2020"^^xsd:date
         a- datatype based on xml schema 
-    /**q- datatype in RDF is specified by the following components? the shape?
+    //**q- datatype in RDF is specified by the following components? the shape?
         value space, lexical space, lexical to value maping 
     q- lexical space of a integer? op20 
     q- value space and lexical space of decimal? 
         arbitry lang decimal numbers, decimal strings 
     h- we can also use rdf:datatype  , xsd 
-    **q- rdf terms? op27 
+    **q- what are rdf terms?x3 op27 
         IRIs
         blank nodes
         and literals.
@@ -233,14 +164,13 @@
         a- "lexical value"^^datatype?
     q- language-tagged string is an expression of the form?
         a- "string"@language
-    q- what is bnodes? 
+    *q- what is bnodes? 
         a- 
         are vertices
             ,that are not identified by a IRI
         placeholder
         there is something at this position
         as auxiliary vertices
-
     **q- what is RDF graph? which types are allowed in which part? 
         a-
             a set of triples
@@ -248,7 +178,7 @@
             predicate: iri
             object: iri, bnodes, literal
     q- ill-formed literals are allowed in graphs? y 
-    q- RDF Serialisations, their formats? x5 
+    *q- RDF Serialisations, their formats? x5 
         op32 
     q- encode this graph to ntriple? op34 
     **q- procons of the rdf Serialisations x2? op41 
@@ -293,23 +223,23 @@
             give up     
     q- what is sparql op23 
     h- we can update a database use sparql
-    s-q- asks for a list of all resource IRIs together with their labels op24 
-    sq- Find up to ten people whose daughter is a professor
-    q- Count all predicates in the database op27 
-    sq- Find the person with most friends
-    sq- Find pairs of siblings
-    q-  shape of a SPARQL query? x4 which parts? op31 
+    q- asks for a list of all resource IRIs together with their labels op24 
+        <> Find up to ten people whose daughter is a professor
+        <> Count all predicates in the database op27 
+        <> Find the person with most friends
+        <> Find pairs of siblings
+    *q-  shape of a SPARQL query? x4 which parts? op31 
         Prologue, Select clause, Where clause,Solution set modifiers
-    q- variable assignment? pattern matching process? predicate
-    q- how to express order? 
+    h- variable assignment? pattern matching process? predicate
+    q- how to express order information in sparql? 
         desc(), ASC() ordering comparator
-    q- how to express "most"? op- 
+    *q- how to express "most"? op- 
     q- further types of queries? x2 
         ASK query: check the existance 
         CONSTRUCT query: build new rdf triples 
-    q- does sparql support literals as subject? y 
+    *q- does sparql support literals as subject? y 
         allows variables everywhere
-    q- what is BGP? -a 
+    *q- what is BGP? 
         a set of triple patterns, will be used to query
         used to describe the patterns, which will be used to query 
         Turtle snippet that specifies patterns
@@ -327,7 +257,7 @@
     pp- blank nodes to RDF terms op43 ? 
         in bgp
     q- The multiset of these solutions is denoted evalG(P)? how to understand this 
-    p-q- what is the result of sparql formally op42 
+    *q- what is the result of sparql formally op42 
     q- what is solution sequence op42 
     h- multiset is an unordered set 
     q- what doeas this mean? µ(σ(P)) ⊆ G op43 
@@ -348,8 +278,9 @@
     q- what is the result from this query? to this graph? this database? op45 
     h- result should be a list of value to the vars
     q- What is evalG(eg:s eg:p eg:o) over the empty graph G = ∅? op48 
-    q- what is Boolean queries? op50 
-        without bindings for any variable
+    *q- what is Boolean queries? op50 
+        cannot yield bindings for any variable
+        Queries that cannot yield bindings for any variable op50
     q- What is evalG(eg:s eg:p eg:o) over the graph G = {eg:s eg:p eg:o}? op50
     h- sparql is meanly depend on matching graph patterns(暴力枚举？)
     pp- Queries that cannot yield bindings for any variable op50
@@ -381,7 +312,7 @@
                 such as Apple Siri and Amazon Alexa
             in research: Wikidata as a subject of study 
                 (social dynamics, internationality, biases, . . . )
-    q- Wikimedia wikidata and wikipedia? what is WMF? op17 
+    *q- Wikimedia wikidata and wikipedia? what is WMF? op17 
         Wikimedia Foundation
         wikidata is part of wikimedia proj. 
         wikidata is a kg based database 
@@ -390,7 +321,7 @@
     q- basic principles of wikidata? op20 rough 
         open editing, community control 
     h- wikidata has one page per entity, with diff. sections 
-    q- what are two views of wikidata? and their properties. op28 
+    *q- what are two views of wikidata? and their properties. op28 
         document-centric
             grouped by subject
             sections 
@@ -408,7 +339,7 @@
         best available language, statements may have a rank, 
         which encodes their current significance
         Site links: Connections to pages on other Wikimedia projects
-    q- what is the main part of the page? 
+    *q- what is the main part of the page? 
         a- statements
     q- how to realise entity-level information integration? ext 
         site links  
@@ -426,7 +357,7 @@
         statements are basic units! 
         similar to triple, it is 
             "Wikidata items + wikidata properties + value"
-    q- how statements can be build? op37 
+    *q- how statements can be build? op37 
         a- "Wikidata items + wikidata properties + value"
     q- start time is a property type? y
     h- property types are predicates, list of all possible properties can be found online 
@@ -451,11 +382,11 @@
             order not imp. 
         differ: 
             a-  // from s to large 
-                iri
+                iri(id)
                 datatype(literal) 
                 links(addi.)
             Wikidata statements can have annotations and references
-            do not have xml schema types 
+            datatypes are differ 
             wikidata ID are not IRIs 
     h- we can Encoding statements in RDF(statements are in graph view)
     h- wikidata has rdf dump, converts will happen inside this process, encoding statements in RDF
@@ -515,14 +446,14 @@
     ////exercise 
     h- core of sparql relies on basic graph patterns (BGPs)
         returns sequences or multi-sets of partial functions (“solutions”)
-    q- what are property paths? op5 
-        spec. conditions /express more complicated predicate for match 
-    **s-q- Find all descendants of Johann Sebastian Bach op06 
+    *q- what are property paths? op5 
+        can express more complicated predicate for match 
+    *s-q- Find all descendants of Johann Sebastian Bach op06 
         with no predicate hasChild but two predicates hasFather and hasMother
     h- Property path syntax-- similar to regular expression
     q- how does this execute? ˆ!ˆeg:p1*/eg:p2?|eg:p3+ op07 
         a- (((ˆ((!(ˆeg:p1))*))/(eg:p2?))|(eg:p3+))
-    q- ˆ(iri*) is actually the same as the meaning of (ˆiri)*? 
+    *q- ˆ(iri*) is actually the same as the meaning of (ˆiri)*? 
     h- property path pattern is a triple hs, p, oi,
     h- extending Turtle syntax to allow 
     **q- meaning of the following ppp op09
@@ -558,13 +489,16 @@
         it can not intro. new vars into the qu. result 
     *q- how filters can be used? 
         a- 
-            as checkers, can express conditions: 
+            express many conditions, eliminate
+            as checkers, can express conditions:
+        p- 
             Type checks and language checks...
             Check for non-existence of certain graph patterns
-    s-q- find out where in Germany towns have names 
+    *s-q- find out where in Germany towns have names 
         ending in “-ow” or “-itz” op18 
     less-q- how semicons can be used? ext 
     q- Filters are not Turtle syntax and don’t require . as separators?
+    h- Turtle syntax!
     q- what means bind variables? - give value to variables
         Answers are eliminated, never added
     q- The position of filters within a pattern is not relevant? y
@@ -590,18 +524,18 @@
     h- FILTER NOT EXISTS
     s-q- From Wikidata, find out how many living people 
         <> are know who are born in Dresden op25 
-    q- how to provide a form of negation in queries? op- ext  
+    *q- how to provide a form of negation in queries? op- ext  
     h- RDF allows almost all kinds of terms in almost all positions, maybe no scene 
-    q- how errors propagate in ql? 
+    *q- how errors propagate in sparql? 
         use EBV 
     *q- what is effective boolean value (EBV)? op26 
         a- 
             used for error propergation 
             empty strings have EBV “false”, other strings have EBV “true”
     //q- why there can be calcu. correctly? ext 
-    q- projection = removal of some bindings from results?
+    *q- projection = removal of some bindings from results?
     q- how to set multiplicity of any element in the result to 1? op29 
-    s-q- Find cities and their population densities op28 
+    *s-q- Find cities and their population densities op28 
     h- may define additional results computed by functions in select clauses
     ext- 
         projection queries (SELECT queries) may only project out variables bound in the query. 
@@ -622,10 +556,10 @@
     q- what means OFFSET? operator? op- 
     h- Both LIMIT and OFFSET should only be used on 
         explicitly ordered results
-    **s-q- In Wikidata, find the largest German cities, rank 6 to 15 op30
-    q- what is group graph pattern? op- 
+    *s-q- In Wikidata, find the largest German cities, rank 6 to 15 op30
+    *q- what is group graph pattern? op- 
         A query part within braces
-    s-q- In Wikidata, find everybody who is a composer by occupation 
+    *s-q- In Wikidata, find everybody who is a composer by occupation 
         <> or who has composed something op33
     h- union adds up multiplicities
     s-q- find composers, and, optionally, their spouses
@@ -1070,7 +1004,7 @@
     h- An atom is a formula of the form R(t1, . . . , tn)   
         with R a predicate symbol of arity n
     h-  A rule with empty body (m = 0) is called a fact
-    **q- how to model fact in datalog x2 
+    **q- how to model rdf triples in datalog x2 
         rule with empty body 
         model rdf terms in datalog? !! 
     q- set of Datalog rules is a Datalog program
@@ -1381,6 +1315,8 @@
             sub-q- ... 
         *4-q- neo4j movie example x7 
             see ex10 
+            4 ferr 
+                h- what should be returned!! take care !
     ////
     h- an other lan. which should also be familier with 
     q- The shape of a Cypher query 
