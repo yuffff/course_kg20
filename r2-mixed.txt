@@ -657,6 +657,7 @@
 ---rem1vp-ex1-slide6---SPARQL: Semantics
     ////ex 
         *ok-1-q- fails in the presence of blank nodes
+            pp- ipad page 249 
         2-q- there are sets of solution mappings such that xxx 
         *th-hard-3-q- show that equivalent of two statements: graph related 
         4q- (little too complex, mixed many parts )
@@ -756,10 +757,12 @@
     ////ex
         q-1- transferm to algebra, too large task, prac. basic part
             q- subtask: 
-        *q-2- Evaluate the following expression of the SPARQL algebra
+        ***q-2- Evaluate the following expression of the SPARQL algebra
             q- subtask:join means combine 2 things that should compatible
             q- subtask:LeftJoin means? 
-                optional, filter    
+                optional, filter  
+                pp- 
+
         q-4- see task6   
     ////
 
