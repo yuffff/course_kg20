@@ -1853,5 +1853,3 @@
             data integration
     q- we can also use ontology to enlarge traditional db? y ext 
     //detailready//
-
-
