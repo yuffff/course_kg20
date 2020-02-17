@@ -16,6 +16,8 @@
     r6-myexam  -- quest. that have been asked in my exam  
 
 ---rem2vp-ex-global---
+    *q- use three lan to express that whos daughter is professor 
+        pad op268 
     *q- their limiations? 
         <> sparql
             path length 

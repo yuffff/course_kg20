@@ -1,6 +1,7 @@
         q-   -- question may be asked 
         *q-   -- ques. should be asked 
 ---rem2vp-ex-global---
+    *q- use three lan to express that whos daughter is professor 
     *q- their limiations? 
         <> sparql
         <> rdf triple

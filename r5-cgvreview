@@ -5,14 +5,41 @@ q:what you did in the KPCG?
 
 a:
 i deve. TD game for Machine Learning.
-In the game, we encouraged users to seg. a map dataset in 
+In the game, we *encouraged users to seg. a map dataset in 
 a playful way. which may be boring before.
 
+{
+    //begin 
+    as for detail, when the game begins, 
+    a map is shown to the player. And the enemies wont 
+    come imm. . 
 
+    //game logic 
+    so as a player we can prepare for that. 
+    plant trees, forest.
+    build maot, a river around the city. 
+    construct buildings. 
+    to earn money, can be used to build tower. 
 
+    //ml back
+    in this way to encourage players to segm. 
+    eg. when we want to plant trees around a perticular area,
+    we would have to draw a circle,it should along the road.
+    players have to do so beacause the game was designed to prevent 
+    people from draw sth. randomly by punishing them when 
+    the circle he drawed is too rediculous, strange. 
+    and it is also reaonable. Beacause it saves mony when we 
+    build fence aroud it. 
 
+    moren d, ml was used, was enhanced. some key-tech 
+    {
+        gen. pre-segmentation 
+        waypoints 
+        parameter adjestment 
+    }
 
-as for detail, 
+}
+
 it was a TD game which can be used to collect user input as 
 ground truth information in a database.
 
