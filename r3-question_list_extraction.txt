@@ -1,5 +1,11 @@
 ---rem2vp-ex-global---
-    exq- all sparql subtasks found in exercise: 
+    *q- their limiations? 
+        <> sparql
+        <> rdf triple
+        <> datalog
+        <> cypher
+        <> property graph
+        <> ...
     *q- well-known theorems 
         <> TimBL’s propersal 
         <> Perron-Frobenius Theorm 
@@ -21,11 +27,10 @@
             <> data 
         <> cypher 
         <> schema checking 
-    q- The OWL Web Ontology Language extends the semantic features of RDF
-    q- what does rdf:type mean?     
+    exq- all sparql subtasks found in exercise: 
     *q- what means a db is normalized? 
     q- we can import wikidata to neo4j? y 
-    q- qa pipeline? graph db querying 
+    q- QA pipeline? graph db querying ext  
     q- redis? 
     q- what are wikis? 
 ---rem2vp-slide1---* usually starts from here...
@@ -157,15 +162,15 @@
     q- liberal configuration, how about the timeout? how many secs? op54 
     q- what is the backend of wdqs? ext 
     q- SPARQL query features? go to ext! 
----rem1vp-ex1-slide5--- core basic of the following chapters! try them out 
+---rem1vp-ex1-slide5--- core basic for the following chapters! try them out 
     ////exercise 
         *1-q- all people that have returned from two spaceights operated by organisations from dierent countries and amount of time 
-            ////human space flight Q752783 
-            ////instanceof P31 
-            ////lunch time P619 
-            ////astronaut mission (P450)
+            <> human space flight Q752783 
+            <> instanceof P31 
+            <> lunch time P619 
+            <> astronaut mission (P450)
         *2-q- find all people that have received more than one Nobel Prize
-            ////award received (P166)
+            <> award received (P166)
         *5-q- check for the existence of a 5-clique in the P3373 (“sibling”)
         q- what is the diff. of wdt:Pxxx and p:Pxxx and ps:Pxxx ? 
     ////exercise 
@@ -220,18 +225,18 @@
         <> one of the 15 largest German cities op- 
     q- what is Subqueries? 
     q- what means BIND operator?  op39 
-    s-q- find people who are composers, or musicians, 
+    *s-q- find people who are composers, or musicians, 
         <> or who play some instrument op40 -ferr 
     q- what is VALUES expression op-
     q- only IRIs or literals can be used in VALUES? y
-    **q- what is the important use of VALUES? op- 
-    **invq- efficiently combine 100 possible options? how to do that? op41 
-    q- what is that "as" part in select? what are they actually? op42 
+    *q- what is the important use of VALUES? op- 
+    invq- efficiently combine 100 possible options? how to do that? op41 
+    *q- what is that "as" part in select? what are they actually? op42 
     q- what is the problem here? given a piece of query code op- 
     q- Assignments of constants to variables are better realised with VALUES? 
-    q- if we are going to assign a constant variable, which should we use? 
+    *q- if we are going to assign a constant variable, which should we use? 
     s-q- write a code to queryxxx use a constant xxx ext 
-    q- what is grouping? op44 
+    *q- what is grouping? op44 
     q- what is Aggregate function? op- in the select part? 
     invq- what we should do if we want to calcu. value as return 
     s-q-  find the ten most common professions of people born in Dresden op- 
@@ -239,7 +244,7 @@
     q- is there allowed? (two para. showed)
     *s-q- find all professions of more than 100 people born in Dresden op46
     *h-s-q- all possible features of sparql? -h s6op2 -and possible examples
-    q- what is COUNT(*) as ?val here COUNT? ext h
+    *q- what is COUNT(*) as ?val here COUNT? ext h
     sum-q- feature-rich query language sparql features? x7 s6op-start
 //////////////////////////////////////core theory part//////////////////////////////////////
 ---rem1vp-ex1-slide6---SPARQL: Semantics
@@ -252,32 +257,30 @@
                 <> the average English label of musical works
             subq- ...
     ////ex 
-    q- what is miu. in this context? op04 ?? 
-    q- how to transfer to semantic operations. 
+    //q- what is miu. in this context? op04 ?? 
+    q- how to transfer to semantic operations? roughly 
     ////new 
     q- joins of two multisets(omga) of solution mappings? op12 notation 
     q- multiplicity, cardinality of the solution? op13 notation
     *q- BGP solutions using joins (higher lev.) op- notation
-    *q- BGP solutions using joins, prove that. op17 
+    **q- BGP solutions using joins, proof that. op17 
     *q- how to deal with bnodes? 
     q- research- optimizations? rough 
-    q-  join--any known algorithm needs exponential time? 
-    q- Join computed the natural join of two results
-    q- filter expression op22 
+    q- join--any known algorithm needs exponential time? 
     **q- sum- operators expression? 
         <> Join(M1, M2), Fileter, Union, MINUS, LeftJoinG, Extend
         <> BIND? OPTIONAL! Group!!
-    *q- pp- diff. bet. join and union? h 
-    q- Minus(M1, M2) does not depend on cardinalities of mappings in M2? y
+    ***q- pp- diff. bet. join and union? op31  
+    *q- Minus(M1, M2) does not depend on cardinalities of mappings in M2? y
+    *q- ok-pp- why need a filter in LeftJoin? op25 
     *q- diff. bet. filter inside optional or outside? op27 
-    q- subqueries return multisets?
-    *q- VALUES behaves just like a subquery with the specified result.
+    *q- VALUES behaves just like a subquery with the specified result?
     q- operators for solution set modifiers? x3 work on lists of mappings L 
     *huge-q- From query to algebra expression? algo? 
-    q- : GROUP BY ?occupation year(?date) possible? y 
+    q- GROUP BY ?occupation year(?date) possible? y 
     q- GROUP BY semantic? 
     *q- what are aggregate functions? what are they? 
-    q- how to deal with several aggregates are selected in the query? 
+    *q- how to deal with several aggregates are selected in the query? 
     q- can further converted into nested expressions of operators? y how 
     less-sum-q- Join, FilterG,Union,Minus,LeftJoinG,Extend
 ---rem1vp-ex1-slide7---SPARQL: Complexity and Expressivity
@@ -288,40 +291,45 @@
     ////
     q- what is the naive approach and its complexity
     q- what computational models are? 
-    *q- how To classify algorithms? 
+    *q- how To classify algorithms? x3
     q- prob. of Finding BGP solutions is a decision prob. 
         <> and has NP complexity
     q- complexity hierarchy
-    q- many-one reduction 
-    q- key- NP-hard
+    *q- many-one reduction 
+    *q- key- NP-hard, NP, NP-c
+    q- 如何相互转化？ 
+    *q- key- coNP
+    *q- key- PSpace
+    *q- space is more powerful than time, why? 
     q- why practical?
-    q- Complexity of SPARQL Evaluation
+    q- Complexity of SPARQL Evaluation ext 
     q- Where this sketch is lacking? s7op58
     ////new////
-    q- haedness compute bgp solutions? find, join after that op12 
+    *q- hardness compute bgp solutions? find, join after that op12 
     q- where comes the hardnbess? 
-    q- measures of a problem’s “difficulty”? x3 
+    *q- measures of a problem’s “difficulty”? x3 
     q- complexity hierarchy? op14 
-    q- what is NP 
+    *q- what is NP 
     q- varify bgp solution is  quadratic time? y 
-    q- what is polynomially many-one reducible
-    q- L1 can be reduced to L2, L2 is at least hard as L1? y 
-    q- reduce to 3Col problem:
-    q- 3col problem? 
-    q- sat problem?  op
-    q- the shape of QBF, what is fai here? 
-    q- TrueQBF problem? 
-    q- assume its hardness? 
+    *q- what is polynomially many-one reducible
+    *q- L1 can be reduced to L2, L2 is at least hard as L1? y 
+    *q- how to reduce sparql query to 3Col problem:
+    *q- 3col problem? 
+    *q- sat problem?  op
+    q- what is QBF ? 
+    *q- the shape of QBF, what is fai here? 
+    *q- TrueQBF problem? 
+    *q- assume its hardness? 
     q- we can also express universal quantifiers? y 
     **q- express QBF using sparql? op41 
-    *q- check SPARQL query is PSpace hard, how to proof 
+    *q- check SPARQL query is PSpace hard, how to proof -re
     ***q- why is sparql practice? roughly 
-    q- what is data-complexity query-complexity? 
+    *q- what is data-complexity query-complexity? 
     q-  s-t-reachability problem? 
     *q- Deciding if a SPARQL query has any solutions is NL-hard? y 
     q- Answering queries in PSpace? y
     //q- Where this sketch is lacking? s7op58
-    q- why practical? detailed 
+    *q- why practical? detailed 
     q- limitations of sparql? see s8! 
 ---rem1vps-*ex1*-spql-slide8---SPARQL Limits/Datalog
     ////ex
@@ -336,7 +344,7 @@
             sub-q- find a  SPARQL queries exponential
         *4-q- Which of the following QBF are satisfiable?
     ////
-    q- why not every set of RDF graphs corresponds to a query
+    *q- why not every set of RDF graphs corresponds to a query
     q- The lower the complexity of query answering, 
     q- why can not measure expressivity with complexity? not so correct? op08 
     q- give a example shows that Complexity not equ. to expressivity op- 
@@ -359,16 +367,17 @@
     *q- why data complexity talked here? 
     *q- what patterns cannot be expressed using sparql? op14 x4 x4 detail
     *q- what limitation does sparql have? roughly x2 
-    *q- why not support them in sparql? op15 
+    *q- why not support them in sparql? op15 x3 
     //q- what are not introduced feature? 
     ////datalog////
     *d-q- datalog-- a query for all ancestors of the individual Alice 
     //q- ext- deduct with ancestor(X, Y) :- parent(X, Y). ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y)
     *q- diff. bet. datalog and prolog 
+    *q- what is a fact? 
     **q- how to model rdf triples in datalog x2 
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
-    q- no multiplicity of results of datalog? y  
+    *q- no multiplicity of results of datalog? y  
 ---rem1vps-ex1-dl-slide9---Rules for Querying Graphs
     ////excerise 
         1-exq- any datalog can be safe? 
@@ -380,29 +389,30 @@
     q- does not imply that all P-computable problems can be
     q- Query for maternal ancestors of Ada Lovelace op37 
     ////new 
-    /q- what is Tp? immediate consequence operator TP?  op04 
+    //q- what is Tp? immediate consequence operator TP?  op04 
     *q- how apply Datalog to graph data? x2 
     *s-q- query expresses parallel s-t-reachability for 
         <> predicates p and q (for triple encoding):
     *q- what means nullary result predicate? 
     q- Non-linear (e.g., tree-shaped) patterns 
         <> possible with datalog, how? ext 
-    q- Datalog complexity op9 
+    *q- Datalog complexity op9 
     *q- Datalog is monotonic, what does this mean?l 
         <> p problem is monotonic? n 
     **s-q- query for living people born in Dresden op12 
     q- require all rules to be safe, and 
-        <> this does not restrict expressivity (exercise)
-    q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
+        <> why this does not restrict expressivity? (exercise)
+    *q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
     **q- A rule is safe? op- 
     *q- problem with negation?  
-    q- the idea of stratified negation ? 
+    *q- the idea of stratified negation ? 
     q- set of facts we obtained from stratified negation is 
         <> not affected by choose ,this is called? 
-    pra-lessdirct-q- algo that obtaining a stratification? op25 
-    *pra-*q- deside which lev. it belones to? 
+    *q- pra-lessdirct-q- algo that obtaining a stratification? op25 roughly
+    *q- deside which lev. it belones to? 
     *q- express eg:JSBach (ˆeg:hasFather|ˆeg:hasMother)+ ?x with datalog 
-    h-q- relation with datalog and sparql 
+    **h-q- relation with datalog and sparql 
+    ***q- datalog can not express?  
     q- vlog4j supports evaluating Datlog queries over RDF files? y
     q- slightly different rules in vlog4j? y 
     *s-q- Ancestor of alice and not composer op36 
@@ -436,23 +446,28 @@
     ////new 
     *q- what is “Property Graph” op05 
     q- how can property graph be used? which model exists? x3 op08 
-    **q- Types of “Property Graphs”? x3+ 
+    ***q- which model for property graph exists?Types of “Property Graphs”? x3+ 
     //ext-q- Programmatic access of property graph?
     q- what does it mean "Relationship types" in rdf world? op14 terminologies!
-    q- limitations of property graph
+    **q- limitations of property graph
     **q- transform From Property Graph to RDF? 
-    **h-q- ext- model a statement into rdf wikidata
+    q- what is reification? -re 
+    h-q- ext- model a statement into rdf wikidata
     q- and from rdf to property graph? op22 
-    **q- datatypes in property graph x6 terms in it?  op14 op25
+    **q- datatypes in property graph, what types of data are allowed?  op14 op25
+        <> bnode   
+        <> node, relationships
+        <> labels, relationship types, and property keys
+        <> property values
     **s-q- asks for a list of all nodes that are in an EMPLOYER relationship
     **s-q- Find up to ten people whose daughter is a professor op29 
     **s-q- nCount all relationships in the database:, types? 
     ***q- compare sparql and cypher 
-    **s-q- Find the person with most friends
-    **s-q- Find pairs of siblings  op33 
-    **s-q- Find friends of all people with name Paul Erdos, 
+    *s-q- Find the person with most friends
+    *s-q- Find pairs of siblings  op33 
+    *s-q- Find friends of all people with name Paul Erdos, 
         <> and return their name and the start date of the friendship op34
-    q- what are cypher features?
+    *q- what are cypher features? roughly
     q- property graph makes data in two layers? which two?
 ---rem1vps-ex1-cypher-slide11--- The Cypher Query Language
     ////ex 
@@ -470,21 +485,21 @@
     q- how to express path patterns? 
     q- the value cannot be distinguished from “unbound”? y 
     ////new 
-    q- what is allowed for node pattern? x3 op4 
+    *q- what is allowed for node pattern? x3 op4 
     *q- find a man who is Scientist and a composer at the same time op04
     q- quotes of property keys, and their value? 
-    q- find a person with particular name and birth year 
-    q- what does this mean? (a)-[:E|F*5..10]->(b)<-[e {score:0.8}]-() op- 
+    *q- find a person with particular name and birth year 
+    *q- what does this mean? (a)-[:E|F*5..10]->(b)<-[e {score:0.8}]-() op- 
     q- what can be expressed in path pattern? op5  x4 
     q- Cypher does not support arbitrary regular expressions? y sparql does? y 
-    q- can we express  ?a (p/q)* ?b with cypher? 
+    *q- can we express  ?a (p/q)* ?b with cypher? 
     q- express ?a (p|ˆp|q|ˆp)* ?b in cypher op07 
-    q- pp- But do their semantics agree? op09 
+    *q- pp- But do their semantics agree? op09 
     q- SPARQL bnodes correspond to Cypher node patterns without variable
     q- Each distinct path is a distinct match in cypher? op10 
     q- relationship must be used in only one place
-    q- Query matching in Cypher is harder than NP. proof that. 
-    q- how can we use the same relationship more than one time? ext op14 
+    *q- Query matching in Cypher is harder than NP. proof that. 
+    *q- how can we use the same relationship more than one time? ext op14 
     q- Homomorphism semantics? isomorphim? 
     q- path manipulation features available? better? y
     q- func. that working on nodes and relationships? roughly op15 
@@ -498,7 +513,7 @@
     q- WHERE clauses can use any expression? 
     **q- Find all nodes that have value "scientist" as one of their occupations, and that do not have a spouse:
     ////Further Cypher Features////
-    q- if aggregated and non-aggregated results are defined, the non-aggregated ones will be the keys to group by? y 
+    *q- if aggregated and non-aggregated results are defined, the non-aggregated ones will be the keys to group by? y 
     *s-q- Show married professors with their number of children op23 
         sub-q- find all professors in graph op23 
     q- min, avg, count can be used 
@@ -508,8 +523,8 @@
     q- Find parent-child pairs with bi directions op25 
     *s-q- Find parent-child pairs and, optionally, a spouse for the parent op26
     q- what happends if var. not bind? 
-    **q- err. propergate in both sparql and cypher? 
-    **q- The use of null in Cypher is ambiguous? 
+    ***q- err. propergate in both sparql and cypher? 
+    *q- The use of null in Cypher is ambiguous? 
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
 ---rem1vps-ex1-slide12---Knowledge Graph Quality and Validation
      ////ex 

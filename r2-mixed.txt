@@ -1,5 +1,22 @@
 
 ---rem2vp-ex-global---
+    *q- their limiations? 
+        <> sparql
+            path length 
+            return path 
+            parallel pattern 
+            otherkinds of pattern 
+        <> rdf triple
+            order  
+        <> datalog
+            no vertices counting 
+            no path iteration 
+            no regular expressions 
+        <> cypher
+            regular expressions are limited 
+        <> property graph
+            some wikidata statements  
+        <> ...
     *q- well-known theorems 
         <> TimBL’s propersal 
         <> Perron-Frobenius Theorm 
@@ -629,14 +646,14 @@
     ////ex 
     h- SPARQL is a feature-rich query language
     h- bgps are conjunctions of triple patterns
-    q- what is miu. in this context? op04 ?? 
+    //q- what is miu. in this context? op04 ?? 
     h- SPARQL algebra that are under queries, which is key to understand the complexity of it 
     h- query algebra operations
     h- "we define the multiset" are imp. 
     *h- each operation corresponds to a underlying Semantic
     h- semantic of bind may hard 
     *h- sum on op31 
-    q- how to transfer to semantic operations. 
+    q- how to transfer to semantic operations? roughly 
     h- synta. expression -> algebra expression -> ?
     h- can be converted into nested expressions
     //detailready//
@@ -646,7 +663,7 @@
     q- multiplicity, cardinality of the solution? op13 notation
     *q- BGP solutions using joins (higher lev.) op- notation
     h- join means combine var. from both side 
-    *q- BGP solutions using joins, prove that. op17 
+    **q- BGP solutions using joins, proof that. op17 
         include from both sides 
         use subset method from both side 
     pp- the multiplicity of any solution will therefore be 1
@@ -658,26 +675,28 @@
         Efficient data structures for finding compatible solutions to triple patterns
         Streaming joins: returning first results before join is complete
     h- pad writting p55
-    q-  join--any known algorithm needs exponential time? 
-    h-  algebra operations
-    q- Join computed the natural join of two results
-    q- filter expression op22 
+    q- join--any known algorithm needs exponential time? 
+    h- algebra operations
+    h- Join computed the natural join of two results
     **q- sum- operators expression? 
         <> Join(M1, M2), Fileter, Union, MINUS, LeftJoinG, Extend
         <> BIND? OPTIONAL! Group!!
         op154 written pad  
         op31 !
     h- the para. of those operators? multiset ... 
-    *q- pp- diff. bet. join and union? h 
-        union has higher lev. 
+    ***q- pp- diff. bet. join and union? op31  
+        join compatible mappings from M1 and M2, no duplicates! 
+        but union has. 
+        https://www.essentialsql.com/what-is-the-difference-between-a-join-and-a-union/
     h- operators can be expressed with help of set theory 
-    q- Minus(M1, M2) does not depend on cardinalities of mappings in M2? y
+    *q- Minus(M1, M2) does not depend on cardinalities of mappings in M2? y
     h- option operation: augments solutions in M1 
-    ok-pp- why need a filter in LeftJoin? op25 
+    *q- ok-pp- why need a filter in LeftJoin? op25 
         为了兼容，简化内部algebra calcu. 
     *q- diff. bet. filter inside optional or outside? op27 
-    q- subqueries return multisets?
-    *q- VALUES behaves just like a subquery with the specified result.
+        when inside, maybe only one people returned, but not the other 
+    h- subqueries return multisets?
+    *q- VALUES behaves just like a subquery with the specified result?
     h- bind -- extension of solution mappings in M
         pp- eval(µ(ϕ))
     q- operators for solution set modifiers? x3 work on lists of mappings L 
@@ -685,13 +704,13 @@
         from inner most 
         deal with mainly three types of things, condition based 
         remove all filter outside, and filt them later 
-    q- : GROUP BY ?occupation year(?date) possible? y 
+    q- GROUP BY ?occupation year(?date) possible? y 
     q- GROUP BY semantic? 
     h- Φ(µ0) = Φ(µ) op34 这里是在进行筛选，group core part 
     *q- what are aggregate functions? what are they? 
         in selection part 
         calcu. mulitsets to values 
-    q- how to deal with several aggregates are selected in the query? 
+    *q- how to deal with several aggregates are selected in the query? 
         join them 
     q- can further converted into nested expressions of operators? y how 
         case match and convert with rules 
@@ -709,7 +728,7 @@
 
     q- what is the naive approach and its complexity
     q- what computational models are? 
-    *q- how To classify algorithms? 
+    *q- how To classify algorithms? x3
     key- Some complexity classes may hard 
     q- prob. of Finding BGP solutions is a decision prob. 
         <> and has NP complexity
@@ -717,13 +736,13 @@
         NP-hard 
     q- complexity hierarchy
         https://upload.wikimedia.org/wikipedia/commons/a/a0/P_np_np-complete_np-hard.svg
-    q- many-one reduction 
+    *q- many-one reduction 
         a-
             is a reduction which converts instances of 
                 one decision problem into instances of a 
                 second decision problem
             pp-err- op22 
-    q- key- NP-hard
+    *q- key- NP-hard, NP, NP-c
         a-
             means can be reduced to polynomial time by a non-deterministic Turing machine.
             不是NP的一部分，最直观的就是他们不可以在P时间被验证
@@ -732,12 +751,12 @@
         a- can be varified in P time
     key- NP complete 
         a- the hardest ones in NP class  
-    如何相互转化？ 
+    q- 如何相互转化？ 
         A reduction from X to Y is simply an algorithm A which solves X by 
             making use of some other algorithm B which solves problem Y
         "polynomial time reduction" if all parts of A other than B have a polynomial time complexit
     key- From 3-colourability to BGP matching
-    key- coNP
+    *q- key- coNP
         a- 
             the complement class to NP, not equal to NP, not symmetric
             Other complexity classes are symmetric
@@ -747,7 +766,7 @@
         example: 
             No Hamiltonian Path: Does the graph G not have a Hamiltonian path?
             Is the propositional logic formula ϕ a tautology (true under all assignments)
-    key- PSpace
+    *q- key- PSpace
         a- 
             a more powerful class, sat can be solved in linear space 
         Space seems to be more powerful than time
@@ -759,7 +778,7 @@
             in the input length (polynomial space) 
         https://jeremykun.files.wordpress.com/2012/02/chp_venn_diagram.jpg
         http://s3.amazonaws.com/sf-web-assets-prod/wp-content/uploads/2018/05/29144646/Scott_AAronson_Quantum_And_Classical_Uncertainty.svg
-    h- space is more powerful than time, 
+    *q- space is more powerful than time, why? 
         they can be reused, take examples to have a better understand!
     key- typical problems and their complexity
     h- game design, start from Complexity!
@@ -786,7 +805,7 @@
             NP-hardness
         数据库的实现在时间复杂度上会有成熟的优化算法，比如排序（order by），分组统计（group by）和取不重复值（distinct）
         你要争取毫秒级操作?
-    q- Complexity of SPARQL Evaluation
+    q- Complexity of SPARQL Evaluation ext 
         what is the complexity of 
         "AND", "Filter", "Optional", "Union "
         "Combinations And/Union "
@@ -804,64 +823,65 @@
     ////new////
     h- BGPG(P) is the join of the solution multisets of all individual triple
         patterns in P.
-    q- haedness compute bgp solutions? find, join after that op12 
+    *q- hardness compute bgp solutions? find, join after that op12 
         find: linear 
         join two multisets is quadratic 
             k multisets is expotional! 
     q- where comes the hardnbess? 
         join of partial solutions 
-    q- measures of a problem’s “difficulty”? x3 
+    *q- measures of a problem’s “difficulty”? x3 
         computational models 
         constrained resources
         resource bounds 
     q- complexity hierarchy? op14 
     h- np is extremely common class for challenging problems
-    q- what is NP 
+    *q- what is NP 
         can be varified in P time 
     q- varify bgp solution is  quadratic time? y 
-    q- what is polynomially many-one reducible
+    *q- what is polynomially many-one reducible
         "complete" problems comes from here 
-    q- L1 can be reduced to L2, L2 is at least hard as L1? y 
-    q- reduce to 3Col problem:
+    *q- L1 can be reduced to L2, L2 is at least hard as L1? y 
+    *q- how to reduce sparql query to 3Col problem:
         we can construct a situation that use sparql to solve the 3col problem 
         thus the complexity is at least the one of 3col 
         detail see slides 
-    q- 3col problem? 
+    *q- 3col problem? 
         assign 3col to vertices of a graph 
         ,and no two adjacent vertices have the same colour
-    q- sat problem?  op
+    *q- sat problem?  op
         给定公式，
         例如，公式“a AND NOT b”是可以满足的，因为可以找到值a = TRUE且b = FALSE
         “a AND NOT a”是不可满足的
-        a- 
+        **a- 
             possible to assign truth values to propositional variables
-            so that fai eval to true? 
+                ,so that fai eval to true? 
     h- Completeness again is defined by polynomial reductions
-    h- Quantified Boolean Formulae QBF, 一阶逻辑基本单位
-    q- the shape of QBF, what is fai here? 
+    q- what is QBF ? 
+        Quantified Boolean Formulae QBF, 一阶逻辑基本单位
+    *q- the shape of QBF, what is fai here? 
         propositional logic formula
         quantifiers {x,x}
         replace? fai[X/.]
-    q- TrueQBF problem? 
+    *q- TrueQBF problem? 
         a-
             fai is a quantified boolean formula 
-            Does ϕ evaluate to true?
+            ,does ϕ evaluate to true?
         consists of two: exists, forall 
         one can be reduced to SAT 
         the other can be reduced to tautology checking 
-    q- assume its hardness? 
+    *q- assume its hardness? 
         TrueQBF is harder than both NP and coNP
         PSpace-complete
     q- we can also express universal quantifiers? y 
     **q- express QBF using sparql? op41 
         pq example 
-    *q- check SPARQL query is PSpace hard, how to proof 
+    *q- check SPARQL query is PSpace hard, how to proof -re
         We reduce QBF formulae to SPARQL queries
     ***q- why is sparql practice? roughly 
         NL-complete for data complexity 
         parallelisable
         queries are limited
-    q- what is data-complexity query-complexity? 
+    *q- what is data-complexity query-complexity? 
         Does Q have answers over G?, fixed query Q
         Does Q have answers over G? (for fixed RDF graph G)
     q-  s-t-reachability problem? 
@@ -869,10 +889,11 @@
     *q- Deciding if a SPARQL query has any solutions is NL-hard? y 
     q- Answering queries in PSpace? y
     //q- Where this sketch is lacking? s7op58
-    q- why practical? detailed 
-        a- query complexity(wrt. query) + data complexity(wrt. rdf graph)
-        stream them out(in PSpace, can have many results)
-        queries are limited
+    *q- why practical? detailed 
+        a- 
+            total = query complexity(wrt. query) + data complexity(wrt. rdf graph)
+                + stream them out(in PSpace, can have many results)
+            queries are limited
     q- limitations of sparql? see s8! 
 ---rem1vps-*ex1*-spql-slide8---SPARQL Limits/Datalog
     ////ex
@@ -900,7 +921,7 @@
             possible always true? just assign val. for one var.! 
             one always? 
     ////
-    q- why not every set of RDF graphs corresponds to a query
+    *q- why not every set of RDF graphs corresponds to a query
     h- power means characterise strictly more sets of graphs
     q- The lower the complexity of query answering, 
         the lower its expressivity, which complexity?
@@ -970,7 +991,8 @@
         <> but can not be expressd in sparql 
         a- 
             higher degrees can only be enforced for a limited number of nodes
-            we can only use infinitly many ver. of degree 2 in rdf to match to a property path pattern
+            we can only use infinitly many *vertices of degree 2 in rdf to 
+                *match to a property path pattern
                 and limited number of nodes with higher degree 
                 but parallel problem need to check arbitry many 4 degree nodes 
     *q- why data complexity talked here? 
@@ -982,13 +1004,14 @@
             Nested regular expressions
             Tree-like patterns
             wide paths 
+            *parallel patterns
         fundamental limits:
             dataypes
-            pathlength 
-            return paths as result 
+            *pathlength 
+            *return paths as result 
             no support for recursive/iterative computation
     *q- what limitation does sparql have? roughly x2 
-    *q- why not support them in sparql? op15 
+    *q- why not support them in sparql? op15 x3 
         performance
         history 
         design 
@@ -1002,13 +1025,14 @@
         order is not imp. in datalog, but for prolog. 
     h- An atom is a formula of the form R(t1, . . . , tn)   
         with R a predicate symbol of arity n
-    h-  A rule with empty body (m = 0) is called a fact
+    *q- what is a fact? 
+        A rule with empty body (m = 0) is called a fact
     **q- how to model rdf triples in datalog x2 
         rule with empty body 
         model rdf terms in datalog? !! 
     q- set of Datalog rules is a Datalog program
     q- database used in datalog is a set of facts 
-    q- no multiplicity of results of datalog? y  
+    *q- no multiplicity of results of datalog? y  
 ---rem1vps-ex1-dl-slide9---Rules for Querying Graphs
     --little bit too hard, finish it fast 
     ////excerise 
@@ -1051,7 +1075,7 @@
     q- Query for maternal ancestors of Ada Lovelace op37 
     //detailready// 
     ////new 
-    /q- what is Tp? immediate consequence operator TP?  op04 
+    //q- what is Tp? immediate consequence operator TP?  op04 
         inserting known facts for the body literals to compute a new literal
         maps Herbrand interpretations to Herbrand interpretations
         monotonic and even continuous
@@ -1071,7 +1095,7 @@
         this is a boolean query. op- 
     q- Non-linear (e.g., tree-shaped) patterns 
         <> possible with datalog, how? ext 
-    q- Datalog complexity op9 
+    *q- Datalog complexity op9 
     *q- Datalog is monotonic, what does this mean?l 
         <> p problem is monotonic? n 
         more input facts given, the more results derived.
@@ -1079,34 +1103,38 @@
     **s-q- query for living people born in Dresden op12 
         P19 born, P570 dead date, Q1731 dresden 
     q- require all rules to be safe, and 
-        <> this does not restrict expressivity (exercise)
+        <> why this does not restrict expressivity? (exercise)
         add more rules to make it safe 
-    q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
+    *q- Result(x) :− triple(x, wdt:P19, wd:Q1731), ¬triple(x, wdt:P570, y), meaning? 
         op15 
     **q- A rule is safe? op- 
         all of its variables occur 
             in non-negated atoms in its body
     *q- problem with negation?  
         fails if negation is freely used in recursion
-    q- the idea of stratified negation ? 
+    *q- the idea of stratified negation ? 
         limit negation rules in each lev. 
-        , we can avoid non-monotonic behaviour.
-        still has limitations 
+            , we can avoid non-monotonic behaviour.
+                still has limitations 
     q- set of facts we obtained from stratified negation is 
         <> not affected by choose ,this is called? 
         M is called perfect model or unique stable model
-    pra-lessdirct-q- algo that obtaining a stratification? op25 
-    *pra-*q- deside which lev. it belones to? 
+    *q- pra-lessdirct-q- algo that obtaining a stratification? op25 roughly
+    *q- deside which lev. it belones to? 
         obtain the maximum edge with "-" in a path 
     *q- express eg:JSBach (ˆeg:hasFather|ˆeg:hasMother)+ ?x with datalog 
         带入法理解！ 把短的代入长的中进行推理
     h- Datalog with stratified negation captures and 
         extends important parts of SPARQL
-    h-q- relation with datalog and sparql 
+    **h-q- relation with datalog and sparql 
         datalog has more powerful expressivity
         can express some sparql, and support some not supported
         and always assume DISTINCT 
-    h- datalog can not express Subqueries 
+    ***q- datalog can not express?  
+        *Subqueries
+        *counts 
+        *all kinds of path 
+        ...
     h- many implementations of datalog 
     q- vlog4j supports evaluating Datlog queries over RDF files? y
         Stratified negation and value invention
@@ -1220,11 +1248,11 @@
     *q- what is “Property Graph” op05 
         a type of graph 
         with more features than rdf graph 
-        enriched graph structures
+        *a- enriched graph structures
         primarily hints at the attribute-value pairs
         ori. focus on properties
     q- how can property graph be used? which model exists? x3 op08 
-    **q- Types of “Property Graphs”? x3+ 
+    ***q- which model for property graph exists?Types of “Property Graphs”? x3+ 
         obj model 
             entity-relationship diagram
         on top of relational db  
@@ -1246,7 +1274,7 @@
     h- Sets of properties can be assigned to vertices and edges
     h- Property keys are unicode strings
     h- Properties are key-value pairs
-    q- limitations of property graph
+    **q- limitations of property graph
         hard to model statement of wikidata 
         Property values cannot ref. to an other vertices or edges.
         "together with"
@@ -1254,15 +1282,18 @@
         //shall be simplified, include bnodes 
         Use reification to represent edges by auxiliary nodes
         datatype mapping 
-    **h-q- ext- model a statement into rdf wikidata
+    q- what is reification? -re 
+    h-q- ext- model a statement into rdf wikidata
     q- and from rdf to property graph? op22 
         may hard due to restrictions of the later 
-    **q- datatypes in property graph x6 terms in it?  op14 op25
-        也是有bnodes的！  
-        node, relationships, iri
-        labels, relationship types, and property keys
+    **q- datatypes in property graph, what types of data are allowed?  op14 op25
+        <> bnode   
+        <> node, relationships
+            iri
+        <> labels, relationship types, and property keys
             are plain strings
-        property values, literal 
+        <> property values
+            literal 
         They cannot occur in the graph
         and no further Properties
     h- Current specification of openCypher 9:
@@ -1281,11 +1312,11 @@
         support distributed computing(high performance)
         rdf has limitations 
         pp- 
-    **s-q- Find the person with most friends
-    **s-q- Find pairs of siblings  op33 
-    **s-q- Find friends of all people with name Paul Erdos, 
+    *s-q- Find the person with most friends
+    *s-q- Find pairs of siblings  op33 
+    *s-q- Find friends of all people with name Paul Erdos, 
         <> and return their name and the start date of the friendship op34
-    q- what are cypher features?
+    *q- what are cypher features? roughly
         Returning of paths and shortest paths
         Filter expressions
         Subqueries 
@@ -1338,7 +1369,7 @@
     q- how to express path patterns? 
     q- the value cannot be distinguished from “unbound”? y 
     ////new 
-    q- what is allowed for node pattern? x3 op4 
+    *q- what is allowed for node pattern? x3 op4 
         variable
         label 
         properties
@@ -1346,21 +1377,21 @@
         pp-  
     q- quotes of property keys, and their value? 
         backticks,straight quotes
-    q- find a person with particular name and birth year 
-    q- what does this mean? (a)-[:E|F*5..10]->(b)<-[e {score:0.8}]-() op- 
+    *q- find a person with particular name and birth year 
+    *q- what does this mean? (a)-[:E|F*5..10]->(b)<-[e {score:0.8}]-() op- 
     q- what can be expressed in path pattern? op5  x4 
         variable, range, relation types, properties
     q- Cypher does not support arbitrary regular expressions? y sparql does? y 
-    q- can we express  ?a (p/q)* ?b with cypher? 
+    *q- can we express  ?a (p/q)* ?b with cypher? 
     q- express ?a (p|ˆp|q|ˆp)* ?b in cypher op07 
-    q- pp- But do their semantics agree? op09 
+    *q- pp- But do their semantics agree? op09 
     q- SPARQL bnodes correspond to Cypher node patterns without variable
     q- Each distinct path is a distinct match in cypher? op10 
         y, path counting feature 
     q- relationship must be used in only one place
-    q- Query matching in Cypher is harder than NP. proof that. 
+    *q- Query matching in Cypher is harder than NP. proof that. 
         reduce to 3col problem 
-    q- how can we use the same relationship more than one time? ext op14 
+    *q- how can we use the same relationship more than one time? ext op14 
         use multiple clauses MATCH 
     q- Homomorphism semantics? isomorphim? 
         some constrains 
@@ -1389,7 +1420,7 @@
     **q- Find all nodes that have value "scientist" as one of their occupations, and that do not have a spouse:
         op21 
     ////Further Cypher Features////
-    q- if aggregated and non-aggregated results are defined, the non-aggregated ones will be the keys to group by? y 
+    *q- if aggregated and non-aggregated results are defined, the non-aggregated ones will be the keys to group by? y 
         implicit 
     *s-q- Show married professors with their number of children op23 
         distinct? pp- 
@@ -1404,10 +1435,10 @@
     *s-q- Find parent-child pairs and, optionally, a spouse for the parent op26
         ferr no direction!  
     q- what happends if var. not bind? 
-    **q- err. propergate in both sparql and cypher? 
+    ***q- err. propergate in both sparql and cypher? 
         Cypher uses the special value null to indicate errors
         EBV 
-    **q- The use of null in Cypher is ambiguous? 
+    *q- The use of null in Cypher is ambiguous? 
         1. error
         2. “unknown value”
 /////////////////////////////////////////outlook, usage and features///////////////////////////////////
