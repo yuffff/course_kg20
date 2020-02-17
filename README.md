@@ -7,7 +7,7 @@
         r2-mixed   -- mixed detail learned from slides 
             pp-  -- problems not solved 
             q-   -- question may be asked 
-            q-   -- ques. should be asked 
+            *q-   -- ques. should be asked 
             opxx -- the corresponding page number on slides
         r3-question_list_extraction  -- ques. list extracted from mixed.txt
         r3-hlev_extraction   -- high level understanding of the contents (global view) for further use
