@@ -1,0 +1,15 @@
+
+
+questions asked: 
+    -what is rdf graph 
+    -what is the diff. between wikidata(graph based) and rdf graph
+    -what datatypes are there? (iri,bnodes,literal)
+    -what is allowed in which part? 
+    -give an example of wikidata entity (with properties to statements)
+        and explain how to transfer it to rdf triples.
+        with bnodes.
+    -write a sparql query to find a person who has worked twice in one company
+        use the relationship modeled above(graph you drawed)
+    -what is centrality
+    -what centrality do you know? formula?
+    -write a cypher query to calcu. the centrality of the nodes in a graph
